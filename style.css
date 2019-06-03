@@ -1,0 +1,48 @@
+/*imports*/
+
+/*html*/
+html{
+    scroll-behavior: smooth;
+}
+
+/*body*/
+
+body {
+    position: relative !important;
+    width: 100%;
+    padding: 0px !important;
+    margin: 0px !important;
+}
+
+
+
+
+/*classes*/
+
+.formbox{
+    overflow: hidden;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    position: absolute;
+    padding: 20px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: #fff;
+    width: 50% !important;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px;
+}
+.backbtn{
+    position: absolute;
+    right: 1%;
+}
+@media(max-width:576px){
+    .formbox{
+        width: 90% !important;
+        position: relative;
+
+    }
+}
