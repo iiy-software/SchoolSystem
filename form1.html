@@ -1,0 +1,1043 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="assets/img/favicon.ico">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <title>DAV School System -Table</title>
+
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+
+    <link href="style.css" type="text/css" rel="stylesheet" />
+    <!-- Bootstrap core CSS     -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Animation library for notifications   -->
+    <link href="assets/css/animate.min.css" rel="stylesheet" />
+
+    <!--  Light Bootstrap Table core CSS    -->
+    <link href="assets/css/light-bootstrap-dashboard.css?v=1.4.0" rel="stylesheet" />
+
+
+    <!--  CSS for Demo Purpose, don't include it in your project     -->
+    <link href="assets/css/demo.css" rel="stylesheet" />
+
+
+    <!--     Fonts and icons     -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
+    <link href="assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="sidebar" data-image="assets/img/sidebar-5.jpg">
+
+            <!--
+    
+            Tip 1: you can change the color of the sidebar using: data-color="blue | azure | green | orange | red | purple"
+            Tip 2: you can also add an image using data-image tag
+    
+        -->
+
+            <div class="sidebar-wrapper"
+                style="background:linear-gradient(to bottom, rgb(29, 199, 234) 0%, rgb(29, 199, 234) 59%, rgb(29, 199, 234) 100%), url('assets/img/sidebar-5.jpg')">
+                <div class="logo">
+                    <a href="http://www.creative-tim.com" class="simple-text">
+                        My DashBoard
+                    </a>
+                </div>
+
+                <ul class="nav">
+                    <li class="active">
+                        <a href="dashboard.html">
+                            <i class="pe-7s-graph"></i>
+                            <p>Dashboard</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="user.html">
+                            <i class="pe-7s-user"></i>
+                            <p>User Profile</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="table.html">
+                            <i class="pe-7s-note2"></i>
+                            <p>Circulars/Notice Board</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="typography.html">
+                            <i class="pe-7s-news-paper"></i>
+                            <p>Academic Audit</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="icons.html">
+                            <i class="pe-7s-science"></i>
+                            <p>Highlight</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="maps.html">
+                            <i class="pe-7s-map-marker"></i>
+                            <p>Resource Center</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="notifications.html">
+                            <i class="pe-7s-bell"></i>
+                            <p>Best Practices</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="notifications.html">
+                            <i class="pe-7s-bell"></i>
+                            <p>QP and MS</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="notifications.html">
+                            <i class="pe-7s-bell"></i>
+                            <p>Olympiad</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="notifications.html">
+                            <i class="pe-7s-bell"></i>
+                            <p>Downloads</p>
+                        </a>
+                    </li>
+                    <li class="active-pro">
+                        <a href="index.html">
+                            <i class="pe-7s-rocket"></i>
+                            <p style="font-size: 1.5rem !important;">GO TO HOME</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="main-panel">
+            <nav class="navbar navbar-default navbar-fixed">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse"
+                            data-target="#navigation-example-2">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#">Dashboard</a>
+                    </div>
+                    <div class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav navbar-left">
+                            <li>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="fa fa-dashboard"></i>
+                                    <p class="hidden-lg hidden-md">Dashboard</p>
+                                </a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="fa fa-globe"></i>
+                                    <b class="caret hidden-lg hidden-md"></b>
+                                    <p class="hidden-lg hidden-md">
+                                        5 Notifications
+                                        <b class="caret"></b>
+                                    </p>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Notification 1</a></li>
+                                    <li><a href="#">Notification 2</a></li>
+                                    <li><a href="#">Notification 3</a></li>
+                                    <li><a href="#">Notification 4</a></li>
+                                    <li><a href="#">Another notification</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <i class="fa fa-search"></i>
+                                    <p class="hidden-lg hidden-md">Search</p>
+                                </a>
+                            </li>
+                        </ul>
+
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a href="">
+                                    <p>Account</p>
+                                </a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <p>
+                                        Dropdown
+                                        <b class="caret"></b>
+                                    </p>
+
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#">Separated link</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="index.html">
+                                    <p>Back to Home</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p>Log out</p>
+                                </a>
+                            </li>
+                            <li class="separator hidden-lg"></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="myform">
+                        <h1 class="text-center"> QUALITY GRADING FORMAT </h1>
+                        <a href="#"><button type="button" class="btn btn-info">ANNEXURE1-A</button></a>
+                        <a href="form2.html"><button type="button" class="btn btn-info">ANNEXURE1-B</button></a>
+
+                        <br><br>
+                        <div style="background-color:#1DC7EA; color:white; padding:20px;  ">
+                            1. SCHOLASTIC AREAS/CURRICULUM
+                        </div>
+                        <br>
+                        <div style="background-color:#1DC7EA; color:white;padding:20px; margin-left: 50px;">
+                            1.1 Scholastic Planning
+                        </div>
+                        <br>
+                        <div style="padding:20px; margin-left: 50px;">
+                            <h4>1.1.1 Academic Calender and Planner is prepared and shared</h4>
+
+                            <label class="fbtntxt">Always (4)
+                                <input type="radio" checked="checked" name="radio" /><span
+                                    class="checkmark"></span></label>
+                            <label class="fbtntxt">Mostly (3)<input type="radio" name="radio" /><span
+                                    class="checkmark"></span></label>
+                            <label class="fbtntxt">Sometimes (2)<input type="radio" name="radio" /><span
+                                    class="checkmark"></span></label>
+                            <label class="fbtntxt">Rarely (1)<input type="radio" name="radio" /><span
+                                    class="checkmark"></span></label>
+                            <label class="fbtntxt">Never (0)<input type="radio" name="radio" /><span
+                                    class="checkmark"></span></label>
+
+
+                            <h4>1.1.2 Timetable is prepared as per Board's by laws and executed </h4>
+                            <label class="fbtntxt">Always (4)
+                                <input type="radio" checked="checked" name="radio" /><span
+                                    class="checkmark"></span></label>
+                            <label class="fbtntxt">Mostly (3)<input type="radio" name="radio" /><span
+                                    class="checkmark"></span></label>
+                            <label class="fbtntxt">Sometimes (2)<input type="radio" name="radio" /><span
+                                    class="checkmark"></span></label>
+                            <label class="fbtntxt">Rarely (1)<input type="radio" name="radio" /><span
+                                    class="checkmark"></span></label>
+                            <label class="fbtntxt">Never (0)<input type="radio" name="radio" /><span
+                                    class="checkmark"></span></label>
+
+
+                            <h4>1.1.3. Lesson plans are prepared with relevant learning objectives
+                                and outcomes</h4>
+                            <label class="fbtntxt">Always (4)
+                                <input type="radio" checked="checked" name="radio" /><span
+                                    class="checkmark"></span></label>
+                            <label class="fbtntxt">Mostly (3)<input type="radio" name="radio" /><span
+                                    class="checkmark"></span></label>
+                            <label class="fbtntxt">Sometimes (2)<input type="radio" name="radio" /><span
+                                    class="checkmark"></span></label>
+                            <label class="fbtntxt">Rarely (1)<input type="radio" name="radio" /><span
+                                    class="checkmark"></span></label>
+                            <label class="fbtntxt">Never (0)<input type="radio" name="radio" /><span
+                                    class="checkmark"></span></label>
+
+
+                            1.1.4. Teaching strategies and activities are relevant<br>
+                            <label class="fbtntxt">Always (4)
+                                <input type="radio" checked="checked" name="radio" /><span
+                                    class="checkmark"></span></label>
+                            <label class="fbtntxt">Mostly (3)<input type="radio" name="radio" /><span
+                                    class="checkmark"></span></label>
+                            <label class="fbtntxt">Sometimes (2)<input type="radio" name="radio" /><span
+                                    class="checkmark"></span></label>
+                            <label class="fbtntxt">Rarely (1)<input type="radio" name="radio" /><span
+                                    class="checkmark"></span></label>
+                            <label class="fbtntxt">Never (0)<input type="radio" name="radio" /><span
+                                    class="checkmark"></span></label>
+                            1.1.5. Assessment tools & techniques are adequately planned<br>
+                            <label class="fbtntxt">Always (4)
+                                <input type="radio" checked="checked" name="radio" /><span
+                                    class="checkmark"></span></label>
+                            <label class="fbtntxt">Mostly (3)<input type="radio" name="radio" /><span
+                                    class="checkmark"></span></label>
+                            <label class="fbtntxt">Sometimes (2)<input type="radio" name="radio" /><span
+                                    class="checkmark"></span></label>
+                            <label class="fbtntxt">Rarely (1)<input type="radio" name="radio" /><span
+                                    class="checkmark"></span></label>
+                            <label class="fbtntxt">Never (0)<input type="radio" name="radio" /><span
+                                    class="checkmark"></span></label>
+                            1.1.6 Tasks for gifted & slow learners as Remedial measures and
+                            home work are specified<br>
+                            <label class="fbtntxt">Always (4)
+                                <input type="radio" checked="checked" name="radio" /><span
+                                    class="checkmark"></span></label>
+                            <label class="fbtntxt">Mostly (3)<input type="radio" name="radio" /><span
+                                    class="checkmark"></span></label>
+                            <label class="fbtntxt">Sometimes (2)<input type="radio" name="radio" /><span
+                                    class="checkmark"></span></label>
+                            <label class="fbtntxt">Rarely (1)<input type="radio" name="radio" /><span
+                                    class="checkmark"></span></label>
+                            <label class="fbtntxt">Never (0)<input type="radio" name="radio" /><span
+                                    class="checkmark"></span></label>
+                        </div>
+
+                        <br>
+                        <div style="background-color:#1DC7EA; color:white;padding:20px; margin-left: 50px;">
+                            1.2 Class Room Transaction
+                        </div>
+                        <br>
+                        <div style="padding:20px; margin-left: 50px;">
+
+                            1.2.1 Teaching staff are confident and have command on the
+                            content and language<br>
+                            <form>
+                                <input type="radio" name="Observations" value="Always" checked> Alaways (4)<br>
+                                <input type="radio" name="Observations" value="Mostly"> Mostly (3)<br>
+                                <input type="radio" name="Observations" value="Sometimes"> Sometimes (2)<br>
+                                <input type="radio" name="Observations" value="Rarely"> Rarely (1)<br>
+                                <input type="radio" name="Observations" value="Never"> Never (0)<br>
+                            </form>
+                            <br>
+                            1.2.2. Classroom activities are interactive and promote thinking
+                            skills<br>
+                            <form>
+                                <input type="radio" name="Observations" value="Always" checked> Alaways (4)<br>
+                                <input type="radio" name="Observations" value="Mostly"> Mostly (3)<br>
+                                <input type="radio" name="Observations" value="Sometimes"> Sometimes (2)<br>
+                                <input type="radio" name="Observations" value="Rarely"> Rarely (1)<br>
+                                <input type="radio" name="Observations" value="Never"> Never (0)<br>
+                            </form> <br>
+                            1.2.3. Teaching aids/ PPTs/ videos/charts/models are used
+                            effectively<br>
+                            <form>
+                                <input type="radio" name="Observations" value="Always" checked> Alaways (4)<br>
+                                <input type="radio" name="Observations" value="Mostly"> Mostly (3)<br>
+                                <input type="radio" name="Observations" value="Sometimes"> Sometimes (2)<br>
+                                <input type="radio" name="Observations" value="Rarely"> Rarely (1)<br>
+                                <input type="radio" name="Observations" value="Never"> Never (0)<br>
+                            </form> <br>
+                            1.2.4. Appropriate questioning technique is used to check the
+                            comprehension level of students and develop divergent thinking
+                            skills<br>
+                            <form>
+                                <input type="radio" name="Observations" value="Always" checked> Alaways (4)<br>
+                                <input type="radio" name="Observations" value="Mostly"> Mostly (3)<br>
+                                <input type="radio" name="Observations" value="Sometimes"> Sometimes (2)<br>
+                                <input type="radio" name="Observations" value="Rarely"> Rarely (1)<br>
+                                <input type="radio" name="Observations" value="Never"> Never (0)<br>
+                            </form> <br>
+                            1.2.5. Feedback is given to the learners on the work assigned<br>
+                            <form>
+                                <input type="radio" name="Observations" value="Always" checked> Alaways (4)<br>
+                                <input type="radio" name="Observations" value="Mostly"> Mostly (3)<br>
+                                <input type="radio" name="Observations" value="Sometimes"> Sometimes (2)<br>
+                                <input type="radio" name="Observations" value="Rarely"> Rarely (1)<br>
+                                <input type="radio" name="Observations" value="Never"> Never (0)<br>
+                            </form> <br>
+                            1.2.6. Home-work is given to reinforce and enrich the learning<br>
+                            <form>
+                                <input type="radio" name="Observations" value="Always" checked> Alaways (4)<br>
+                                <input type="radio" name="Observations" value="Mostly"> Mostly (3)<br>
+                                <input type="radio" name="Observations" value="Sometimes"> Sometimes (2)<br>
+                                <input type="radio" name="Observations" value="Rarely"> Rarely (1)<br>
+                                <input type="radio" name="Observations" value="Never"> Never (0)<br>
+                            </form> <br>
+                            1.2.7. Remedial measures are taken care of in feedback and by
+                            timely checking of H.W./C.W.<br>
+                            <form>
+                                <input type="radio" name="Observations" value="Always" checked> Alaways (4)<br>
+                                <input type="radio" name="Observations" value="Mostly"> Mostly (3)<br>
+                                <input type="radio" name="Observations" value="Sometimes"> Sometimes (2)<br>
+                                <input type="radio" name="Observations" value="Rarely"> Rarely (1)<br>
+                                <input type="radio" name="Observations" value="Never"> Never (0)<br>
+                            </form> <br>
+
+                        </div>
+
+                        <br>
+                        <div style="background-color:#1DC7EA; color:white;padding:20px; margin-left: 50px;">
+                            1.3 Growth and development of teachers vis- a'-vis
+                            training
+                        </div>
+                        <br>
+                        <div style="padding:20px; margin-left: 50px;">
+
+                            1.3.1. lmpact of teacher training is visible in the classroom<br>
+                            <form>
+                                <input type="radio" name="Observations" value="Always" checked> Alaways (4)<br>
+                                <input type="radio" name="Observations" value="Mostly"> Mostly (3)<br>
+                                <input type="radio" name="Observations" value="Sometimes"> Sometimes (2)<br>
+                                <input type="radio" name="Observations" value="Rarely"> Rarely (1)<br>
+                                <input type="radio" name="Observations" value="Never"> Never (0)<br>
+                            </form> <br>
+                            1.3.2, During classroom teaching, creative and problem-solving
+                            methods are used<br>
+                            <form>
+                                <input type="radio" name="Observations" value="Always" checked> Alaways (4)<br>
+                                <input type="radio" name="Observations" value="Mostly"> Mostly (3)<br>
+                                <input type="radio" name="Observations" value="Sometimes"> Sometimes (2)<br>
+                                <input type="radio" name="Observations" value="Rarely"> Rarely (1)<br>
+                                <input type="radio" name="Observations" value="Never"> Never (0)<br>
+                            </form> <br>
+
+                            1.3.3. lnnovative strategies viz. hands-on activities & games to
+                            facilitate learners achieve their goals are being devised<br>
+                            <form>
+                                <input type="radio" name="Observations" value="Always" checked> Alaways (4)<br>
+                                <input type="radio" name="Observations" value="Mostly"> Mostly (3)<br>
+                                <input type="radio" name="Observations" value="Sometimes"> Sometimes (2)<br>
+                                <input type="radio" name="Observations" value="Rarely"> Rarely (1)<br>
+                                <input type="radio" name="Observations" value="Never"> Never (0)<br>
+                            </form>
+                            <br>
+
+                        </div>
+                        <br>
+
+                        <div style="background-color:#1DC7EA; color:white; padding:20px;  ">
+                            2. INFRASTRUCTURE AND LEARNING RESOURCES
+                        </div>
+                        <br>
+                        <div style="background-color:#1DC7EA; color:white;padding:20px; margin-left: 50px;">
+                            2.1(a) Physical Learning Facilities
+                        </div>
+                        <br>
+                        <div style="padding:20px; margin-left: 50px;">
+                            2.1.1.No. & size of rooms, school have enough rooms of proper
+                            size to provide all facilities as per Board's norms<br>
+                            <form>
+                                <input type="radio" name="Observations" value="Always" checked> Alaways (4)<br>
+                                <input type="radio" name="Observations" value="Mostly"> Mostly (3)<br>
+                                <input type="radio" name="Observations" value="Sometimes"> Sometimes (2)<br>
+                                <input type="radio" name="Observations" value="Rarely"> Rarely (1)<br>
+                                <input type="radio" name="Observations" value="Never"> Never (0)<br>
+                            </form>
+                            <br>
+
+                            2.1.2. Ventilation is good as most of the windows open on the
+                            outer side of the corridors<br>
+                            <form>
+                                <input type="radio" name="Observations" value="Always" checked> Alaways (4)<br>
+                                <input type="radio" name="Observations" value="Mostly"> Mostly (3)<br>
+                                <input type="radio" name="Observations" value="Sometimes"> Sometimes (2)<br>
+                                <input type="radio" name="Observations" value="Rarely"> Rarely (1)<br>
+                                <input type="radio" name="Observations" value="Never"> Never (0)<br>
+                            </form>
+                            <br>
+                            2.1.3 Well illuminated rooms having enough natural light or
+                            proper artificial light<br>
+                            <form>
+                                <input type="radio" name="Observations" value="Always" checked> Alaways (4)<br>
+                                <input type="radio" name="Observations" value="Mostly"> Mostly (3)<br>
+                                <input type="radio" name="Observations" value="Sometimes"> Sometimes (2)<br>
+                                <input type="radio" name="Observations" value="Rarely"> Rarely (1)<br>
+                                <input type="radio" name="Observations" value="Never"> Never (0)<br>
+                            </form>
+                            <br>
+                            2.1.4 Theme based Display Boards exhibit quality<br>
+                            <form>
+                                <input type="radio" name="Observations" value="Always" checked> Alaways (4)<br>
+                                <input type="radio" name="Observations" value="Mostly"> Mostly (3)<br>
+                                <input type="radio" name="Observations" value="Sometimes"> Sometimes (2)<br>
+                                <input type="radio" name="Observations" value="Rarely"> Rarely (1)<br>
+                                <input type="radio" name="Observations" value="Never"> Never (0)<br>
+                            </form>
+                            <br>
+                        </div>
+                        <br>
+                        <div style="background-color:#1DC7EA; color:white;padding:20px; margin-left: 50px;">
+                            2.1(b) School Building and Other Facilities
+                        </div>
+                        <br>
+                        <div style="padding:20px; margin-left: 50px;">
+                            2.2.1. Maintainance and cleanliness of the school building done
+                            regularly<br>
+                            <form>
+                                <input type="radio" name="Observations" value="Always" checked> Alaways (4)<br>
+                                <input type="radio" name="Observations" value="Mostly"> Mostly (3)<br>
+                                <input type="radio" name="Observations" value="Sometimes"> Sometimes (2)<br>
+                                <input type="radio" name="Observations" value="Rarely"> Rarely (1)<br>
+                                <input type="radio" name="Observations" value="Never"> Never (0)<br>
+                            </form>
+                            <br>
+                            2.2.2.Number of toilets as per strength of boys & girl students and are
+                            kept clean<br>
+                            <form>
+                                <input type="radio" name="Observations" value="Always" checked> Alaways (4)<br>
+                                <input type="radio" name="Observations" value="Mostly"> Mostly (3)<br>
+                                <input type="radio" name="Observations" value="Sometimes"> Sometimes (2)<br>
+                                <input type="radio" name="Observations" value="Rarely"> Rarely (1)<br>
+                                <input type="radio" name="Observations" value="Never"> Never (0)<br>
+                            </form>
+                            <br>
+                            2.2.3.Placement of toilet seat and washbasins in case of Pre- Primary
+                            and Primary found at a low level<br>
+                            <form>
+                                <input type="radio" name="Observations" value="Always" checked> Alaways (4)<br>
+                                <input type="radio" name="Observations" value="Mostly"> Mostly (3)<br>
+                                <input type="radio" name="Observations" value="Sometimes"> Sometimes (2)<br>
+                                <input type="radio" name="Observations" value="Rarely"> Rarely (1)<br>
+                                <input type="radio" name="Observations" value="Never"> Never (0)<br>
+                            </form>
+                            <br>
+                            2.2.4. Safe Drinking water of RO/Aqua Guard, facility available<br>
+                            <form>
+                                <input type="radio" name="Observations" value="Always" checked> Alaways (4)<br>
+                                <input type="radio" name="Observations" value="Mostly"> Mostly (3)<br>
+                                <input type="radio" name="Observations" value="Sometimes"> Sometimes (2)<br>
+                                <input type="radio" name="Observations" value="Rarely"> Rarely (1)<br>
+                                <input type="radio" name="Observations" value="Never"> Never (0)<br>
+                            </form>
+                            <br>
+
+                            2.2.5 .Boundary wall & parapet walls available along with grills in the
+                            corridors, for the safety of children<br>
+                            <form>
+                                <input type="radio" name="Observations" value="Always" checked> Alaways (4)<br>
+                                <input type="radio" name="Observations" value="Mostly"> Mostly (3)<br>
+                                <input type="radio" name="Observations" value="Sometimes"> Sometimes (2)<br>
+                                <input type="radio" name="Observations" value="Rarely"> Rarely (1)<br>
+                                <input type="radio" name="Observations" value="Never"> Never (0)<br>
+                            </form>
+                            <br>
+                            2.2.6. Ramp & toilets in schoslfor specially abled are available<br>
+                            <form>
+                                <input type="radio" name="Observations" value="Always" checked> Alaways (4)<br>
+                                <input type="radio" name="Observations" value="Mostly"> Mostly (3)<br>
+                                <input type="radio" name="Observations" value="Sometimes"> Sometimes (2)<br>
+                                <input type="radio" name="Observations" value="Rarely"> Rarely (1)<br>
+                                <input type="radio" name="Observations" value="Never"> Never (0)<br>
+                            </form>
+                            <br>
+                            2.2.7 Layout of furniture in Pre-Primary and Primary classes allows
+                            easy movement<br>
+                            <form>
+                                <input type="radio" name="Observations" value="Always" checked> Alaways (4)<br>
+                                <input type="radio" name="Observations" value="Mostly"> Mostly (3)<br>
+                                <input type="radio" name="Observations" value="Sometimes"> Sometimes (2)<br>
+                                <input type="radio" name="Observations" value="Rarely"> Rarely (1)<br>
+                                <input type="radio" name="Observations" value="Never"> Never (0)<br>
+                            </form>
+                            <br>
+
+
+
+                            2.2.8 .Sufficient furniture as per school strength , available in good
+                            condition<br>
+                            <form>
+                                <input type="radio" name="Observations" value="Always" checked> Alaways (4)<br>
+                                <input type="radio" name="Observations" value="Mostly"> Mostly (3)<br>
+                                <input type="radio" name="Observations" value="Sometimes"> Sometimes (2)<br>
+                                <input type="radio" name="Observations" value="Rarely"> Rarely (1)<br>
+                                <input type="radio" name="Observations" value="Never"> Never (0)<br>
+                            </form>
+                            <br>
+
+                        </div>
+
+                        <br>
+                        <div style="background-color:#1DC7EA; color:white;padding:20px; margin-left: 50px;">
+                            2.1(c) Laboratories
+                        </div>
+                        <br>
+
+                        <div style="padding:20px; margin-left: 50px;">
+                            Lab equipments , enough material/equipments are seen as per the
+                            maximum student strength<br>
+                            <form>
+                                <input type="radio" name="Observations" value="Always" checked> Alaways (4)<br>
+                                <input type="radio" name="Observations" value="Mostly"> Mostly (3)<br>
+                                <input type="radio" name="Observations" value="Sometimes"> Sometimes (2)<br>
+                                <input type="radio" name="Observations" value="Rarely"> Rarely (1)<br>
+                                <input type="radio" name="Observations" value="Never"> Never (0)<br>
+                            </form>
+                            <br>
+
+                            Lab safety ensured as display of safety and exit norms along with
+                            exhaust fan are available<br>
+                            <form>
+                                <input type="radio" name="Observations" value="Always" checked> Alaways (4)<br>
+                                <input type="radio" name="Observations" value="Mostly"> Mostly (3)<br>
+                                <input type="radio" name="Observations" value="Sometimes"> Sometimes (2)<br>
+                                <input type="radio" name="Observations" value="Rarely"> Rarely (1)<br>
+                                <input type="radio" name="Observations" value="Never"> Never (0)<br>
+                            </form>
+                            <br>
+                            List of Experiments (classwise)& lab time-table are displayed for
+                            all classes<br>
+                            <form>
+                                <input type="radio" name="Observations" value="Always" checked> Alaways (4)<br>
+                                <input type="radio" name="Observations" value="Mostly"> Mostly (3)<br>
+                                <input type="radio" name="Observations" value="Sometimes"> Sometimes (2)<br>
+                                <input type="radio" name="Observations" value="Rarely"> Rarely (1)<br>
+                                <input type="radio" name="Observations" value="Never"> Never (0)<br>
+                            </form>
+                            <br>
+                            Practical demostration done and precautions are taken<br>
+                            <form>
+                                <input type="radio" name="Observations" value="Always" checked> Alaways (4)<br>
+                                <input type="radio" name="Observations" value="Mostly"> Mostly (3)<br>
+                                <input type="radio" name="Observations" value="Sometimes"> Sometimes (2)<br>
+                                <input type="radio" name="Observations" value="Rarely"> Rarely (1)<br>
+                                <input type="radio" name="Observations" value="Never"> Never (0)<br>
+                            </form>
+                            <br>
+                            Maintainance and usage of Composite Science lab done regularly<br>
+                            <form>
+                                <input type="radio" name="Observations" value="Always" checked> Alaways (4)<br>
+                                <input type="radio" name="Observations" value="Mostly"> Mostly (3)<br>
+                                <input type="radio" name="Observations" value="Sometimes"> Sometimes (2)<br>
+                                <input type="radio" name="Observations" value="Rarely"> Rarely (1)<br>
+                                <input type="radio" name="Observations" value="Never"> Never (0)<br>
+                            </form>
+                            <br>
+                            Lab Upkeep and Stock Register;labs neatly maintained,
+                            concentrated acids stored under lock & key in chemistry lab and
+                            stock registers are in place as per board guidelines<br>
+                            <form>
+                                <input type="radio" name="Observations" value="Always" checked> Alaways (4)<br>
+                                <input type="radio" name="Observations" value="Mostly"> Mostly (3)<br>
+                                <input type="radio" name="Observations" value="Sometimes"> Sometimes (2)<br>
+                                <input type="radio" name="Observations" value="Rarely"> Rarely (1)<br>
+                                <input type="radio" name="Observations" value="Never"> Never (0)<br>
+                            </form>
+                            <br>
+
+                        </div>
+                        <br>
+
+                        <div style="background-color:#1DC7EA; color:white;padding:20px; margin-left: 50px;">
+                            2.1(d) Sports
+                        </div>
+                        <br>
+
+                        <div style="padding:20px; margin-left: 50px;">
+                            Size and marking of ground for different games/ sports offered, is
+                            found to be as per norms<br>
+                            <form>
+                                <input type="radio" name="Observations" value="Always" checked> Alaways (4)<br>
+                                <input type="radio" name="Observations" value="Mostly"> Mostly (3)<br>
+                                <input type="radio" name="Observations" value="Sometimes"> Sometimes (2)<br>
+                                <input type="radio" name="Observations" value="Rarely"> Rarely (1)<br>
+                                <input type="radio" name="Observations" value="Never"> Never (0)<br>
+                            </form>
+                            <br>
+
+                            Availability of Sports equipment (lndoor and Outdoor) as per
+                            School/Class strength and sports room is well- stocked<br>
+                            <form>
+                                <input type="radio" name="Observations" value="Always" checked> Alaways (4)<br>
+                                <input type="radio" name="Observations" value="Mostly"> Mostly (3)<br>
+                                <input type="radio" name="Observations" value="Sometimes"> Sometimes (2)<br>
+                                <input type="radio" name="Observations" value="Rarely"> Rarely (1)<br>
+                                <input type="radio" name="Observations" value="Never"> Never (0)<br>
+                            </form>
+                            <br>
+                            Awards & National / lnternational level achievements list and
+                            records are kept maintained<br>
+                            <form>
+                                <input type="radio" name="Observations" value="Always" checked> Alaways (4)<br>
+                                <input type="radio" name="Observations" value="Mostly"> Mostly (3)<br>
+                                <input type="radio" name="Observations" value="Sometimes"> Sometimes (2)<br>
+                                <input type="radio" name="Observations" value="Rarely"> Rarely (1)<br>
+                                <input type="radio" name="Observations" value="Never"> Never (0)<br>
+                            </form>
+                            <br>
+                            School Band / Marchpast and Yoga/ morning drilUPT/any form of
+                            Martialart- at least 2-3 activities are performed regularly and
+                            school band is available<br>
+                            <form>
+                                <input type="radio" name="Observations" value="Always" checked> Alaways (4)<br>
+                                <input type="radio" name="Observations" value="Mostly"> Mostly (3)<br>
+                                <input type="radio" name="Observations" value="Sometimes"> Sometimes (2)<br>
+                                <input type="radio" name="Observations" value="Rarely"> Rarely (1)<br>
+                                <input type="radio" name="Observations" value="Never"> Never (0)<br>
+                            </form>
+                            <br>
+
+                        </div>
+
+                        <br>
+
+                        <div style="background-color:#1DC7EA; color:white; padding:20px;  ">
+                            2.2 LEARNING RESOURCES
+                        </div>
+                        <br>
+                        <div style="padding:20px; margin-left: 50px;">
+                            2.2(a) Library
+                        </div>
+                        <br>
+                        <div style="padding:20px; margin-left: 50px;">
+                            Number & type of books as per school strength :sufficient books
+
+                            as per ratio L:5 prescribed by CBSE;story books (fiction and non-
+                            fiction) , encylopedia and reference books available<br>
+                            <form>
+                                <input type="radio" name="Observations" value="Always" checked> Alaways (4)<br>
+                                <input type="radio" name="Observations" value="Mostly"> Mostly (3)<br>
+                                <input type="radio" name="Observations" value="Sometimes"> Sometimes (2)<br>
+                                <input type="radio" name="Observations" value="Rarely"> Rarely (1)<br>
+                                <input type="radio" name="Observations" value="Never"> Never (0)<br>
+                            </form>
+                            <br>
+
+                            Upkeep of Books & Library records properly managed by a
+                            qualified librarian<br>
+                            <form>
+                                <input type="radio" name="Observations" value="Always" checked> Alaways (4)<br>
+                                <input type="radio" name="Observations" value="Mostly"> Mostly (3)<br>
+                                <input type="radio" name="Observations" value="Sometimes"> Sometimes (2)<br>
+                                <input type="radio" name="Observations" value="Rarely"> Rarely (1)<br>
+                                <input type="radio" name="Observations" value="Never"> Never (0)<br>
+                            </form>
+                            <br>
+                            Functionality of library (digital Iibrary) E-library (issue and return
+                            of books, electronic search of books, e-books)<br>
+                            <form>
+                                <input type="radio" name="Observations" value="Always" checked> Alaways (4)<br>
+                                <input type="radio" name="Observations" value="Mostly"> Mostly (3)<br>
+                                <input type="radio" name="Observations" value="Sometimes"> Sometimes (2)<br>
+                                <input type="radio" name="Observations" value="Rarely"> Rarely (1)<br>
+                                <input type="radio" name="Observations" value="Never"> Never (0)<br>
+                            </form>
+                            <br>
+                            Effective library utilization as library periods are allocated and
+                            utilized by both students & staff to update themselves with new
+                            ideas<br>
+                            <form>
+                                <input type="radio" name="Observations" value="Always" checked> Alaways (4)<br>
+                                <input type="radio" name="Observations" value="Mostly"> Mostly (3)<br>
+                                <input type="radio" name="Observations" value="Sometimes"> Sometimes (2)<br>
+                                <input type="radio" name="Observations" value="Rarely"> Rarely (1)<br>
+                                <input type="radio" name="Observations" value="Never"> Never (0)<br>
+                            </form>
+                            <br>
+                            Book reading promotion policy w.r.t students is used to
+                            encourage reading habit<br>
+                            <form>
+                                <input type="radio" name="Observations" value="Always" checked> Alaways (4)<br>
+                                <input type="radio" name="Observations" value="Mostly"> Mostly (3)<br>
+                                <input type="radio" name="Observations" value="Sometimes"> Sometimes (2)<br>
+                                <input type="radio" name="Observations" value="Rarely"> Rarely (1)<br>
+                                <input type="radio" name="Observations" value="Never"> Never (0)<br>
+                            </form>
+                            <br>
+                            Easy access to students as Books are displayed on open shelves/
+                            cupboards, not kept under lock and key; library is well lit and
+                            ventilated<br>
+                            <form>
+                                <input type="radio" name="Observations" value="Always" checked> Alaways (4)<br>
+                                <input type="radio" name="Observations" value="Mostly"> Mostly (3)<br>
+                                <input type="radio" name="Observations" value="Sometimes"> Sometimes (2)<br>
+                                <input type="radio" name="Observations" value="Rarely"> Rarely (1)<br>
+                                <input type="radio" name="Observations" value="Never"> Never (0)<br>
+                            </form>
+                            <br>
+                        </div>
+
+                        <br>
+                        <div style="background-color:#1DC7EA; color:white;padding:20px; margin-left: 50px;">
+                            2.2(b) Teachers Resource Centre
+                        </div>
+                        <br>
+                        <div style="padding:20px; margin-left: 50px;">
+
+                            Availability of Resource centre f room demarcated and computers
+                            /laptops, printers and high speed internet available<br>
+                            <form>
+                                <input type="radio" name="Observations" value="Always" checked> Alaways (4)<br>
+                                <input type="radio" name="Observations" value="Mostly"> Mostly (3)<br>
+                                <input type="radio" name="Observations" value="Sometimes"> Sometimes (2)<br>
+                                <input type="radio" name="Observations" value="Rarely"> Rarely (1)<br>
+                                <input type="radio" name="Observations" value="Never"> Never (0)<br>
+                            </form>
+                            <br>
+                            Records w.r.t usage of Resource Centre are maintained and centre
+                            is effectively utilized<br>
+                            <form>
+                                <input type="radio" name="Observations" value="Always" checked> Alaways (4)<br>
+                                <input type="radio" name="Observations" value="Mostly"> Mostly (3)<br>
+                                <input type="radio" name="Observations" value="Sometimes"> Sometimes (2)<br>
+                                <input type="radio" name="Observations" value="Rarely"> Rarely (1)<br>
+                                <input type="radio" name="Observations" value="Never"> Never (0)<br>
+                            </form>
+                            <br>
+
+                        </div>
+
+                        <br>
+                        <div style="background-color:#1DC7EA; color:white;padding:20px; margin-left: 50px;">
+                            2.2(c) Other labs and Medical room
+                        </div>
+                        <br>
+                        <div style="padding:20px; margin-left: 50px;">
+
+
+                            Availability of Math lab, Language lab and Social Science lab<br>
+                            <form>
+                                <input type="radio" name="Observations" value="Always" checked> Alaways (4)<br>
+                                <input type="radio" name="Observations" value="Mostly"> Mostly (3)<br>
+                                <input type="radio" name="Observations" value="Sometimes"> Sometimes (2)<br>
+                                <input type="radio" name="Observations" value="Rarely"> Rarely (1)<br>
+                                <input type="radio" name="Observations" value="Never"> Never (0)<br>
+                            </form>
+                            <br>
+                            Equipments & time-table display in tabs available as per subject<br>
+                            <form>
+                                <input type="radio" name="Observations" value="Always" checked> Alaways (4)<br>
+                                <input type="radio" name="Observations" value="Mostly"> Mostly (3)<br>
+                                <input type="radio" name="Observations" value="Sometimes"> Sometimes (2)<br>
+                                <input type="radio" name="Observations" value="Rarely"> Rarely (1)<br>
+                                <input type="radio" name="Observations" value="Never"> Never (0)<br>
+                            </form>
+                            <br>
+
+                            Well equipped medical room with qualified fulltime Nurse and a
+                            visiting Doctor(daily or on fixed days of week )<br>
+                            <form>
+                                <input type="radio" name="Observations" value="Always" checked> Alaways (4)<br>
+                                <input type="radio" name="Observations" value="Mostly"> Mostly (3)<br>
+                                <input type="radio" name="Observations" value="Sometimes"> Sometimes (2)<br>
+                                <input type="radio" name="Observations" value="Rarely"> Rarely (1)<br>
+                                <input type="radio" name="Observations" value="Never"> Never (0)<br>
+                            </form>
+                            <br>
+
+                        </div>
+                        <br>
+                        <div style="background-color:#1DC7EA; color:white;padding:20px; margin-left: 50px;">
+                            2.3 Transport Management
+                        </div>
+                        <br>
+                        <div style="padding:20px; margin-left: 50px;">
+
+
+                            2.3,l.Transport committee found working, having transport and
+                            route in-charges as members<br>
+                            <form>
+                                <input type="radio" name="Observations" value="Always" checked> Alaways (4)<br>
+                                <input type="radio" name="Observations" value="Mostly"> Mostly (3)<br>
+                                <input type="radio" name="Observations" value="Sometimes"> Sometimes (2)<br>
+                                <input type="radio" name="Observations" value="Rarely"> Rarely (1)<br>
+                                <input type="radio" name="Observations" value="Never"> Never (0)<br>
+                            </form>
+                            <br>
+                            2.3.2 Bus attendance is maintained both in the morning and
+                            afternoon<br>
+                            <form>
+                                <input type="radio" name="Observations" value="Always" checked> Alaways (4)<br>
+                                <input type="radio" name="Observations" value="Mostly"> Mostly (3)<br>
+                                <input type="radio" name="Observations" value="Sometimes"> Sometimes (2)<br>
+                                <input type="radio" name="Observations" value="Rarely"> Rarely (1)<br>
+                                <input type="radio" name="Observations" value="Never"> Never (0)<br>
+                            </form>
+                            <br>
+                            2.3.3, Fire-safety compliance seen in buses, being fitted with first-
+                            aid box and fire-extinguishers<br>
+                            <form>
+                                <input type="radio" name="Observations" value="Always" checked> Alaways (4)<br>
+                                <input type="radio" name="Observations" value="Mostly"> Mostly (3)<br>
+                                <input type="radio" name="Observations" value="Sometimes"> Sometimes (2)<br>
+                                <input type="radio" name="Observations" value="Rarely"> Rarely (1)<br>
+                                <input type="radio" name="Observations" value="Never"> Never (0)<br>
+                            </form>
+                            <br>
+
+                            2.3.4, Supreme court guidelines seen displayed in the buses and
+                            drivers found aware<br>
+                            <form>
+                                <input type="radio" name="Observations" value="Always" checked> Alaways (4)<br>
+                                <input type="radio" name="Observations" value="Mostly"> Mostly (3)<br>
+                                <input type="radio" name="Observations" value="Sometimes"> Sometimes (2)<br>
+                                <input type="radio" name="Observations" value="Rarely"> Rarely (1)<br>
+                                <input type="radio" name="Observations" value="Never"> Never (0)<br>
+                            </form>
+                            <br>
+
+                        </div>
+                        <br>
+                        <div style="background-color:#1DC7EA; color:white;padding:20px; margin-left: 50px;">
+                            2.4 Disaster Management
+                        </div>
+                        <br>
+                        <div style="padding:20px; margin-left: 50px;">
+
+                            2.4.1 School preparedness & infrastructure compliance like ramp,
+                            stairs, fire alarms & CCTVs seen<br>
+                            <form>
+                                <input type="radio" name="Observations" value="Always" checked> Alaways (4)<br>
+                                <input type="radio" name="Observations" value="Mostly"> Mostly (3)<br>
+                                <input type="radio" name="Observations" value="Sometimes"> Sometimes (2)<br>
+                                <input type="radio" name="Observations" value="Rarely"> Rarely (1)<br>
+                                <input type="radio" name="Observations" value="Never"> Never (0)<br>
+                            </form>
+                            <br>
+                            2,4.2Evacuation & exit plans seen displayed in corridors &
+                            classrooms and mock drills are conducted<br>
+                            <form>
+                                <input type="radio" name="Observations" value="Always" checked> Alaways (4)<br>
+                                <input type="radio" name="Observations" value="Mostly"> Mostly (3)<br>
+                                <input type="radio" name="Observations" value="Sometimes"> Sometimes (2)<br>
+                                <input type="radio" name="Observations" value="Rarely"> Rarely (1)<br>
+                                <input type="radio" name="Observations" value="Never"> Never (0)<br>
+                            </form>
+                            <br>
+                            2.4.3 Admin and teachers are aware of the duty to be performed
+                            during a disaster<br>
+                            <form>
+                                <input type="radio" name="Observations" value="Always" checked> Alaways (4)<br>
+                                <input type="radio" name="Observations" value="Mostly"> Mostly (3)<br>
+                                <input type="radio" name="Observations" value="Sometimes"> Sometimes (2)<br>
+                                <input type="radio" name="Observations" value="Rarely"> Rarely (1)<br>
+                                <input type="radio" name="Observations" value="Never"> Never (0)<br>
+                            </form>
+                            <br>
+
+                        </div>
+                        <br>
+
+                        <div style="background-color:#1DC7EA; color:white; padding:20px;  ">
+                            2.4 SCHOOL ETHOS
+                        </div>
+                        <br>
+
+                        <div style="padding:20px; margin-left: 50px;">
+                            2.4.1Yagna - Havan and Vedic lectures/bhajan sandhya are
+                            organised class-wise, on rotation<br>
+                            <form>
+                                <input type="radio" name="Observations" value="Always" checked> Alaways (4)<br>
+                                <input type="radio" name="Observations" value="Mostly"> Mostly (3)<br>
+                                <input type="radio" name="Observations" value="Sometimes"> Sometimes (2)<br>
+                                <input type="radio" name="Observations" value="Rarely"> Rarely (1)<br>
+                                <input type="radio" name="Observations" value="Never"> Never (0)<br>
+                            </form>
+                            <br>
+                        </div>
+                        <br>
+
+                        <div style="background-color:#1DC7EA; color:white; padding:20px;  ">
+                            3. DOCUMENTATION OF RECORDS
+                        </div>
+                        <br>
+
+                        <div style="padding:20px; margin-left: 50px;">
+                            3.1 Documentation of Administrative records viz. Personal files
+                            and Service books are maintained<br>
+                            <form>
+                                <input type="radio" name="Observations" value="Always" checked> Alaways (4)<br>
+                                <input type="radio" name="Observations" value="Mostly"> Mostly (3)<br>
+                                <input type="radio" name="Observations" value="Sometimes"> Sometimes (2)<br>
+                                <input type="radio" name="Observations" value="Rarely"> Rarely (1)<br>
+                                <input type="radio" name="Observations" value="Never"> Never (0)<br>
+                            </form>
+                            <br>
+                            3.2 Financial records of the Budget, Audit & lncome tax, Purchase
+                            system and remittances are found in order & maintained<br>
+                            <form>
+                                <input type="radio" name="Observations" value="Always" checked> Alaways (4)<br>
+                                <input type="radio" name="Observations" value="Mostly"> Mostly (3)<br>
+                                <input type="radio" name="Observations" value="Sometimes"> Sometimes (2)<br>
+                                <input type="radio" name="Observations" value="Rarely"> Rarely (1)<br>
+                                <input type="radio" name="Observations" value="Never"> Never (0)<br>
+                            </form>
+                            <br>
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <button type="submit" class="btn btn-primary">SUBMIT</button>
+
+                    </div>
+                </div>
+            </div>
+
+            <footer class="footer">
+                <div class="container-fluid">
+                    <nav class="pull-left">
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    Home
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Company
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Portfolio
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Blog
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <p class="copyright pull-right">
+                        &copy;
+                        <script>document.write(new Date().getFullYear())</script> <a
+                            href="http://www.creative-tim.com">Creative Tim</a>, made with love for a better web
+                    </p>
+                </div>
+            </footer>
+
+
+        </div>
+    </div>
+
+
+</body>
+
+<!--   Core JS Files   -->
+<script src="assets/js/jquery.3.2.1.min.js" type="text/javascript"></script>
+<script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+
+<!--  Charts Plugin -->
+<script src="assets/js/chartist.min.js"></script>
+
+<!--  Notifications Plugin    -->
+<script src="assets/js/bootstrap-notify.js"></script>
+
+<!--  Google Maps Plugin    -->
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+
+<!-- Light Bootstrap Table Core javascript and methods for Demo purpose -->
+<script src="assets/js/light-bootstrap-dashboard.js?v=1.4.0"></script>
+
+<!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
+<script src="assets/js/demo.js"></script>
+
+
+</html>
