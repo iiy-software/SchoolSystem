@@ -93,10 +93,8 @@
 											align="center">SCHOOL&nbsp;&nbsp;SYSTEM</strong></span></a></div>
 							<div class="site-header__right-col  site-header__rigt-col--secondary--has-search">
 								<div class="site-header__search">
-									<a href="dashboard.html"><button class="btn--site__header btn--search"
-											type="button">GO TO DASHBOARD</button></a>
-
-								</div>
+									<button class="btn--site__header btn--search" type="button" onclick="detectuser()">
+										GO TO DASHBOARD</button> </div>
 								<div class="main-menu-container">
 									<button class="btn--site__header menu-toggle"
 										type="button"><span>Menu</span></button>
@@ -106,7 +104,8 @@
 													href="college.pardeepsingh.tk/about/index.html" 71">About</a>
 												<ul class="menu">
 													<li class="menu-item--collapsed li--level-two"><a
-															href="about/faith-and-mission/index.html" 81">Faith &amp;
+															href="about/faith-and-mission/index.html" 81">Faith
+															&amp;
 															Mission</a></li>
 													<li class="menu-item--collapsed li--level-two"><a
 															href="college.pardeepsingh.tk/about/leadership-and-administration/index.html"
@@ -203,7 +202,8 @@
 															36">International
 															Admission</a></li>
 													<li class="menu-item--collapsed li--level-two"><a
-															href="college.pardeepsingh.tk/index-2.html" 96">Connect With
+															href="college.pardeepsingh.tk/index-2.html" 96">Connect
+															With
 															Us</a>
 													</li>
 													<li class="menu-item--collapsed li--level-two"><a
@@ -212,7 +212,8 @@
 												</ul>
 											</li>
 											<li class="menu-item--expanded li--level-one"><a
-													href="college.pardeepsingh.tk/life-st-johns/index.html" 61">Life at
+													href="college.pardeepsingh.tk/life-st-johns/index.html" 61">Life
+													at
 													DAV&apos;s</a>
 												<ul class="menu">
 													<li class="li--level-two"><a
@@ -1324,6 +1325,49 @@
 
 	</div>
 
+	<!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+	<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+	<script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
+
+	<!-- Add Firebase products that you want to use -->
+	<script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-firestore.js"></script>
+
+
+
+	<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+
+	<script type="text/javascript">
+		// Your web app's Firebase configuration
+		var firebaseConfig = {
+			apiKey: "AIzaSyCRTrqrEdRR7hX5dFMU2EM9J4orE2KEe_Y",
+			authDomain: "dav-school-system.firebaseapp.com",
+			databaseURL: "https://dav-school-system.firebaseio.com",
+			projectId: "dav-school-system",
+			storageBucket: "",
+			messagingSenderId: "503899193487",
+			appId: "1:503899193487:web:4835ed6556887d0c"
+		};
+		// Initialize Firebase
+		firebase.initializeApp(firebaseConfig);
+
+		//make auth and firestore references
+		const auth = firebase.auth();
+		const db = firebase.firestore();
+
+		function detectuser() {
+			auth.onAuthStateChanged(user => {
+				if (user) {
+					window.location = 'dashboard.html';
+				}
+				else {
+					window.location = 'auth.html';
+				}
+			});
+		}
+	</script>
 
 
 	<script

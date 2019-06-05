@@ -7,13 +7,30 @@ signupform.addEventListener('submit', (e) => {
     const password = signupform['password'].value;
 
     //sign up the user
-    auth.createUserWithEmailAndPassword(mail, password).then(cred => {
+    auth.signInWithEmailAndPassword(mail, password).then(cred => {
         console.log(cred);
         window.alert('Sign in Successfull');
         signupform.reset();
-    })
+    });
+    auth.onAuthStateChanged(user => {
+        if (user) {
+            console.log(user);
+            window.location = 'dashboard.html'; //After successful login, user will be redirected to dashboard.html
+        }
+        // else {
+        //     signupform.reset();
+        //     window.alert('User does not exist');
+        // }
+    });
 });
 
+// const logout = document.querySelector('#logout');
+// logout.addEventListener('click', (e) => {
+//     e.preventDefault();
+//     auth.signOut().then(() => {
+//         window.alert('User signed Out Successfully');
+//     });
+// });
 
 // ui.start('#firebaseui-auth-container', {
 //     signInOptions: [
