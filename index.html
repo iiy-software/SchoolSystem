@@ -1369,14 +1369,14 @@
 		const db = firebase.firestore();
 
 		function detectuser() {
-			auth.onAuthStateChanged(user => {
-				if (user) {
-					window.location = 'dashboard.html';
-				}
-				else {
-					window.location = 'auth.html';
-				}
-			});
+			var user = auth.currentUser;
+			console.log(user);
+			if (user) {
+				window.location = 'dashboard.html';
+			}
+			else {
+				window.location = 'auth.html';
+			}
 		}
 	</script>
 
