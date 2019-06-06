@@ -9,7 +9,6 @@ signupform.addEventListener('submit', (e) => {
     //sign up the user
     auth.signInWithEmailAndPassword(mail, password).then(cred => {
         console.log(cred);
-        window.alert('Sign in Successfull');
         signupform.reset();
     });
     auth.onAuthStateChanged(user => {

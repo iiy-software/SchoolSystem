@@ -3,9 +3,7 @@
 html, body { background: #333 url("https://codepen.io/images/classy_fabric.png"); }
 
 .slides {
-    padding: 0;
-    width: 690px;
-    height: 200px;
+    height: 250px;
     display: block;
     margin: 0 auto;
     position: relative;
@@ -22,18 +20,22 @@ html, body { background: #333 url("https://codepen.io/images/classy_fabric.png")
 
 .slides input { display: none; }
 
-.slide-container { display: block; }
-
-.slide {
-    top: 0;
-    opacity: 0;
-    width: 690px;
-    height: 200px;
+.slide-container { 
     display: block;
     position: absolute;
 
-    transform: scale(0);
+    width: 90%;
+ }
 
+.slide {
+    top: 0;
+    width: 90%;
+    opacity: 0;
+    height: 250px;
+    display: block;
+    position: absolute;
+    left: 25%;
+    transform: translateX(-50%);
     transition: all .7s ease-in-out;
 }
 
