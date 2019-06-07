@@ -381,7 +381,7 @@
   <!-- Add Firebase products that you want to use -->
   <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-firestore.js"></script>
-
+  <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-storage.js"></script>
 
 
   <!-- TODO: Add SDKs for Firebase products that you want to use
@@ -404,6 +404,10 @@
     //make auth and firestore references
     const auth = firebase.auth();
     const db = firebase.firestore();
+    // Get a reference to the storage service, which is used to create references in your storage bucket
+    var store = firebase.storage();
+
+    var schoolname = "test";
 
     //for auth listener
     auth.onAuthStateChanged(user => {
@@ -416,6 +420,27 @@
       }
       if (user.uid == 'DC7QG7ohydZ396GOJxgtZr5ghGU2') {
         document.getElementById('addbtn').style.display = 'none';
+      }
+      if (user.uid == 'cmbA2MYeGnNx7IPVhfOBWz57a3I2') {
+        schoolname = "lrsdav";
+      }
+      else if (user.uid == 'EsU6A3yoMbQT0EJ7nVXWxv1fLEr1') {
+        schoolname = "karambaidav";
+      }
+      else if (user.uid == 'EtoYm8LaUwOvp0yM8uxiwbqjlzk2') {
+        schoolname = "sgjdav";
+      }
+      else if (user.uid == 'KLK5qFTKMyWqBTemzFrUXHTrer82') {
+        schoolname = "dcldav";
+      }
+      else if (user.uid == 'BT2r9guo6paya2jw3XVN1WVvL0d2') {
+        schoolname = "mgdav";
+      }
+      else if (user.uid == 'X0bTJaPOAoXyRNQrHKRmzoz9Dyg2') {
+        schoolname = "rbdav";
+      }
+      else {
+        schoolname = "test";
       }
     });
 
@@ -454,6 +479,39 @@
         modal.style.display = "none";
       }
     }
+
+    //get element to upload image
+    var uploader = document.getElementById('uploader');
+    var filebtn = document.getElementById('filebtn');
+
+    //Get file Event Listner
+    filebtn.addEventListener('change', function(e) {
+      //Get file
+      var file = e.target.files[0];
+
+      //Get Reference
+      var storageref = store.ref(schoolname + '/teachers/' + file.name);
+
+      //upload file
+      var task =  storageref.put(file);
+
+      //update progress bar
+      // task.on('statechanged',
+      
+      // function progress(snapshot){
+      //   var percentage = (snapshot.bytesTransfered / snapshot.totalBytes) * 100;
+      //   uploader.value = percentage;
+      // },
+      // function error(err){
+      //     console.log('error occured');
+      // },
+      // function complete(){
+      //     console.log('Successfull');
+      // }
+
+      // );
+
+    });
   </script>
 
 
