@@ -202,6 +202,25 @@ body {
     border-radius: 5px;
     border: 5px solid #000;
 }
+.modal-form progress{
+    -webkit-appearance: none;
+    appearance: none;
+   position: absolute;
+   bottom: 25%;
+   left: 70px;
+   width: 250px;
+   height: 20px;
+}
+.modal-form progress[value]::-webkit-progress-bar {
+    background-color: #eee;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+  }
+.modal-form progress[value]::-webkit-progress-value{
+    background-color: #000;
+    border-radius: 2px;
+    background-size: 35px 20px, 100% 100%, 100% 100%;
+}
   @media (max-width:575px){
       .modal-content{
           margin-left: auto;
@@ -210,6 +229,12 @@ body {
       .modal-btn{
           right: 0%;
           left: 50%;
+          transform: translateX(-50%);
+      }
+      .modal-form progress{
+          position: absolute;
+          left: 50%;
+          bottom: 25%;
           transform: translateX(-50%);
       }
   }

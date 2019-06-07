@@ -345,6 +345,7 @@
                 <input type="text" id="tclass" placeholder="Teacher's class">
                 <input type="file" name="file" id="file" class="upload" />
                 <label for="file">Upload Photo</label>
+                <progress value="0" max="100" id="uploader">0%</progress>
                 <button type="submit" class="modal-btn">Add Teacher</button>
               </form>
             </section>
@@ -398,8 +399,6 @@
     //make auth and firestore references
     const auth = firebase.auth();
     const db = firebase.firestore();
-  </script>
-  <script type="text/javascript">
 
     //for auth listener
     auth.onAuthStateChanged(user => {
@@ -424,8 +423,7 @@
         window.alert('User signed Out Successfully');
       });
     });
-  </script>
-  <script type="text/javascript">
+
     // Get the modal
     var modal = document.getElementById("myModal");
 
