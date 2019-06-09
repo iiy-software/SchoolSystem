@@ -211,16 +211,11 @@
                                         </div>
                                 </div>
                         </nav>
-
+       
                         <div class="content">
                                 <div class="container-fluid">
                                         <div class="myform">
-                                                <h1 class="text-center"> QUALITY GRADING FORMAT </h1>
-                                                <a href="#"><button type="button"
-                                                                class="btn btn-info">ANNEXURE1-A</button></a>
-                                                <a href="form2.html"><button type="button"
-                                                                class="btn btn-info">ANNEXURE1-B</button></a>
-
+                                                <h1 class="text-center"> FEEDBACK DETAILS </h1>
                                                 <br><br>
                                                 <div style="background-color:#1DC7EA; color:white; padding:20px;  ">
                                                         1. SCHOLASTIC AREAS/CURRICULUM
@@ -1734,25 +1729,27 @@
                                                 <br>
                                                 <br>
                                                 <br>
+                                                <button type="submit" class="btn btn-primary" id="submit">SUBMIT</button>
+
                                         </div>
                                 </div>
                         </div>
 
                         <footer class="footer">
-                                <div class="container-fluid">
-                                        <p class="copyright pull-right">
-                                                &copy;
-                                                <script>document.write(new Date().getFullYear())</script> <a
-                                                        href="https://www.iiysoftware.com/">IIY
-                                                        Software</a>, made with <span
-                                                        style="color: red;">&#10084;</span> for a better web
-                                        </p>
-                                </div>
-                        </footer>
+                            <div class="container-fluid">
+                                    <p class="copyright pull-right">
+                                            &copy;
+                                            <script>document.write(new Date().getFullYear())</script> <a
+                                                    href="https://www.iiysoftware.com/">IIY
+                                                    Software</a>, made with <span
+                                                    style="color: red;">&#10084;</span> for a better web
+                                    </p>
+                            </div>
+                    </footer>
 
 
-                </div>
-        </div>
+            </div>
+    </div>
 
 
 </body>
@@ -1772,133 +1769,214 @@
 
 <!-- Light Bootstrap Table Core javascript and methods for Demo purpose -->
 <script src="assets/js/light-bootstrap-dashboard.js?v=1.4.0"></script>
+<script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
+
+<!-- Add Firebase products that you want to use -->
+<script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-firestore.js"></script>
 
 <!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
 <script src="assets/js/demo.js"></script>
-	<!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
-
-	<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
-	<script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
-
-	<!-- Add Firebase products that you want to use -->
-	<script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-auth.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-firestore.js"></script>
-
-
-
-	<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#config-web-app -->
-
-
-
 <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyCRTrqrEdRR7hX5dFMU2EM9J4orE2KEe_Y",
+        authDomain: "dav-school-system.firebaseapp.com",
+        databaseURL: "https://dav-school-system.firebaseio.com",
+        projectId: "dav-school-system",
+        storageBucket: "",
+        messagingSenderId: "503899193487",
+        appId: "1:503899193487:web:4835ed6556887d0c"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
 
+    //make auth and firestore references
+    const auth = firebase.auth();
+    const db = firebase.firestore();
 
-var firebaseConfig = {
-			apiKey: "AIzaSyCRTrqrEdRR7hX5dFMU2EM9J4orE2KEe_Y",
-			authDomain: "dav-school-system.firebaseapp.com",
-			databaseURL: "https://dav-school-system.firebaseio.com",
-			projectId: "dav-school-system",
-			storageBucket: "",
-			messagingSenderId: "503899193487",
-			appId: "1:503899193487:web:4835ed6556887d0c"
-		};
-		// Initialize Firebase
-		firebase.initializeApp(firebaseConfig);
-
-		//make auth and firestore references
-		const auth = firebase.auth();
-		var db = firebase.firestore();
-                //TODO: Here instead of this uid will come the uid of the admin
-                if(auth.currentUser.uid === '7aa6jS40lzWe4PpRTY46BjXtL5i1'){
-                        location.href = 'feedback.html';
+         //TODO: Here instead of this uid will come the uid of the admin
+         if(auth.currentUser.uid !== '7aa6jS40lzWe4PpRTY46BjXtL5i1'){
+                        location.href = 'form1.html';
                 }
 
-var submit = document.querySelector("#submit");
-submit.addEventListener('click', (e) => {
+</script>
+<script type="text/javascript">
 
-        var q1 = document.querySelector('input[name="q1"]:checked').value;
-        var q2 = document.querySelector('input[name="q2"]:checked').value;
-        var q3 = document.querySelector('input[name="q3"]:checked').value;
-        var q4 = document.querySelector('input[name="q4"]:checked').value;
-        var q5 = document.querySelector('input[name="q5"]:checked').value;
-        var q6 = document.querySelector('input[name="q6"]:checked').value;
-        var q7 = document.querySelector('input[name="q7"]:checked').value;
-        var q8 = document.querySelector('input[name="q8"]:checked').value;
-        var q9 = document.querySelector('input[name="q9"]:checked').value;
-        var q10 = document.querySelector('input[name="q10"]:checked').value;
-        var q11 = document.querySelector('input[name="q11"]:checked').value;
-        var q12 = document.querySelector('input[name="q12"]:checked').value;
-        var q13 = document.querySelector('input[name="q13"]:checked').value;
-        var q14 = document.querySelector('input[name="q14"]:checked').value;
-        var q15 = document.querySelector('input[name="q15"]:checked').value;
-        var q16 = document.querySelector('input[name="q16"]:checked').value;
-        var q17 = document.querySelector('input[name="q17"]:checked').value;
-        var q18 = document.querySelector('input[name="q18"]:checked').value;
-        var q19 = document.querySelector('input[name="q19"]:checked').value;
-        var q20 = document.querySelector('input[name="q20"]:checked').value;
-        var q21 = document.querySelector('input[name="q21"]:checked').value;
-        var q22 = document.querySelector('input[name="q22"]:checked').value;
-        var q23 = document.querySelector('input[name="q23"]:checked').value;
-        var q24 = document.querySelector('input[name="q24"]:checked').value;
-        var q25 = document.querySelector('input[name="q25"]:checked').value;
-        var q26 = document.querySelector('input[name="q26"]:checked').value;
-        var q27 = document.querySelector('input[name="q27"]:checked').value;
-        var q28 = document.querySelector('input[name="q28"]:checked').value;
-        var q29 = document.querySelector('input[name="q29"]:checked').value;
-        var q30 = document.querySelector('input[name="q30"]:checked').value;
-        var q31 = document.querySelector('input[name="q31"]:checked').value;
-        var q32 = document.querySelector('input[name="q32"]:checked').value;
-        var q33 = document.querySelector('input[name="q33"]:checked').value;
-        var q34 = document.querySelector('input[name="q34"]:checked').value;
-        var q35 = document.querySelector('input[name="q35"]:checked').value;
-        var q36 = document.querySelector('input[name="q36"]:checked').value;
-        var q37 = document.querySelector('input[name="q37"]:checked').value;
-        var q38 = document.querySelector('input[name="q38"]:checked').value;
-        var q39 = document.querySelector('input[name="q39"]:checked').value;
-        var q40 = document.querySelector('input[name="q40"]:checked').value;
-        var q41 = document.querySelector('input[name="q41"]:checked').value;
-        var q42 = document.querySelector('input[name="q42"]:checked').value;
-        var q43 = document.querySelector('input[name="q43"]:checked').value;
-        var q44 = document.querySelector('input[name="q44"]:checked').value;
-        var q45 = document.querySelector('input[name="q45"]:checked').value;
-        var q46 = document.querySelector('input[name="q46"]:checked').value;
-        var q47 = document.querySelector('input[name="q47"]:checked').value;
-        var q48 = document.querySelector('input[name="q48"]:checked').value;
-        var q49 = document.querySelector('input[name="q49"]:checked').value;
-        var q50 = document.querySelector('input[name="q50"]:checked').value;
-        var q51 = document.querySelector('input[name="q51"]:checked').value;
-        var q52 = document.querySelector('input[name="q52"]:checked').value;
-        var q53 = document.querySelector('input[name="q53"]:checked').value;
-        var q54 = document.querySelector('input[name="q54"]:checked').value;
-        var q55 = document.querySelector('input[name="q55"]:checked').value;
-        var q56 = document.querySelector('input[name="q56"]:checked').value;
-        var q57 = document.querySelector('input[name="q57"]:checked').value;
-        var q58 = document.querySelector('input[name="q58"]:checked').value;
 
-        console.log(q1);
-        if(q1!==null && q2!==null && q3!==null && q4!==null && q5!==null && q6!==null && q7!==null && 
-        q8!==null && q9!==null && q10!==null && q11!==null && q12!==null && q13!==null && q14!==null && 
-        q15!==null && q16!==null && q17!==null && q18!==null && q19!==null && q20!==null && q21!==null && 
-        q22!==null && q23!==null && q24!==null && q25!==null && q26!==null && q27!==null && q28!==null &&
-        q29!==null && q30!==null && q31!==null && q32!==null && q33!==null && q34!==null && q35!==null &&
-        q36!==null && q37!==null && q38!==null && q39!==null && q40!==null && q41!==null && q42!==null && 
-        q43!==null && q44!==null && q45!==null && q46!==null && q47!==null && q48!==null && q49!==null && 
-        q50!==null && q51!==null && q52!==null && q53!==null && q54!==null && q55!==null && q56!==null &&
-        q57!==null && q58!==null){
-        db.collection(auth.currentUser.uid).add({
-                q1,q2,q3,q4,q5,q6,q7,q8,q9,q10,q11,q12,q13,q14,q15,q16,q17,q18,q19,q20,q21,q22,q23,q24,q24,q25,q26,q27,q28,q29,q30,q31,q32,q33,q34,q35,q36,q37,q38,q39,q40,q41,q42,q43,q44,q45,q46,q47,q48,q49,q50,q51,q52,q53,q54,q55,q56,q57,q58
-        }).then(function(){
-                console.log("Data saved successfully");
-        });
-        }else{
-                alert("Fill the whole form before submitting...");
+    //for auth listener
+    auth.onAuthStateChanged(user => {
+        if (user) {
+            console.log('user logged in');
+            
+            var docRef = db.collection("7aa6jS40lzWe4PpRTY46BjXtL5i1");
+            //console.log(docRef);
+                docRef.get().then(querySnapshot => {
+                    querySnapshot.docs.forEach(doc => {           
+                    console.log(doc.data()["q1"]);
+                    var q1 = document.querySelector('input[name="q1"]');
+                    q1.checked = true;
+                    var q2 = document.querySelector('input[name="q2"]');
+                    q2.checked = true;
+                    var q3 = document.querySelector('input[name="q3"]');
+                    q3.checked = true;
+                    var q4 = document.querySelector('input[name="q4"]');
+                    q4.checked = true;
+                    var q5 = document.querySelector('input[name="q5"]');
+                    q5.checked = true;
+                    var q6 = document.querySelector('input[name="q6"]');
+                    q6.checked = true;
+                    var q7 = document.querySelector('input[name="q7"]');
+                    q7.checked = true;
+                    var q8 = document.querySelector('input[name="q8"]');
+                    q8.checked = true;
+                    var q9 = document.querySelector('input[name="q9"]');
+                    q9.checked = true;
+                    var q10 = document.querySelector('input[name="q10"]');
+                    q10.checked = true;
+                    var q11 = document.querySelector('input[name="q11"]');
+                    q11.checked = true;
+                    var q12 = document.querySelector('input[name="q12"]');
+                    q12.checked = true;
+                    var q13 = document.querySelector('input[name="q13"]');
+                    q13.checked = true;
+                    var q14 = document.querySelector('input[name="q14"]');
+                    q14.checked = true;
+                    var q15 = document.querySelector('input[name="q15"]');
+                    q15.checked = true;
+                    var q16 = document.querySelector('input[name="q16"]');
+                    q16.checked = true;
+                    var q17 = document.querySelector('input[name="q17"]');
+                    q17.checked = true;
+                    var q18 = document.querySelector('input[name="q18"]');
+                    q18.checked = true;
+                    var q19 = document.querySelector('input[name="q19"]');
+                    q19.checked = true;
+                    var q20 = document.querySelector('input[name="q20"]');
+                    q20.checked = true;
+                    var q21 = document.querySelector('input[name="q21"]');
+                    q21.checked = true;
+                    var q22 = document.querySelector('input[name="q22"]');
+                    q22.checked = true;
+                    var q23 = document.querySelector('input[name="q23"]');
+                    q23.checked = true;
+                    var q24 = document.querySelector('input[name="q24"]');
+                    q24.checked = true;
+                    var q25 = document.querySelector('input[name="q25"]');
+                    q25.checked = true;
+                    var q26 = document.querySelector('input[name="q26"]');
+                    q26.checked = true;
+                    var q27 = document.querySelector('input[name="q27"]');
+                    q27.checked = true;
+                    var q28 = document.querySelector('input[name="q28"]');
+                    q28.checked = true;
+                    var q29 = document.querySelector('input[name="q29"]');
+                    q29.checked = true;
+                    var q30 = document.querySelector('input[name="q30"]');
+                    q30.checked = true;
+                    var q31 = document.querySelector('input[name="q31"]');
+                    q31.checked = true;
+                    var q32 = document.querySelector('input[name="q32"]');
+                    q32.checked = true;
+                    var q33 = document.querySelector('input[name="q33"]');
+                    q33.checked = true;
+                    var q34 = document.querySelector('input[name="q34"]');
+                    q34.checked = true;
+                    var q35 = document.querySelector('input[name="q35"]');
+                    q35.checked = true;
+                    var q36 = document.querySelector('input[name="q36"]');
+                    q36.checked = true;
+                    var q37 = document.querySelector('input[name="q37"]');
+                    q37.checked = true;
+                    var q38 = document.querySelector('input[name="q38"]');
+                    q39.checked = true;
+                    var q39 = document.querySelector('input[name="q39"]');
+                    q39.checked = true;
+                    var q40 = document.querySelector('input[name="q40"]');
+                    q40.checked = true;
+                    var q41 = document.querySelector('input[name="q41"]');
+                    q41.checked = true;
+                    var q42 = document.querySelector('input[name="q42"]');
+                    q42.checked = true;
+                    var q43 = document.querySelector('input[name="q43"]');
+                    q43.checked = true;
+                    var q44 = document.querySelector('input[name="q44"]');
+                    q44.checked = true;
+                    var q45 = document.querySelector('input[name="q45"]');
+                    q45.checked = true;
+                    var q46 = document.querySelector('input[name="q46"]');
+                    q46.checked = true;
+                    var q47 = document.querySelector('input[name="q47"]');
+                    q47.checked = true;
+                    var q48 = document.querySelector('input[name="q48"]');
+                    q48.checked = true;
+                    var q49 = document.querySelector('input[name="q49"]');
+                    q49.checked = true;
+                    var q50 = document.querySelector('input[name="q50"]');
+                    q50.checked = true;
+                    var q51 = document.querySelector('input[name="q51"]');
+                    q51.checked = true;
+                    var q52 = document.querySelector('input[name="q52"]');
+                    q52.checked = true;
+                    var q53 = document.querySelector('input[name="q53"]');
+                    q53.checked = true;
+                    var q54 = document.querySelector('input[name="q54"]');
+                    q54.checked = true;
+                    var q55 = document.querySelector('input[name="q55"]');
+                    q55.checked = true;
+                    var q56 = document.querySelector('input[name="q56"]');
+                    q56.checked = true;
+                    var q57 = document.querySelector('input[name="q57"]');
+                    q57.checked = true;
+                    var q58 = document.querySelector('input[name="q58"]');
+                    q58.checked = true;
+                    
+                    });
+                });
         }
-});
+        else {
+            console.log('user logged out');
+        }
+    });
+/*
+    //for logout user
+    const logout = document.querySelector('#logout');
+    logout.addEventListener('click', (e) => {
+        e.preventDefault();
+        auth.signOut().then(() => {
+            window.location = 'index.html';
+            window.alert('User signed Out Successfully');
+        });
+    });
+*/
+    const adminCheck = document.querySelector('#admin-check');
+    adminCheck.addEventListener('click', (e) => {
+        e.preventDefault();
+        if(auth.currentUser.uid === '7aa6jS40lzWe4PpRTY46BjXtL5i1'){
+            location.href = 'feedback.html'
+        }else{
+            location.href = 'form1.html';
+            
+        }
+    });
 
-
-
+/*
+    window.onload = function(){
+        
+        var docRef = db.collection("lrsdavform");
+        console.log(docRef);
+        const feed = [];
+        docRef.get().then(querySnapshot => {
+            querySnapshot.docs.forEach(doc => {
+                feed.push(doc.data());
+                console.log(feed);
+            });
+        })
+    
+    }
+*/
 
 </script>
+
 
 </html>
