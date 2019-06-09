@@ -1451,7 +1451,7 @@
 		const db = firebase.firestore();
 
 		function detectuser() {
-			var user = auth.currentUser;
+			auth.onAuthStateChanged(user => {
 			console.log(user);
 			if (user) {
 				window.location = 'dashboard.html';
@@ -1459,6 +1459,7 @@
 			else {
 				window.location = 'auth.html';
 			}
+		});
 		}
 	</script>
 
