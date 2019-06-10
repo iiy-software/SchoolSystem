@@ -216,7 +216,15 @@
                                 <div class="container-fluid">
                                         <div class="myform">
                                                 <h1 class="text-center"> FEEDBACK DETAILS </h1>
-                                                <br><br>
+                                                <br>
+                                                <button id="sc-one" style="background-color:#1DC7EA;color:white;padding:10px;margin:5px;border:transparent;">GURUKUL INTL SCHOOL</button>
+                                                <button id="sc-two" style="background-color:#1DC7EA;color:white;padding:10px;margin:5px;border:transparent;">WHEAT FIELDS PUBLIC SCHOOL</button>
+                                                <button id="sc-three" style="background-color:#1DC7EA;color:white;padding:10px;margin:5px;border:transparent;">MATA SUNDRI PUBLIC SCHOOL</button>
+                                                <button id="sc-four" style="background-color:#1DC7EA;color:white;padding:10px;margin:5px;border:transparent;">RADCLIFFE SCHOOL</button>
+                                                <button id="sc-five" style="background-color:#1DC7EA;color:white;padding:10px;margin:5px;border:transparent;">THE MILLENNIUM SCHOOL</button>
+                                                
+                                                
+                                                <br>
                                                 <div style="background-color:#1DC7EA; color:white; padding:20px;  ">
                                                         1. SCHOLASTIC AREAS/CURRICULUM
                                                 </div>
@@ -1800,16 +1808,17 @@
                         location.href = 'form1.html';
                 }
 
+
+
 </script>
 <script type="text/javascript">
 
 
-    //for auth listener
-    auth.onAuthStateChanged(user => {
-        if (user) {
-            console.log('user logged in');
-            
-            var docRef = db.collection("7aa6jS40lzWe4PpRTY46BjXtL5i1");
+        var uid = "";
+
+        function changeFeedback(uid){
+                
+                var docRef = db.collection(uid+"");
             //console.log(docRef);
                 docRef.get().then(querySnapshot => {
                     querySnapshot.docs.forEach(doc => {           
@@ -1933,6 +1942,45 @@
                     
                     });
                 });
+        }
+
+
+        const sc_one = document.querySelector('#sc-one');
+        sc_one.addEventListener('click', () => {
+                uid = "7aa6jS40lzWe4PpRTY46BjXtL5i1";   // Here the uid of the school one will come
+                console.log("SCHOOL ONE");
+                changeFeedback(uid);
+        });
+        const sc_two = document.querySelector('#sc-two');
+        sc_two.addEventListener('click', () => {
+                uid = "";   // Here the uid of the school two will come
+                console.log("SCHOOL TWO");
+                changeFeedback(uid);
+        });
+        const sc_three = document.querySelector('#sc-three');
+        sc_three.addEventListener('click', () => {
+                uid = "";   // Here the uid of the school three will come
+                console.log("SCHOOL THREE");
+                changeFeedback(uid);
+        });
+        const sc_four = document.querySelector('#sc-four');
+        sc_four.addEventListener('click', () => {
+                uid = "";   // Here the uid of the school four will come
+                console.log("SCHOOL FOUR");
+                changeFeedback(uid);
+        });
+        const sc_five = document.querySelector('#sc-five');
+        sc_five.addEventListener('click', () => {
+                uid = "";   // Here the uid of the school five will come
+                console.log("SCHOOL FIVE");
+                changeFeedback(uid);
+        });
+    //for auth listener
+    auth.onAuthStateChanged(user => {
+        if (user) {
+            console.log('user logged in');
+                // TODO: Here the id of one of the schools will come
+                changeFeedback(uid);
         }
         else {
             console.log('user logged out');
