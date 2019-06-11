@@ -212,6 +212,24 @@
                 </div>
             </nav>
 
+            <div class="container">
+                <h2 class="text-center">DOWNLOADS</h2>
+                <div style="background-color:#1DC7EA; color:white;padding:20px;">
+                    OLYMPIAD DOWNLOADS
+                </div>
+                <br><br>
+                <ul class="list-group" id="ul_list">
+
+                </ul>
+                <br><br>
+                <div style="background-color:#1DC7EA; color:white;padding:20px;">
+                   QP DOWNLOADS
+                </div>
+                <br><br>
+                <ul class="list-group" id="ul_list1">
+
+                </ul>    
+            </div>
 
             <footer class="footer">
                 <div class="container-fluid">
@@ -236,6 +254,7 @@
     <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-firestore.js"></script>
 
+    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-storage.js"></script>
 
 
     <!-- TODO: Add SDKs for Firebase products that you want to use
@@ -248,7 +267,7 @@
             authDomain: "dav-school-system.firebaseapp.com",
             databaseURL: "https://dav-school-system.firebaseio.com",
             projectId: "dav-school-system",
-            storageBucket: "",
+            storageBucket: "gs://dav-school-system.appspot.com",
             messagingSenderId: "503899193487",
             appId: "1:503899193487:web:4835ed6556887d0c"
         };
@@ -258,6 +277,108 @@
         //make auth and firestore references
         const auth = firebase.auth();
         const db = firebase.firestore();
+
+        var ul = document.querySelector('#ul_list');
+        var docRef = db.collection("olympiad_uploads");
+        docRef.get().then(querySnapshot => {
+        querySnapshot.docs.forEach(doc => {
+            console.log("data retrieved");
+            ul.innerHTML += `<li class="list-group-item">
+            <h3> Title : `+doc.data()['title']+`</h3>
+            <p> Description: `+doc.data()['desc']+`</p>
+            <a class="btn btn-primary" onclick="o_fileDownload('`+doc.data()['loc']+`')">Download</a>
+          </li>`;
+        });
+      });
+
+
+      var ul1 = document.querySelector('#ul_list1');
+        var docRef1 = db.collection("olympiad_uploads");
+        docRef1.get().then(querySnapshot => {
+        querySnapshot.docs.forEach(doc => {
+            console.log("data retrieved");
+            ul1.innerHTML += `<li class="list-group-item">
+            <h3> Title : `+doc.data()['title']+`</h3>
+            <p> Description: `+doc.data()['desc']+`</p>
+            <a class="btn btn-primary" onclick="qp_fileDownload('`+doc.data()['loc']+`')">Download</a>
+          </li>`;
+        });
+      });
+
+
+      function o_fileDownload(name){
+        console.log(name);
+        var storageRef = firebase.storage().ref('olympiad_uploads/'+name);
+
+        storageRef.getDownloadURL().then(function(url) {
+        location.href = url;                
+            /*
+                var xhr = new XMLHttpRequest();
+                xhr.responseType = 'blob';
+                xhr.onload = function(event) {
+                    var blob = xhr.response;
+                };
+                xhr.open('GET', url);
+                xhr.send();
+*/
+        }).catch(function(error) {
+
+        switch (error.code) {
+            case 'storage/object-not-found':
+            console.log(error.code);
+            break;
+            case 'storage/unauthorized':
+            console.log(error.code);
+            break;
+            case 'storage/canceled':
+            console.log(error.code);
+            break;
+            case 'storage/unknown':
+            console.log(error.code);
+            break;
+            default: console.log(error.code);
+        }
+        });
+      }
+
+
+
+
+      function qp_fileDownload(name){
+        console.log(name);
+        var storageRef = firebase.storage().ref('qp_uploads/'+name);
+
+        storageRef.getDownloadURL().then(function(url) {
+        location.href = url;                
+            /*
+                var xhr = new XMLHttpRequest();
+                xhr.responseType = 'blob';
+                xhr.onload = function(event) {
+                    var blob = xhr.response;
+                };
+                xhr.open('GET', url);
+                xhr.send();
+*/
+        }).catch(function(error) {
+
+        switch (error.code) {
+            case 'storage/object-not-found':
+            console.log(error.code);
+            break;
+            case 'storage/unauthorized':
+            console.log(error.code);
+            break;
+            case 'storage/canceled':
+            console.log(error.code);
+            break;
+            case 'storage/unknown':
+            console.log(error.code);
+            break;
+            default: console.log(error.code);
+        }
+        });
+      }
+
     </script>
     <script type="text/javascript">
         //for auth listener

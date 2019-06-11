@@ -212,6 +212,15 @@
                 </div>
             </nav>
 
+            <div class="container">
+                    <form>
+                        <h2 class="text-center">UPLOAD OLYPIAD INFORMATION</h2>
+                        <input type="text" class="form-control" name="title" placeholder="Title" id="title"><br>
+                        <input type="text" class="form-control" name="desc" placeholder="Description" id="desc"><br>
+                        <input type="file" name="upload" class="form-control" accept="application/pdf" id="file"/><br>
+                        <button type="submit" id="btn" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
 
             <footer class="footer">
                 <div class="container-fluid">
@@ -236,6 +245,8 @@
     <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-firestore.js"></script>
 
+    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-storage.js"></script>
+
 
 
     <!-- TODO: Add SDKs for Firebase products that you want to use
@@ -248,7 +259,7 @@
             authDomain: "dav-school-system.firebaseapp.com",
             databaseURL: "https://dav-school-system.firebaseio.com",
             projectId: "dav-school-system",
-            storageBucket: "",
+            storageBucket: "gs://dav-school-system.appspot.com",
             messagingSenderId: "503899193487",
             appId: "1:503899193487:web:4835ed6556887d0c"
         };
@@ -258,6 +269,43 @@
         //make auth and firestore references
         const auth = firebase.auth();
         const db = firebase.firestore();
+
+
+
+        var f;
+
+var file = document.querySelector('#file');
+file.addEventListener('change', (e) => {
+    f = e.target.files[0];
+    var storageRef = firebase.storage().ref('olympiad_uploads/'+f.name);
+    storageRef.put(f);
+});
+
+var btn = document.querySelector('#btn');
+btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    var title = document.querySelector('#title').value;
+    var desc = document.querySelector('#desc').value;
+    var loc = f.name;
+    db.collection('olympiad_uploads').add({
+        title,
+        desc,
+        loc
+    }).catch((e) => {
+        console.log(e);
+    }).then(() => {
+        console.log("Data updated");
+        alert("File uploaded");
+    });
+
+});
+
+
+
+
+
+
+
     </script>
     <script type="text/javascript">
         //for auth listener
