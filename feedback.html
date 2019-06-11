@@ -1818,7 +1818,7 @@
         function changeFeedback(uid){
                 
                 var docRef = db.collection(uid+"");
-            //console.log(docRef);
+            console.log(docRef);
                 docRef.get().then(querySnapshot => {
                     querySnapshot.docs.forEach(doc => {           
                     console.log(doc.data()["q1"]);
