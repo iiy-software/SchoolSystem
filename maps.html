@@ -210,13 +210,40 @@
                 </div>
             </nav>
 
-            <div id="map"></div>
+            <div class="container">
+
+                <h2 class="text-center">RESOURCE CENTER</h2><br><br><br>
+      <center>
+                <table class="table-bordered">
+                    <thead>
+                        <tr>
+                          <th style="padding:20px">Title</th>
+                          <th style="padding:20px">Description</th>
+                          <th style="padding:20px">Downloads</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body">
+
+                    </tbody>
+                </table>
+            </center>
+            </div>
+
+            <footer class="footer" style="margin-top: 50px;">
+                <div class="container-fluid">
+                  <p class="copyright pull-right">
+                    &copy;
+                    <script>document.write(new Date().getFullYear())</script> <a href="https://www.iiysoftware.com/">IIY
+                      Software</a>, made with <span style="color: red;">&#10084;</span> for a better web
+                  </p>
+                </div>
+              </footer>
+        
 
         </div>
     </div>
 
 
-</body>
 
 <!--   Core JS Files   -->
 <script src="assets/js/jquery.3.2.1.min.js" type="text/javascript"></script>
@@ -237,10 +264,134 @@
 <!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
 <script src="assets/js/demo.js"></script>
 
-<script>
-    $().ready(function () {
-        demo.initGoogleMaps();
-    });
-</script>
 
+<script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
+
+<!-- Add Firebase products that you want to use -->
+<script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-firestore.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-storage.js"></script>
+
+
+
+<script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyCRTrqrEdRR7hX5dFMU2EM9J4orE2KEe_Y",
+            authDomain: "dav-school-system.firebaseapp.com",
+            databaseURL: "https://dav-school-system.firebaseio.com",
+            projectId: "dav-school-system",
+            storageBucket: "gs://dav-school-system.appspot.com",
+            messagingSenderId: "503899193487",
+            appId: "1:503899193487:web:4835ed6556887d0c"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        //make auth and firestore references
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+        console.log("Reached here");
+        var tbody = document.querySelector('#table-body');
+        var docRef = db.collection("olympiad_uploads");
+        docRef.get().then(querySnapshot => {
+        querySnapshot.docs.forEach(doc => {
+            console.log("data retrieved");
+            tbody.innerHTML += `<tr>
+            <td style="padding:20px">`+doc.data()['title']+`</td>
+            <td style="padding:20px">`+doc.data()['desc']+`</td>
+            <td style="padding:20px"><a class="btn btn-primary" onclick="o_fileDownload('`+doc.data()['loc']+`')">Download</a></td>
+          </tr>`;
+        });
+      });
+
+      docRef = db.collection("qp_uploads");
+        docRef.get().then(querySnapshot => {
+        querySnapshot.docs.forEach(doc => {
+            console.log("data retrieved");
+            tbody.innerHTML += `<tr>
+            <td style="padding:20px">`+doc.data()['title']+`</td>
+            <td style="padding:20px">`+doc.data()['desc']+`</td>
+            <td style="padding:20px"><a class="btn btn-primary" onclick="qp_fileDownload('`+doc.data()['loc']+`')">Download</a></td>
+          </tr>`;
+        });
+      });
+
+
+      function o_fileDownload(name){
+        console.log(name);
+        var storageRef = firebase.storage().ref('olympiad_uploads/'+name);
+
+        storageRef.getDownloadURL().then(function(url) {
+        location.href = url;                
+            /*
+                var xhr = new XMLHttpRequest();
+                xhr.responseType = 'blob';
+                xhr.onload = function(event) {
+                    var blob = xhr.response;
+                };
+                xhr.open('GET', url);
+                xhr.send();
+*/
+        }).catch(function(error) {
+
+        switch (error.code) {
+            case 'storage/object-not-found':
+            console.log(error.code);
+            break;
+            case 'storage/unauthorized':
+            console.log(error.code);
+            break;
+            case 'storage/canceled':
+            console.log(error.code);
+            break;
+            case 'storage/unknown':
+            console.log(error.code);
+            break;
+            default: console.log(error.code);
+        }
+        });
+      }
+
+
+
+
+      function qp_fileDownload(name){
+        console.log(name);
+        var storageRef = firebase.storage().ref('qp_uploads/'+name);
+
+        storageRef.getDownloadURL().then(function(url) {
+        location.href = url;                
+            /*
+                var xhr = new XMLHttpRequest();
+                xhr.responseType = 'blob';
+                xhr.onload = function(event) {
+                    var blob = xhr.response;
+                };
+                xhr.open('GET', url);
+                xhr.send();
+*/
+        }).catch(function(error) {
+
+        switch (error.code) {
+            case 'storage/object-not-found':
+            console.log(error.code);
+            break;
+            case 'storage/unauthorized':
+            console.log(error.code);
+            break;
+            case 'storage/canceled':
+            console.log(error.code);
+            break;
+            case 'storage/unknown':
+            console.log(error.code);
+            break;
+            default: console.log(error.code);
+        }
+        });
+      }
+
+</script>
+    </body>
 </html>

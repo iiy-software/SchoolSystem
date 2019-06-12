@@ -293,7 +293,7 @@
 
 
       var ul1 = document.querySelector('#ul_list1');
-        var docRef1 = db.collection("olympiad_uploads");
+        var docRef1 = db.collection("qp_uploads");
         docRef1.get().then(querySnapshot => {
         querySnapshot.docs.forEach(doc => {
             console.log("data retrieved");
