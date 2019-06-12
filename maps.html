@@ -319,6 +319,18 @@
       });
 
 
+      docRef = db.collection("circular_uploads");
+        docRef.get().then(querySnapshot => {
+        querySnapshot.docs.forEach(doc => {
+            console.log("data retrieved");
+            tbody.innerHTML += `<tr>
+            <td style="padding:20px">`+doc.data()['title']+`</td>
+            <td style="padding:20px">`+doc.data()['desc']+`</td>
+            <td style="padding:20px"><a class="btn btn-primary" onclick="c_fileDownload('`+doc.data()['loc']+`')">Download</a></td>
+          </tr>`;
+        });
+      });
+
       function o_fileDownload(name){
         console.log(name);
         var storageRef = firebase.storage().ref('olympiad_uploads/'+name);
@@ -355,6 +367,41 @@
       }
 
 
+
+      function c_fileDownload(name){
+        console.log(name);
+        var storageRef = firebase.storage().ref('circular_uploads/'+name);
+
+        storageRef.getDownloadURL().then(function(url) {
+        location.href = url;                
+            /*
+                var xhr = new XMLHttpRequest();
+                xhr.responseType = 'blob';
+                xhr.onload = function(event) {
+                    var blob = xhr.response;
+                };
+                xhr.open('GET', url);
+                xhr.send();
+*/
+        }).catch(function(error) {
+
+        switch (error.code) {
+            case 'storage/object-not-found':
+            console.log(error.code);
+            break;
+            case 'storage/unauthorized':
+            console.log(error.code);
+            break;
+            case 'storage/canceled':
+            console.log(error.code);
+            break;
+            case 'storage/unknown':
+            console.log(error.code);
+            break;
+            default: console.log(error.code);
+        }
+        });
+      }
 
 
       function qp_fileDownload(name){
