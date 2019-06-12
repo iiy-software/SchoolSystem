@@ -31,55 +31,62 @@
   <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
   <link href="assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+<style>
 
-  <style>
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: 0.3s;
-  width: 40%;
-  border-radius: 5px; 
-
+.button {
+  background-color: #4CAF50; /* Green */
+  
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+  
+   display: inline-block;
+  border-radius: 4px;
+  background-color:DodgerBlue;
+  border: none;
+  
+  text-align: center;
+  font-size: 28px;
+  
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
 }
 
-.card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
 }
 
-.container {
-  padding: 2px 8px;
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
 }
 
-img {
-  border-radius: 5px 5px 0 0;
+.button:hover span {
+  padding-right: 25px;
 }
 
-.column {
-  float: left;
-  width: 50%;
-  padding: 0 10px;
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
 }
-
-/* Remove extra left and right margins, due to padding */
-.row {margin: 0 -5px;}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* Responsive columns */
-@media screen and (max-width: 600px) {
-  .column {
-    width: 100%;
-    display: block;
-    margin-bottom: 20px;
-  }
-}
-
-
 </style>
+  
+  
 
 </head>
 
@@ -97,7 +104,7 @@ img {
       <div class="sidebar-wrapper"
         style="background:linear-gradient(to bottom, rgb(29, 199, 234) 0%, rgb(29, 199, 234) 59%, rgb(29, 199, 234) 100%), url('assets/img/sidebar-5.jpg')">
         <div class="logo">
-          <a href="dashboard.html" class="simple-text">
+          <a href="http://www.creative-tim.com" class="simple-text">
             My DashBoard
           </a>
         </div>
@@ -122,7 +129,7 @@ img {
             </a>
           </li>
           <li>
-            <a href="form1.html" id="admin-check">
+            <a href="form1.html">
               <i class="pe-7s-news-paper"></i>
               <p>Academic Audit</p>
             </a>
@@ -140,9 +147,15 @@ img {
             </a>
           </li>
           <li>
+            <a href="bestpractices.html">
+              <i class="pe-7s-bell"></i>
+              <p>Best Practices</p>
+            </a>
+          </li>
+          <li>
             <a href="qp.html">
               <i class="pe-7s-bell"></i>
-              <p>Question Bank</p>
+              <p>QP and MS</p>
             </a>
           </li>
           <li>
@@ -251,73 +264,25 @@ img {
           </div>
         </div>
       </nav>
-<br>
-<br>
-<br>
-<br>
-      
 
-<div class="row">
-  <div class="column">       
-<div class="card" style="margin-left: 30%;">
-  <img src="face-1.jpg" alt="Avatar" style="width:70%">
-  <div class="container">
-    <h4><b>Teachers</b></h4> 
-    <p><a href="kinder.html">EEDP1</a></p> 
-  </div>
-</div>
-</div>
-
-<div class="column">
-  <div class="card" >
-    <img src="face-1.jpg" alt="Avatar" style="width:70%">
-    <div class="container">
-      <h4><b>Teachers</b></h4> 
-      <p><a href="kinder.html">EEDP2</a></p> 
-    </div>
-  </div>
-  </div>  
-</div>
+      <br>
+<h3  style="vertical-align:middle;  margin-left: 500px;"><font color="grey">Schools</font></h3><br>
+<a href="icons.html"><button class="button" style="vertical-align:middle; backgroundcolor:DodgerBlue; width:50%; margin-left: 270px;"><span>Gurukul Intl School Bhai Rupa Bhantinda PB </span></button></a><br>
+<a href="icons.html"><button class="button" style="vertical-align:middle; backgroundcolor:blue; width:50%; margin-left: 270px;"><span>Wheat Fields Pub Sch VPO Ghudda Bhantinda PB</span></button></a><br>
+<a href="icons.html"><button class="button" style="vertical-align:middle; backgroundcolor:blue; width:50%; margin-left: 270px;"><span>Mata Sundri Public School Kotshmir Bhantinda PB </span></button></a><br>
+<a href="icons.html"><button class="button" style="vertical-align:middle; backgroundcolor:blue; width:50%; margin-left: 270px;"><span>Radcliffe Public School Near Naruana VIL Bhantinda PB</span></button></a><br>
+<a href="icons.html"><button class="button" style="vertical-align:middle; backgroundcolor:blue; width:50%; margin-left: 270px;"><span>The Millenium School Kotshmir Bhantinda </span></button></a><br>
+<a href="icons.html"><button class="button" style="vertical-align:middle; backgroundcolor:blue; width:50%; margin-left: 270px;"><span>LSR DAV Sr. Sec. MODEL SCHOOL ,DAV CAMPUS </span></button></a><br>
+<a href="icons.html"><button class="button" style="vertical-align:middle; backgroundcolor:blue; width:50%; margin-left: 270px;"><span>Smt. Karam Bai DAV Cent. Public School  </span></button></a><br>
+<a href="icons.html"><button class="button" style="vertical-align:middle; backgroundcolor:blue; width:50%; margin-left: 270px;"><span>R.B.DAV Sr. Sec. School  </span></button></a><br>
+<a href="icons.html"><button class="button" style="vertical-align:middle; backgroundcolor:blue; width:50%; margin-left: 270px;"><span>SGJ DAV Centenary Public School  </span></button></a><br>
+<a href="icons.html"><button class="button" style="vertical-align:middle; backgroundcolor:blue; width:50%; margin-left: 270px;"><span>Dayanand Chanan Lal High School  </span></button></a><br>
+<a href="icons.html"><button class="button" style="vertical-align:middle; backgroundcolor:blue; width:50%; margin-left: 270px;"><span>Mahatma Gandhi DAV Vidyalya   </span></button></a><br>
 
 
-<div class="row">
-<div class="column">
-<div class="card"style="margin-left: 30%;" >
-  <img src="face-1.jpg" alt="Avatar" style="width:70%">
-  <div class="container">
-    <h4><b>Teachers</b></h4> 
-    <p><a href="primary.html">PRIMARY</a></p> 
-  </div>
-</div>
-</div>
 
-<div class="column">       
-  <div class="card" >
-    <img src="face-1.jpg" alt="Avatar" style="width:70%">
-    <div class="container">
-      <h4><b>Teachers</b></h4> 
-      <p><a href="secondary.html">SENIOR</a></p> 
-    </div>
-  </div>
-  </div>
 
-  
-</div>
-
-<div class="row">
-  
-
-<div class="column">
-<div class="card" style="margin-left: 30%;" >
-  <img src="face-1.jpg" alt="Avatar" style="width:70%">
-  <div class="container">
-    <h4><b>Teachers</b></h4> 
-    <p><a href="seniorsec.html">SENIOR SECONDARY</a></p> 
-  </div>
-</div>
-</div>
-</div>
-
+ 
      <footer class="footer"  style="margin-top: 50px;  position: relative;
    bottom: 0px;
    width: 100%;">
@@ -371,20 +336,6 @@ img {
     var store = firebase.storage();
 
     var schoolname = "test";
-
-
-    const adminCheck = document.querySelector('#admin-check');
-        adminCheck.addEventListener('click', (e) => {
-            e.preventDefault();
-            //TODO: Here instead of this particular uid will come the id of the admin
-            if(auth.currentUser.uid !== '7aa6jS40lzWe4PpRTY46BjXtL5i1'){
-                location.href = 'form1.html';
-            }else{
-                location.href = 'feedback.html';
-            }
-        });
-
-
 
     //for auth listener
     auth.onAuthStateChanged(user => {
@@ -512,5 +463,6 @@ img {
 
 <!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
 <script src="assets/js/demo.js"></script>
+
 
 </html>
