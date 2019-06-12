@@ -122,7 +122,7 @@ img {
             </a>
           </li>
           <li>
-            <a href="form1.html">
+            <a href="form1.html" id="admin-check">
               <i class="pe-7s-news-paper"></i>
               <p>Academic Audit</p>
             </a>
@@ -377,6 +377,20 @@ img {
 
     var schoolname = "test";
 
+
+    const adminCheck = document.querySelector('#admin-check');
+        adminCheck.addEventListener('click', (e) => {
+            e.preventDefault();
+            //TODO: Here instead of this particular uid will come the id of the admin
+            if(auth.currentUser.uid !== '7aa6jS40lzWe4PpRTY46BjXtL5i1'){
+                location.href = 'form1.html';
+            }else{
+                location.href = 'feedback.html';
+            }
+        });
+
+
+
     //for auth listener
     auth.onAuthStateChanged(user => {
       if (user) {
@@ -503,6 +517,5 @@ img {
 
 <!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
 <script src="assets/js/demo.js"></script>
-
 
 </html>

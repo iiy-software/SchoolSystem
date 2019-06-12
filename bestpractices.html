@@ -74,7 +74,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="form1.html">
+                            <a href="form1.html" id="admin-check">
                                 <i class="pe-7s-news-paper"></i>
                                 <p>Academic Audit</p>
                             </a>
@@ -258,6 +258,23 @@
         //make auth and firestore references
         const auth = firebase.auth();
         const db = firebase.firestore();
+
+
+        const adminCheck = document.querySelector('#admin-check');
+        adminCheck.addEventListener('click', (e) => {
+            e.preventDefault();
+            //TODO: Here instead of this particular uid will come the id of the admin
+            if(auth.currentUser.uid !== '7aa6jS40lzWe4PpRTY46BjXtL5i1'){
+                location.href = 'form1.html';
+            }else{
+                location.href = 'feedback.html';
+            }
+        });
+
+
+    </script>
+    
+
     </script>
     <script type="text/javascript">
         //for auth listener
