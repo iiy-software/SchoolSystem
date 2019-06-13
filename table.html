@@ -205,7 +205,8 @@
 
 
 <div class="container" id="main-cont">
-    </div>
+<ul id="ul-list1"></ul> 
+</div>
 
             <footer class="footer">
                 <div class="container-fluid">
@@ -278,7 +279,74 @@
 
 
 
-        var f;
+
+
+
+
+
+
+
+        function c_fileDownload(name){
+        console.log(name);
+        var storageRef = firebase.storage().ref('circular_uploads/'+name);
+
+        storageRef.getDownloadURL().then(function(url) {
+        location.href = url;                
+            /*
+                var xhr = new XMLHttpRequest();
+                xhr.responseType = 'blob';
+                xhr.onload = function(event) {
+                    var blob = xhr.response;
+                };
+                xhr.open('GET', url);
+                xhr.send();
+*/
+        }).catch(function(error) {
+
+        switch (error.code) {
+            case 'storage/object-not-found':
+            console.log(error.code);
+            break;
+            case 'storage/unauthorized':
+            console.log(error.code);
+            break;
+            case 'storage/canceled':
+            console.log(error.code);
+            break;
+            case 'storage/unknown':
+            console.log(error.code);
+            break;
+            default: console.log(error.code);
+        }
+        });
+      }
+
+
+
+auth.onAuthStateChanged(user => {
+            if (user) {
+                console.log('user logged in');
+                if(auth.currentUser.uid === '7aa6jS40lzWe4PpRTY46BjXtL5i1'){
+                    var div = document.querySelector('#main-cont');
+                    div.innerHTML += `
+                    <form>
+                        <h2 class="text-center">UPLOAD CIRCULARS AND NOTICES</h2>
+                        <input type="text" class="form-control" name="title" placeholder="Title" id="title"><br>
+                        <input type="text" class="form-control" name="desc" placeholder="Description" id="desc"><br>
+                        <input type="file" name="upload" class="form-control" accept="application/pdf" id="file"/><br>
+                        <button type="submit" id="btn" class="btn btn-primary">Submit</button>
+                    </form>
+                    `
+
+
+
+
+
+
+
+
+
+                    var f;
 
 var file = document.querySelector('#file');
 file.addEventListener('change', (e) => {
@@ -306,24 +374,21 @@ btn.addEventListener('click', (e) => {
 
 });
 
-
-
-auth.onAuthStateChanged(user => {
-            if (user) {
-                console.log('user logged in');
-                if(auth.currentUser.uid === '7aa6jS40lzWe4PpRTY46BjXtL5i1'){
-                    var div = document.querySelector('#main-cont');
-                    div.innerHTML += `
-                    <form>
-                        <h2 class="text-center">UPLOAD CIRCULARS AND NOTICES</h2>
-                        <input type="text" class="form-control" name="title" placeholder="Title" id="title"><br>
-                        <input type="text" class="form-control" name="desc" placeholder="Description" id="desc"><br>
-                        <input type="file" name="upload" class="form-control" accept="application/pdf" id="file"/><br>
-                        <button type="submit" id="btn" class="btn btn-primary">Submit</button>
-                    </form>
-                    `
                 }else{
-                    
+                  
+                    var ul1 = document.querySelector('#ul-list1');
+                        var docRef1 = db.collection("circular_uploads");
+                        console.log("Reached here");
+                        docRef1.get().then(querySnapshot => {
+                        querySnapshot.docs.forEach(doc => {
+                            console.log("data retrieved");
+                            ul1.innerHTML += `<li class="list-group-item">
+                            <h3> Title : `+doc.data()['title']+`</h3>
+                            <p> Description: `+doc.data()['desc']+`</p>
+                            <a class="btn btn-primary" onclick="c_fileDownload('`+doc.data()['loc']+`')">Download</a>
+                        </li>`;
+                        });
+                    });  
                 }
             }
             else {

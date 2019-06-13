@@ -208,6 +208,7 @@
 
 
             <div class="container" id="main-cont">
+                <ul id="ul-list1"></ul>
                 </div>
 
 
@@ -290,6 +291,43 @@
 
 
 
+        function qp_fileDownload(name){
+        console.log(name);
+        var storageRef = firebase.storage().ref('qp_uploads/'+name);
+
+        storageRef.getDownloadURL().then(function(url) {
+        location.href = url;                
+            /*
+                var xhr = new XMLHttpRequest();
+                xhr.responseType = 'blob';
+                xhr.onload = function(event) {
+                    var blob = xhr.response;
+                };
+                xhr.open('GET', url);
+                xhr.send();
+*/
+        }).catch(function(error) {
+
+        switch (error.code) {
+            case 'storage/object-not-found':
+            console.log(error.code);
+            break;
+            case 'storage/unauthorized':
+            console.log(error.code);
+            break;
+            case 'storage/canceled':
+            console.log(error.code);
+            break;
+            case 'storage/unknown':
+            console.log(error.code);
+            break;
+            default: console.log(error.code);
+        }
+        });
+      }
+
+
+
 
         const adminCheck = document.querySelector('#admin-check');
         adminCheck.addEventListener('click', (e) => {
@@ -323,7 +361,21 @@
                     </form>
                     `
                 }else{
-                    
+                 
+                    var ul1 = document.querySelector('#ul-list1');
+                        var docRef1 = db.collection("qp_uploads");
+                        console.log("Reached here");
+                        docRef1.get().then(querySnapshot => {
+                        querySnapshot.docs.forEach(doc => {
+                            console.log("data retrieved");
+                            ul1.innerHTML += `<li class="list-group-item">
+                            <h3> Title : `+doc.data()['title']+`</h3>
+                            <p> Description: `+doc.data()['desc']+`</p>
+                            <a class="btn btn-primary" onclick="o_fileDownload('`+doc.data()['loc']+`')">Download</a>
+                        </li>`;
+                        });
+                    });  
+                   
                 }
             }
             else {
