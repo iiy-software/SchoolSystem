@@ -170,7 +170,7 @@
                                 </a>
                             </li>
                             <li class="dropdown">
-                                <a href="teachers.html">
+                                <a href="teachers.html" id="teachers">
                                     <p>
                                         Teachers
                                     </p>
@@ -246,6 +246,18 @@
         //make auth and firestore references
         const auth = firebase.auth();
         const db = firebase.firestore();
+        
+        const teachersCheck = document.querySelector('#teachers');
+        teachersCheck.addEventListener('click', (e) => {
+            e.preventDefault();
+            console("Teachers click");
+            //TODO: Here instead of this particular uid will come the id of the admin
+            if(auth.currentUser.uid !== '7aa6jS40lzWe4PpRTY46BjXtL5i1'){
+                location.href = 'icons.html';
+            }else{
+                location.href = 'teachers.html';
+            }
+        });
     </script>
     <script type="text/javascript">
 
