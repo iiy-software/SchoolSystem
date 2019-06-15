@@ -295,7 +295,7 @@
                                             <img class="avatar border-gray" src="assets/img/imgplaceholder.png"
                                                 alt="..." style="background-color: #fff;" />
 
-                                            <h4 class="title">R.B DAV Public School<br />
+                                            <h4 class="title" id="school_title">R.B DAV Public School<br />
                                                 <small>Punjab</small>
                                             </h4>
                                         </a>
@@ -407,5 +407,42 @@
                 window.alert('User signed Out Successfully');
             });
         });
+        
+        var school_title = document.querySelector('#school_title');
+
+        if(auth.currentUser.uid === 'CxElxaZ9EPTO6b1azSkzkVFjZAs2'){
+            school_title.value = 'Dayanand Chanan Lal High School';
+        }
+        if(auth.currentUser.uid === 'EoqIt69qKGYxQqk7HTCBTCBEiZh2'){
+            school_title.value = 'Gurukul Intl School';
+        }
+        if(auth.currentUser.uid === 'EsU6A3yoMbQT0EJ7nVXWxv1fLEr1'){
+            school_title.value = 'Smt. Karam Bai DAV Cent. Public School';
+        }
+        if(auth.currentUser.uid === 'EtoYm8LaUwOvp0yM8uxiwbqjlzk2'){
+            school_title.value = 'SGJ DAV Centenary Public School;'
+        }
+        if(auth.currentUser.uid === 'FncVoXmyIMP86Ah7n8ZiCVcJjlt2'){
+            school_title.value = 'Mahatma Gandhi DAV Vidyalaya';
+        }
+        if(auth.currentUser.uid === 'OV4xG553lwXVqJXu7Ohq7tbEIPP2'){
+            school_title.value = 'R.B. DAV Sr. Secondary School';
+        }
+        if(auth.currentUser.uid === 'QEn99edIa0hU64nqmJ9s0YaRsnG2'){
+            school_title.value = 'Wheat Fields Public School';
+        }
+        if(auth.currentUser.uid === 'QJvlw5TMXCUNv78z0WcrQNZjfDj2'){
+            school_title.value = 'Radcliffe School';
+        }
+        if(auth.currentUser.uid === 'Qx5RqymWioPWPZR3sgjNYLHIpZ42'){
+            school_title.value = 'LRS DAV Sr. Sec. Model School';
+        }
+        if(auth.currentUser.uid === 'h1jF6BToWgbDGtw4siN3sEs6Als2'){
+            school_title.value = 'The Millennium School';
+        }
+        if(auth.currentUser.uid === 'hwODP1CS4sNUE3fr5BYg0NyTikM2'){
+            school_title.value = 'Mata Sundri Public School';
+        }
+
 </script>
 </html>
