@@ -3,7 +3,7 @@ var signupform = document.querySelector('#signupform');
 signupform.addEventListener('submit', (e) => {
     e.preventDefault();
     //get user details
-    const mail = signupform['mail'].value;
+    const mail = signupform['email'].value;
     const password = signupform['password'].value;
 
     //sign up the user

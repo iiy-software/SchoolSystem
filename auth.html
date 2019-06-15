@@ -96,11 +96,12 @@
                     </div>
                     <div class="row">
                         <div class="formbox">
+                            <div id="main-cont"></div>
                             <div class="col-md-12">
-                                <form id="signupform">
+                                <form id="signupform" role="form">
                                     <div class="form-group">
                                         <label for="mail">Email address</label>
-                                        <input type="email" class="form-control" id="mail" aria-describedby="emailHelp"
+                                        <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
                                             placeholder="Enter email" required>
                                         <small id="emailHelp" class="form-text text-muted">We'll never share your email
                                             with
@@ -110,8 +111,9 @@
                                         <label for="password">Password</label>
                                         <input type="password" class="form-control" id="password" placeholder="Password"
                                             required>
+                                            
                                     </div>
-                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                    <button type="submit" class="btn btn-primary" id="btn">Submit</button>
                                 </form>
                             </div>
                         </div>
@@ -165,6 +167,22 @@
         //make auth and firestore references
         const auth = firebase.auth();
         const db = firebase.firestore();
+
+
+        const btn = document.querySelector('#btn');
+        btn.addEventListener('click', (e) => {
+            var email = document.querySelector('#email').value;
+            var password = document.querySelector('#password').value;
+            firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            var err = document.querySelector('#main-cont');
+            err.innerHTML += `<div style="padding:10px; color:whitesmoke; background-color: #ff3535; border-radius: 7px; opacity: 0.8;">
+                    <strong>`+errorMessage+`</strong>
+                </div><br>`
+});
+        });
+
     </script>
     <script type="text/javascript" src="main.js"></script>
 
@@ -194,18 +212,8 @@
 <script type="text/javascript">
     $(document).ready(function () {
 
-        demo.initChartist();
-
-        // $.notify({
-        //     icon: 'pe-7s-gift',
-        //     message: "Welcome to <b>Light Bootstrap Dashboard</b> - a beautiful freebie for every web developer."
-
-        // }, {
-        //         type: 'info',
-        //         timer: 4000
-        //     });
-
     });
+
 </script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
