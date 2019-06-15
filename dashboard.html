@@ -246,7 +246,7 @@
         //make auth and firestore references
         const auth = firebase.auth();
         const db = firebase.firestore();
-        
+
         const teachersCheck = document.querySelector('#teachers');
         teachersCheck.addEventListener('click', (e) => {
             e.preventDefault();
@@ -258,6 +258,16 @@
                 location.href = 'teachers.html';
             }
         });
+        const logout = document.querySelector('#logout');
+        logout.addEventListener('click', (e) => {
+            e.preventDefault();
+            console.log("Logout Clicked")
+            auth.signOut().then(() => {
+                window.location = 'index.html';
+                window.alert('User signed Out Successfully');
+            });
+        });
+        
     </script>
     <script type="text/javascript">
 
@@ -277,15 +287,6 @@
         });
 
         //for logout user
-        const logout = document.querySelector('#logout');
-        logout.addEventListener('click', (e) => {
-            e.preventDefault();
-            auth.signOut().then(() => {
-                window.location = 'index.html';
-                window.alert('User signed Out Successfully');
-            });
-        });
-
         const adminCheck = document.querySelector('#admin-check');
         adminCheck.addEventListener('click', (e) => {
             e.preventDefault();
@@ -314,29 +315,10 @@
 <script src="assets/js/bootstrap-notify.js"></script>
 
 <!--  Google Maps Plugin    -->
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
-
 <!-- Light Bootstrap Table Core javascript and methods for Demo purpose -->
 <script src="assets/js/light-bootstrap-dashboard.js?v=1.4.0"></script>
 
 <!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
 <script src="assets/js/demo.js"></script>
-
-<script type="text/javascript">
-    $(document).ready(function () {
-
-        demo.initChartist();
-
-        // $.notify({
-        //     icon: 'pe-7s-gift',
-        //     message: "Welcome to <b>Light Bootstrap Dashboard</b> - a beautiful freebie for every web developer."
-
-        // }, {
-        //         type: 'info',
-        //         timer: 4000
-        //     });
-
-    });
-</script>
 
 </html>

@@ -1750,9 +1750,6 @@
 <!--  Notifications Plugin    -->
 <script src="assets/js/bootstrap-notify.js"></script>
 
-<!--  Google Maps Plugin    -->
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
-
 <!-- Light Bootstrap Table Core javascript and methods for Demo purpose -->
 <script src="assets/js/light-bootstrap-dashboard.js?v=1.4.0"></script>
 
@@ -1793,9 +1790,6 @@ var firebaseConfig = {
 		const auth = firebase.auth();
 		var db = firebase.firestore();
                 //TODO: Here instead of this uid will come the uid of the admin
-                if(auth.currentUser.uid === '7aa6jS40lzWe4PpRTY46BjXtL5i1'){
-                        location.href = 'feedback.html';
-                }
 
 var submit = document.querySelector("#submit");
 submit.addEventListener('click', (e) => {
@@ -1888,7 +1882,14 @@ const logout = document.querySelector('#logout');
                 window.alert('User signed Out Successfully');
             });
         });
-
+        firebase.auth().onAuthStateChanged(function(user) {
+if(user){
+        if(auth.currentUser.uid === '7aa6jS40lzWe4PpRTY46BjXtL5i1'){
+                        window.location = 'feedback.html';
+                }
+console.log(auth.currentUser);
+}
+});
 </script>
 
 </html>
