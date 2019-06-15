@@ -177,6 +177,7 @@
             var errorCode = error.code;
             var errorMessage = error.message;
             var err = document.querySelector('#main-cont');
+            err.innerHTML = '';
             err.innerHTML += `<div style="padding:10px; color:whitesmoke; background-color: #ff3535; border-radius: 7px; opacity: 0.8;">
                     <strong>`+errorMessage+`</strong>
                 </div><br>`
