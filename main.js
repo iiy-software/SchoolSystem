@@ -14,7 +14,10 @@ signupform.addEventListener('submit', (e) => {
     auth.onAuthStateChanged(user => {
         if (user) {
             console.log(user);
-            window.location = 'dashboard.html'; //After successful login, user will be redirected to dashboard.html
+            if(auth.currentUser.uid === '7aa6jS40lzWe4PpRTY46BjXtL5i1')
+            window.location = 'dashboard.html';
+            else
+            window.location = 'user.html'; //After successful login, user will be redirected to dashboard.html
         }
         // else {
         //     signupform.reset();

@@ -56,12 +56,6 @@
                 <ul class="nav">
                     <ul class="nav">
                         <li>
-                            <a href="dashboard.html">
-                                <i class="pe-7s-graph"></i>
-                                <p>Dashboard</p>
-                            </a>
-                        </li>
-                        <li>
                             <a href="user.html">
                                 <i class="pe-7s-user"></i>
                                 <p>User Profile</p>
@@ -304,7 +298,7 @@
 
         var ul = document.querySelector('#table-body');
         var docRef = db.collection("olympiad_uploads");
-     //  docRef.get().then(querySnapshot => {
+        docRef.get().then(querySnapshot => {
         querySnapshot.docs.forEach(doc => {
             console.log("data retrieved");
           //  ul.innerHTML += `<li class="list-group-item">
@@ -318,7 +312,7 @@
                             <td style="padding:20px"><a class="btn btn-primary" onclick="o_fileDownload('`+doc.data()['loc']+`')">Download</a></td>
                         </tr>`;
         });
-      });
+      
 
 
       var ul1 = document.querySelector('#table-body');
@@ -409,6 +403,7 @@
       }
 
     </script>
+
     <script type="text/javascript">
         //for auth listener
 
@@ -422,8 +417,8 @@
             }else{
                 location.href = 'feedback.html';
             }
-        });
         
+        });        
         auth.onAuthStateChanged(user => {
             if (user) {
                 console.log('user logged in');
@@ -440,11 +435,11 @@
                     </form>
                     `
             }
-           
+            }
             else {
                 console.log('user logged out');
             }
-        })
+        });
 
         //for logout user
         const logout = document.querySelector('#logout');
@@ -475,27 +470,8 @@
 <!--  Google Maps Plugin    -->
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script> 
 
-<!-- Light Bootstrap Table Core javascript and methods for Demo purpose -->
 <script src="assets/js/light-bootstrap-dashboard.js?v=1.4.0"></script>
 
-<!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
 <script src="assets/js/demo.js"></script>
-
-<script type="text/javascript">
-    $(document).ready(function () {
-
-        demo.initChartist();
-
-        // $.notify({
-        //     icon: 'pe-7s-gift',
-        //     message: "Welcome to <b>Light Bootstrap Dashboard</b> - a beautiful freebie for every web developer."
-
-        // }, {
-        //         type: 'info',
-        //         timer: 4000
-        //     });
-
-    });
-</script>
 
 </html>
