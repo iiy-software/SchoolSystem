@@ -378,8 +378,8 @@ const adminCheck = document.querySelector('#admin-check');
                         querySnapshot.docs.forEach(doc => {
                             console.log("data retrieved");
                             ul1.innerHTML += `<tr>
-                            <td style="padding:20px"> Title : `+doc.data()['title']+`</td>
-                            <td style="padding:20px"> Description: `+doc.data()['desc']+`</td>
+                            <td style="padding:20px">  `+doc.data()['title']+`</td>
+                            <td style="padding:20px">  `+doc.data()['desc']+`</td>
                             <td style="padding:20px"><a class="btn btn-primary" onclick="o_fileDownload('`+doc.data()['loc']+`')">Download</a></td>
                         </tr>`;
                         });

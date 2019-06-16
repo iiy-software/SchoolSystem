@@ -195,7 +195,7 @@
                 </div>
             </nav>
 
-            <div class="container">
+      <!--      <div class="container">
                 <h2 class="text-center">DOWNLOADS</h2>
                 <div style="background-color:#1DC7EA; color:white;padding:20px;">
                     OLYMPIAD DOWNLOADS
@@ -212,6 +212,47 @@
                 <ul class="list-group" id="ul_list1">
 
                 </ul>    
+            </div> -->
+            <div class="container">
+
+                <h2 class="text-center">OLYMPIAD DETAILS</h2><br><br><br>
+                <div id="main-cont">
+      <left>
+                <table class="table-bordered" width="90%">
+                    <thead>
+                        <tr>
+                          <th style="padding:20px; background-color: rgba(50,115,220,0.3);">Title</th>
+                          <th style="padding:20px; background-color: rgba(50,115,220,0.3);">Description</th>
+                          <th style="padding:20px; background-color: rgba(50,115,220,0.3);">Downloads</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body" >
+
+                    </tbody>
+                </table>
+            </left>
+        </div>
+            </div>
+<br><br>
+            <div class="container"> 
+
+                <h2 class="text-center">QUESTION BANK</h2><br><br>
+                <div id="main-cont">
+      <left>
+                <table class="table-bordered" width="90%">
+                    <thead>
+                        <tr>
+                          <th style="padding:20px; background-color: rgba(50,115,220,0.3);">Title</th>
+                          <th style="padding:20px; background-color: rgba(50,115,220,0.3);">Description</th>
+                          <th style="padding:20px; background-color: rgba(50,115,220,0.3);">Downloads</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body">
+
+                    </tbody>
+                </table>
+            </left>
+        </div>
             </div>
 
             <footer class="footer">
@@ -261,30 +302,35 @@
         const auth = firebase.auth();
         const db = firebase.firestore();
 
-        var ul = document.querySelector('#ul_list');
+        var ul = document.querySelector('#table-body');
         var docRef = db.collection("olympiad_uploads");
-        docRef.get().then(querySnapshot => {
+     //  docRef.get().then(querySnapshot => {
         querySnapshot.docs.forEach(doc => {
             console.log("data retrieved");
-            ul.innerHTML += `<li class="list-group-item">
-            <h3> Title : `+doc.data()['title']+`</h3>
-            <p> Description: `+doc.data()['desc']+`</p>
-            <a class="btn btn-primary" onclick="o_fileDownload('`+doc.data()['loc']+`')">Download</a>
-          </li>`;
+          //  ul.innerHTML += `<li class="list-group-item">
+            //<h3> Title : `+doc.data()['title']+`</h3>
+            //<p> Description: `+doc.data()['desc']+`</p>
+            //<a class="btn btn-primary" onclick="o_fileDownload('`+doc.data()['loc']+`')">Download</a>
+          //</li>`; 
+          ul.innerHTML += `<tr>
+                            <td style="padding:20px"> `+doc.data()['title']+`</td>
+                            <td style="padding:20px">  `+doc.data()['desc']+`</td>
+                            <td style="padding:20px"><a class="btn btn-primary" onclick="o_fileDownload('`+doc.data()['loc']+`')">Download</a></td>
+                        </tr>`;
         });
       });
 
 
-      var ul1 = document.querySelector('#ul_list1');
+      var ul1 = document.querySelector('#table-body');
         var docRef1 = db.collection("qp_uploads");
         docRef1.get().then(querySnapshot => {
         querySnapshot.docs.forEach(doc => {
             console.log("data retrieved");
-            ul1.innerHTML += `<li class="list-group-item">
-            <h3> Title : `+doc.data()['title']+`</h3>
-            <p> Description: `+doc.data()['desc']+`</p>
-            <a class="btn btn-primary" onclick="qp_fileDownload('`+doc.data()['loc']+`')">Download</a>
-          </li>`;
+             ul1.innerHTML += `<tr>
+                            <td style="padding:20px"> `+doc.data()['title']+`</td>
+                            <td style="padding:20px">  `+doc.data()['desc']+`</td>
+                            <td style="padding:20px"><a class="btn btn-primary" onclick="o_fileDownload('`+doc.data()['loc']+`')">Download</a></td>
+                        </tr>`;
         });
       });
 
@@ -369,6 +415,7 @@
         const adminCheck = document.querySelector('#admin-check');
         adminCheck.addEventListener('click', (e) => {
             e.preventDefault();
+            console.log('Admin Check')
             //TODO: Here instead of this particular uid will come the id of the admin
             if(auth.currentUser.uid !== '7aa6jS40lzWe4PpRTY46BjXtL5i1'){
                 location.href = 'form1.html';
@@ -380,7 +427,20 @@
         auth.onAuthStateChanged(user => {
             if (user) {
                 console.log('user logged in');
+                 if(auth.currentUser.uid === '7aa6jS40lzWe4PpRTY46BjXtL5i1'){
+                    var div = document.querySelector('#main-cont');
+                    div.innerHTML += '';
+                    div.innerHTML += `
+                    <form>
+                        <h2 class="text-center">UPLOAD</h2>
+                        <input type="text" class="form-control" name="title" placeholder="Title" id="title"><br>
+                        <input type="text" class="form-control" name="desc" placeholder="Description" id="desc"><br>
+                        <input type="file" name="upload" class="form-control" accept="application/pdf" id="file"/><br>
+                        <button type="submit" class="btn btn-primary" id="btn">Submit</button>
+                    </form>
+                    `
             }
+           
             else {
                 console.log('user logged out');
             }
@@ -413,7 +473,7 @@
 <script src="assets/js/bootstrap-notify.js"></script>
 
 <!--  Google Maps Plugin    -->
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script> 
 
 <!-- Light Bootstrap Table Core javascript and methods for Demo purpose -->
 <script src="assets/js/light-bootstrap-dashboard.js?v=1.4.0"></script>
