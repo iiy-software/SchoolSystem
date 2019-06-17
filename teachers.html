@@ -248,17 +248,17 @@
 
       <br>
 <h3  style="vertical-align:middle;  margin-left: 200px; font-size:7vw;"><font color="grey">Schools</font></h3><br>
-<a href="icons.html"><button class="button" style=" backgroundcolor:DodgerBlue; width:70%; margin-left: 100px;"><span>Gurukul Intl School Bhai Rupa Bhantinda PB </span></button></a><br>
-<a href="icons.html"><button class="button" style="vertical-align:middle; backgroundcolor:blue; width:70%; margin-left: 100px;"><span>Wheat Fields Pub Sch VPO Ghudda Bhantinda PB</span></button></a><br>
-<a href="icons.html"><button class="button" style="vertical-align:middle; backgroundcolor:blue; width:70%; margin-left: 100px;"><span>Mata Sundri Public School Kotshmir Bhantinda PB </span></button></a><br>
-<a href="icons.html"><button class="button" style="vertical-align:middle; backgroundcolor:blue; width:70%; margin-left: 100px;"><span>Radcliffe Public School Near Naruana VIL Bhantinda PB</span></button></a><br>
-<a href="icons.html"><button class="button" style="vertical-align:middle; backgroundcolor:blue; width:70%; margin-left: 100px;"><span>The Millenium School Kotshmir Bhantinda </span></button></a><br>
-<a href="icons.html"><button class="button" style="vertical-align:middle; backgroundcolor:blue; width:70%; margin-left: 100px;"><span>LSR DAV Sr. Sec. MODEL SCHOOL ,DAV CAMPUS </span></button></a><br>
-<a href="icons.html"><button class="button" style="vertical-align:middle; backgroundcolor:blue; width:70%; margin-left: 100px;"><span>Smt. Karam Bai DAV Cent. Public School  </span></button></a><br>
-<a href="icons.html"><button class="button" style="vertical-align:middle; backgroundcolor:blue; width:70%; margin-left: 100px;"><span>R.B.DAV Sr. Sec. School  </span></button></a><br>
-<a href="icons.html"><button class="button" style="vertical-align:middle; backgroundcolor:blue; width:70%; margin-left: 100px;"><span>SGJ DAV Centenary Public School  </span></button></a><br>
-<a href="icons.html"><button class="button" style="vertical-align:middle; backgroundcolor:blue; width:70%; margin-left: 100px;"><span>Dayanand Chanan Lal High School  </span></button></a><br>
-<a href="icons.html"><button class="button" style="vertical-align:middle; backgroundcolor:blue; width:70%; margin-left: 100px;"><span>Mahatma Gandhi DAV Vidyalya   </span></button></a><br>
+<a href="#"><button class="button" name="gurukul" onclick="clgbutton(this.name)" style=" backgroundcolor:DodgerBlue; width:70%; margin-left: 100px;"><span>Gurukul Intl School Bhai Rupa Bhantinda PB </span></button></a><br>
+<a href="#"><button class="button" name="wheat" onclick="clgbutton(this.name)" style="vertical-align:middle; backgroundcolor:blue; width:70%; margin-left: 100px;"><span>Wheat Fields Pub Sch VPO Ghudda Bhantinda PB</span></button></a><br>
+<a href="#"><button class="button" name="mata" onclick="clgbutton(this.name)" style="vertical-align:middle; backgroundcolor:blue; width:70%; margin-left: 100px;"><span>Mata Sundri Public School Kotshmir Bhantinda PB </span></button></a><br>
+<a href="#"><button class="button" name="radcliffe" onclick="clgbutton(this.name)" style="vertical-align:middle; backgroundcolor:blue; width:70%; margin-left: 100px;"><span>Radcliffe Public School Near Naruana VIL Bhantinda PB</span></button></a><br>
+<a href="#"><button class="button" name="millennium" onclick="clgbutton(this.name)" style="vertical-align:middle; backgroundcolor:blue; width:70%; margin-left: 100px;"><span>The Millenium School Kotshmir Bhantinda </span></button></a><br>
+<a href="#"><button class="button" name="lrs" onclick="clgbutton(this.name)" style="vertical-align:middle; backgroundcolor:blue; width:70%; margin-left: 100px;"><span>LSR DAV Sr. Sec. MODEL SCHOOL ,DAV CAMPUS </span></button></a><br>
+<a href="#"><button class="button" name="karam" onclick="clgbutton(this.name)" style="vertical-align:middle; backgroundcolor:blue; width:70%; margin-left: 100px;"><span>Smt. Karam Bai DAV Cent. Public School  </span></button></a><br>
+<a href="#"><button class="button" name="rb" onclick="clgbutton(this.name)" style="vertical-align:middle; backgroundcolor:blue; width:70%; margin-left: 100px;"><span>R.B.DAV Sr. Sec. School  </span></button></a><br>
+<a href="#"><button class="button" name="sgj" onclick="clgbutton(this.name)" style="vertical-align:middle; backgroundcolor:blue; width:70%; margin-left: 100px;"><span>SGJ DAV Centenary Public School  </span></button></a><br>
+<a href="#"><button class="button" name="dayanand" onclick="clgbutton(this.name)" style="vertical-align:middle; backgroundcolor:blue; width:70%; margin-left: 100px;"><span>Dayanand Chanan Lal High School  </span></button></a><br>
+<a href="#"><button class="button" name="mahatma" onclick="clgbutton(this.name)" style="vertical-align:middle; backgroundcolor:blue; width:70%; margin-left: 100px;"><span>Mahatma Gandhi DAV Vidyalya   </span></button></a><br>
 
 
 
@@ -319,6 +319,10 @@
     var schoolname = "test";
 
 
+    function clgbutton(name){
+      console.log(name);
+      location.href = 'icons.html?name='+name+"";
+    }
 
     const adminCheck = document.querySelector('.admin-check');
         adminCheck.addEventListener('click', (e) => {
@@ -346,7 +350,7 @@
     //for auth listener
     auth.onAuthStateChanged(user => {
       if (user) {
-        console.log('user logged in: ', user);
+        //console.log('user logged in: ', user);
         if(auth.currentUser.uid !== '7aa6jS40lzWe4PpRTY46BjXtL5i1')
         {
           window.location = 'icons.html';
