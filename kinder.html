@@ -348,8 +348,9 @@
                 <input type="file" name="file" id="file" class="upload" />
                 <label for="file">Upload Photo</label>
                 
-                <button type="submit" class="modal-btn">Add Teacher</button>
               </form>
+              <button type="submit" class="modal-btn" onclick="addteacher()">Add Teacher</button>
+     
             </section>
           </div>
 
@@ -405,6 +406,30 @@
 
     var schoolname = "test";
     
+    var queryDict = {};
+    location.search.substr(1).split("&").forEach(function(item) {
+    queryDict[item.split("=")[0]] = item.split("=")[1];
+});
+
+    function addteacher(){
+      var name = document.querySelector('#tname').value;
+      var sub = document.querySelector('#sub').value;
+      var classes = document.querySelector('#tclass').value;
+      var add = document.querySelector('#tadd').value;
+      var city = document.querySelector('#tcity').value;
+      var state = document.querySelector('#tstate').value;
+      var pin = document.querySelector('#tpin').value;
+      var exp = document.querySelector('#texp').value;
+      var qual = document.querySelector('#tqual').value;
+      var father = document.querySelector('#tfather').value;
+      var mother = document.querySelector('#tmother').value;
+      var gender = document.querySelector('input[name="gender"]:checked').value;
+      
+      db.collection(queryDict.name+""+queryDict.category).doc().set({
+        name,sub,classes,add,city,state,pin,exp,qual,father,mother,gender
+      });
+      
+    }
     
     const adminCheck = document.querySelector('#admin-check');
         adminCheck.addEventListener('click', (e) => {
