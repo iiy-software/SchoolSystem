@@ -230,7 +230,7 @@
                 <input type="text" id="sub" placeholder="Teacher's Subject" required/>
                 <input type="text" id="tclass" placeholder="Teacher's class" required/>
                 <input type="text" id="tadd" placeholder="Teacher's address" required/>
-                <input type="text" id="tph" placeholder="Teacher's Phone" required/>
+                <input type="number" id="tph" placeholder="Teacher's Phone" required/>
                 <input type="email" id="email" placeholder="emailaddress">
                 <input type="text" id="tcity" placeholder="City" required/>
                 <input type="text" id="tstate" placeholder="State" required/>
@@ -354,7 +354,7 @@ var image = "";
         cont.innerHTML += `
           <div class="font-icon-list col-lg-2 col-md-3 col-sm-4 col-xs-6 col-xs-6">
                       <div class="font-icon-detail">
-                        <img src="`+image+`" style="width: 100%; height:100%; padding-top: 0px;" />
+                        <img src="`+image+`" style="width: 100%; border-radius: 50%; height:100%; padding-top: 0px;" />
                         <input type="text" value="`+doc.data()['name']+`">
                         <input type="text" value="`+doc.data()['exp']+`">
                       </div>
