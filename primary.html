@@ -225,23 +225,24 @@
             <h2 class="modal-heading text-center">Add Teacher</h2>
             <section class="modal-form">
               <form method="POST" id="myform">
-                <input type="text" id="tname" placeholder="Teacher's Name">
-                <input type="text" id="sub" placeholder="Teacher's Subject">
-                <input type="text" id="tclass" placeholder="Teacher's class">
-                <input type="text" id="tadd" placeholder="Teacher's address">
-                <input type="text" id="tph" placeholder="Teacher's Phone">
-                <input type="text" id="tcity" placeholder="City">
-                <input type="text" id="tstate" placeholder="State">
-                <input type="text" id="tpin" placeholder="PinCode">
+                <input type="text" id="tname" placeholder="Teacher's Name"  required/>
+                <input type="text" id="sub" placeholder="Teacher's Subject" required/>
+                <input type="text" id="tclass" placeholder="Teacher's class" required/>
+                <input type="text" id="tadd" placeholder="Teacher's address" required/>
+                <input type="text" id="tph" placeholder="Teacher's Phone" required/>
+                <input type="email" id="email" placeholder="emailaddress">
+                <input type="text" id="tcity" placeholder="City" required/>
+                <input type="text" id="tstate" placeholder="State" required/>
+                <input type="text" id="tpin" placeholder="PinCode" required/>
                 <h5>Gender</h5>
                 <input type="radio" name="gender" value="male" checked> Male<br>
                 <input type="radio" name="gender" value="female"> Female<br>
                 <input type="radio" name="gender" value="other"> Other
 
-                <input type="text" id="texp" placeholder="Teacher's experience">
-                <input type="text" id="tqual" placeholder="Teacher's Qualification">
-                 <input type="text" id="tfather" placeholder="Father's Name">
-                  <input type="text" id="tmother" placeholder="Mother's Name">
+                <input type="text" id="texp" placeholder="Teacher's experience" required/>
+                <input type="text" id="tqual" placeholder="Teacher's Qualification" required/>
+                 <input type="text" id="tfather" placeholder="Father's Name" required/>
+                  <input type="text" id="tmother" placeholder="Mother's Name" required/>
                 <input type="file" name="file" id="file" class="upload" accept="image/x-png,image/gif,image/jpeg" required/>
                 <label for="file">Upload Photo</label>
                 
