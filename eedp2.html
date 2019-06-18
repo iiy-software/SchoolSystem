@@ -230,7 +230,7 @@
                 <input type="text" id="sub" placeholder="Teacher's Subject" required/>
                 <input type="text" id="tclass" placeholder="Teacher's class" required/>
                 <input type="text" id="tadd" placeholder="Teacher's address" required/>
-                <input type="text" id="tph" placeholder="Teacher's Phone" required/>
+                <input type="number" id="tph" placeholder="Teacher's Phone" required/>
                 <input type="email" id="email" placeholder="emailaddress">
                 <input type="text" id="tcity" placeholder="City" required/>
                 <input type="text" id="tstate" placeholder="State" required/>
@@ -324,9 +324,11 @@
       var father = document.querySelector('#tfather').value;
       var mother = document.querySelector('#tmother').value;
       var gender = document.querySelector('input[name="gender"]:checked').value;
+      var phone = document.querySelector('#tph').value;
+      var email = document.querySelector('#email').value;
       var img = f.name;      
       db.collection(queryDict.name+""+queryDict.category).doc().set({
-        name,sub,classes,add,city,state,pin,exp,qual,father,mother,gender,img
+        name,sub,classes,add,city,state,pin,exp,qual,father,mother,gender,img,phone,email
       });
       
     }
