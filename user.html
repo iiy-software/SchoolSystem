@@ -565,7 +565,14 @@
                     school_title.innerHTML = 'Mata Sundri Public School';
                     db.collection('msundrischool').get().then(querySnapshot => {
                         querySnapshot.docs.forEach(doc => {
-                            school = doc.data()['school']; 
+                            document.querySelector('#school').value = doc.data()['school'];
+                            document.querySelector('#username').value = doc.data()['username'];
+                            document.querySelector('#name').value = doc.data()['name'];
+                            document.querySelector('#email').value = doc.data()['email'];
+                            document.querySelector('#address').value = doc.data()['address'];
+                            document.querySelector('#city').value = doc.data()['city'];
+                            document.querySelector('#pcode').value = doc.data()['pcode'];
+                            document.querySelector('#about').value = doc.data()['about']; 
                         })
                     });
                 }
