@@ -195,11 +195,11 @@
 
    
 <h3  style="vertical-align:middle;   font-size:5vw;"><font color="grey">Teachers</font></h3><br>
-<a href="eedp1.html"><button class="btn btn-primary" name= "kinder" onclick="subselect(this.name)" id="addbtn"
+<a href="#"><button class="btn btn-primary" name= "kinder" onclick="subselect(this.name)" id="addbtn"
             style="display: block; position: absolute;left: 30%; transform: translateX(-50%);  width:30%; height:30%"><h3 style="font-size:2.5vw;">EEDP1</button></a>
         
        
-<a href="eedp2.html">            <button class="btn btn-primary" id="addbtn"
+<a href="#">            <button class="btn btn-primary" name= "eedp2" onclick="subselect(this.name)" id="addbtn"
             style="display: block; position: absolute; left: 70%; transform: translateX(-50%);  width:30%; height:30%"><h3 style="font-size:2.5vw;">EEDP2</button></a>
   <br> <br> <br><br><br><br><br><br><br><br><br><br><br>
 <a href="#">          <button class="btn btn-primary" name="primary" onclick="subselect(this.name)" id="addbtn"
@@ -342,6 +342,9 @@ location.search.substr(1).split("&").forEach(function(item) {
 
 function subselect(category){
   if(category === 'kinder'){
+    location.href = category+".html?name="+queryDict.name+"&category="+category;
+  }
+  if(category === 'eedp2'){
     location.href = category+".html?name="+queryDict.name+"&category="+category;
   }
   if(category === 'primary'){
