@@ -399,6 +399,7 @@
     var store = firebase.storage();
 
     var schoolname = "test";
+    var f = "";
 
     var queryDict = {};
     location.search.substr(1).split("&").forEach(function(item) {
@@ -418,27 +419,63 @@
       var father = document.querySelector('#tfather').value;
       var mother = document.querySelector('#tmother').value;
       var gender = document.querySelector('input[name="gender"]:checked').value;
-      
+      var img = f.name;      
       db.collection(queryDict.name+""+queryDict.category).doc().set({
-        name,sub,classes,add,city,state,pin,exp,qual,father,mother,gender
+        name,sub,classes,add,city,state,pin,exp,qual,father,mother,gender,img
       });
       
     }
 
+    var file = document.querySelector('#file');
+        file.addEventListener('change', (e) => {
+            f = e.target.files[0];
+            var storageRef = firebase.storage().ref(queryDict.name+""+queryDict.category+'/'+f.name);
+            storageRef.put(f);
+        });
+
+
+var image = "";
     function showteachers(){
       var docRef = db.collection(queryDict.name+""+queryDict.category);
       docRef.get().then(querySnapshot => {
         querySnapshot.docs.forEach(doc => {
           var cont = document.querySelector('#cont');
-          cont.innerHTML += `
+          var storageRef = firebase.storage().ref(queryDict.name+""+queryDict.category+'/'+doc.data()['img']);
+        
+        storageRef.getDownloadURL().then(function(url) {
+        console.log(url); 
+        image = url;
+
+        cont.innerHTML += `
           <div class="font-icon-list col-lg-2 col-md-3 col-sm-4 col-xs-6 col-xs-6">
                       <div class="font-icon-detail">
-                        <img src="assets/img/imgplaceholder.png" style="width: 100%; height:100%; padding-top: 0px;" />
+                        <img src="`+image+`" style="width: 100%; height:100%; padding-top: 0px;" />
                         <input type="text" value="`+doc.data()['name']+`">
                         <input type="text" value="`+doc.data()['exp']+`">
                       </div>
                     </div>
           `;
+
+
+        }).catch(function(error) {
+
+        switch (error.code) {
+            case 'storage/object-not-found':
+            console.log(error.code);
+            break;
+            case 'storage/unauthorized':
+            console.log(error.code);
+            break;
+            case 'storage/canceled':
+            console.log(error.code);
+            break;
+            case 'storage/unknown':
+            console.log(error.code);
+            break;
+            default: console.log(error.code);
+        }
+        });  
+        
         })
       });
     }
