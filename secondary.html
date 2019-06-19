@@ -224,6 +224,7 @@
             <span class="close">&times;</span>
             <h2 class="modal-heading text-center">Add Teacher</h2>
             <section class="modal-form">
+              <div id="error-cont"></div>
               <form method="POST" id="myform">
                 <input type="text" id="tname" placeholder="Teacher's Name" required/>
                 <input type="text" id="sub" placeholder="Teacher's Subject" required/>
@@ -312,6 +313,38 @@
     queryDict[item.split("=")[0]] = item.split("=")[1];
 });
 
+function verifyBtn(){
+      console.log("Clicked");
+      var name = document.querySelector('#tname').value;
+      var sub = document.querySelector('#sub').value;
+      var classes = document.querySelector('#tclass').value;
+      var add = document.querySelector('#tadd').value;
+      var city = document.querySelector('#tcity').value;
+      var state = document.querySelector('#tstate').value;
+      var pin = document.querySelector('#tpin').value;
+      var exp = document.querySelector('#texp').value;
+      var qual = document.querySelector('#tqual').value;
+      var father = document.querySelector('#tfather').value;
+      var mother = document.querySelector('#tmother').value;
+      var gender = document.querySelector('input[name="gender"]:checked').value;
+      var phone = document.querySelector('#tph').value;
+      var email = document.querySelector('#email').value;
+      var img = f.name;
+      console.log(name);
+      if(name !== "" && sub !== "" && classes !==  "" && add !== "" && city !== "" && state !== ""
+       && pin !== "" && exp !== "" && qual !== "" && father !== "" && mother !== "" && gender !== ""
+       && phone !== "" && email !== "" && img !== ""){
+         addteacher();
+       }else{
+         console.log("Reached here");
+        var err = document.querySelector('#error-cont');
+            err.innerHTML = '';
+            err.innerHTML += `<div style="padding:10px; color:whitesmoke; background-color: #ff3535; border-radius: 7px; opacity: 0.8;">
+                    <strong>First fill all the required details.</strong>
+                </div><br>`;
+       }
+    }
+
     function addteacher(){
       var name = document.querySelector('#tname').value;
       var sub = document.querySelector('#sub').value;
@@ -330,6 +363,16 @@
       var img = f.name;
       db.collection(queryDict.name+""+queryDict.category).doc().set({
         name,sub,classes,add,city,state,pin,exp,qual,father,mother,gender,img,phone,email
+      }).then((e) => {
+        if(e){
+          var err = document.querySelector('#error-cont');
+            err.innerHTML = '';
+            err.innerHTML += `<div style="padding:10px; color:whitesmoke; background-color: #ff3535; border-radius: 7px; opacity: 0.8;">
+                    <strong>`+e+`</strong>
+                </div><br>`;
+        }else{
+          alert("Details added sucessfully, kindly refresh the page(Press Ctrl+R).");
+        }
       });
       
     }
