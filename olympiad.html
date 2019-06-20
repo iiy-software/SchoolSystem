@@ -264,33 +264,20 @@
 
         var f;
 
-var file = document.querySelector('#file');
-file.addEventListener('change', (e) => {
-    f = e.target.files[0];
-    var storageRef = firebase.storage().ref('olympiad_uploads/'+f.name);
-    storageRef.put(f);
-});
 
-var btn = document.querySelector('#btn');
-btn.addEventListener('click', (e) => {
-    e.preventDefault();
-    var title = document.querySelector('#title').value;
-    var desc = document.querySelector('#desc').value;
-    var loc = f.name;
-    db.collection('olympiad_uploads').add({
-        title,
-        desc,
-        loc
-    }).catch((e) => {
+
+
+function deleteFile(name, id){
+    console.log("DeleteFile");
+    db.collection('olympiad_uploads').doc(id).delete();
+    console.log(name);
+    firebase.storage().child('olympiad_uploads/'+name).delete().then(() => {
+      alert("Succesfully deleted");  
+    }).catch((e)=>{
+        if(e)
         console.log(e);
-    }).then(() => {
-        console.log("Data updated");
-        alert("File uploaded");
     });
-
-});
-
-
+}
 
 function o_fileDownload(name){
         console.log(name);
@@ -361,7 +348,51 @@ const adminCheck = document.querySelector('#admin-check');
                         <input type="file" name="upload" class="form-control" accept="application/pdf" id="file"/><br>
                         <button type="submit" id="btn" class="btn btn-primary">Submit</button>
                     </form>
-                    `
+                    `;
+
+
+                    var ul1 = document.querySelector('#table-body');
+                        var docRef1 = db.collection("olympiad_uploads");
+                        console.log("Reached here");
+                        docRef1.get().then(querySnapshot => {
+                        querySnapshot.docs.forEach(doc => {
+                            console.log("data retrieved");
+                            ul1.innerHTML += `<tr>
+                            <td style="padding:20px">  `+doc.data()['title']+`</td>
+                            <td style="padding:20px">  `+doc.data()['desc']+`</td>
+                            <td style="padding:20px"><a class="btn btn-primary" onclick="o_fileDownload('`+doc.data()['loc']+`')">Download</a></td>
+                            <td style="padding:20px"><a class="btn btn-primary" onclick="deleteFile('`+doc.data()['loc']+`','`+doc.id+`')">Delete</a></td>
+                        </tr>`;
+                        });
+                    });  
+                
+
+                    var file = document.querySelector('#file');
+file.addEventListener('change', (e) => {
+    f = e.target.files[0];
+    var storageRef = firebase.storage().ref('olympiad_uploads/'+f.name);
+    storageRef.put(f);
+});
+
+var btn = document.querySelector('#btn');
+btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    var title = document.querySelector('#title').value;
+    var desc = document.querySelector('#desc').value;
+    var loc = f.name;
+    db.collection('olympiad_uploads').add({
+        title,
+        desc,
+        loc
+    }).catch((e) => {
+        console.log(e);
+    }).then(() => {
+        console.log("Data updated");
+        alert("File uploaded");
+    });
+
+});
+
                 }else{
                       
                     var ul1 = document.querySelector('#table-body');
@@ -377,8 +408,34 @@ const adminCheck = document.querySelector('#admin-check');
                         </tr>`;
                         });
                     });  
-                
-                }
+ 
+var file = document.querySelector('#file');
+file.addEventListener('change', (e) => {
+    f = e.target.files[0];
+    var storageRef = firebase.storage().ref('olympiad_uploads/'+f.name);
+    storageRef.put(f);
+});               
+
+var btn = document.querySelector('#btn');
+btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    var title = document.querySelector('#title').value;
+    var desc = document.querySelector('#desc').value;
+    var loc = f.name;
+    db.collection('olympiad_uploads').add({
+        title,
+        desc,
+        loc
+    }).catch((e) => {
+        console.log(e);
+    }).then(() => {
+        console.log("Data updated");
+        alert("File uploaded");
+    });
+
+});
+
+}
             }
             else {
                 console.log('user logged out');
