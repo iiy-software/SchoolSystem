@@ -246,9 +246,6 @@
 <!--  Notifications Plugin    -->
 <script src="assets/js/bootstrap-notify.js"></script>
 
-<!--  Google Maps Plugin    -->
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
-
 <!-- Light Bootstrap Table Core javascript and methods for Demo purpose -->
 <script src="assets/js/light-bootstrap-dashboard.js?v=1.4.0"></script>
 
@@ -266,23 +263,146 @@
 
 
 
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#config-web-app -->
 
+<script>
+var firebaseConfig = {
+            apiKey: "AIzaSyCRTrqrEdRR7hX5dFMU2EM9J4orE2KEe_Y",
+            authDomain: "dav-school-system.firebaseapp.com",
+            databaseURL: "https://dav-school-system.firebaseio.com",
+            projectId: "dav-school-system",
+            storageBucket: "gs://dav-school-system.appspot.com",
+            messagingSenderId: "503899193487",
+            appId: "1:503899193487:web:4835ed6556887d0c"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        //make auth and firestore references
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+
+
+
+        function deleteFile(id){
+            console.log("DeleteFile");
+            db.collection('notices_uploads').doc(id).delete().then(()=>alert("Successfully Deleted. Please refresh this page."));
+        }
+
+
+
+
+        auth.onAuthStateChanged(user => {
+            if (user) {
+                console.log('user logged in');
+                if(auth.currentUser.uid === '7aa6jS40lzWe4PpRTY46BjXtL5i1'){
+                    var div = document.querySelector('#main-cont');
+                    div.innerHTML += '';
+                    div.innerHTML += `
+                    <form>
+                        <input type="text" class="form-control" name="title" placeholder="Title" id="title"><br>
+                        <input type="text" class="form-control" name="desc" placeholder="Description" id="desc"><br>
+                        <button type="submit" id="btn" class="btn btn-primary">Submit</button>
+                    </form>
+                    `;
+
+
+                    var ul1 = document.querySelector('#table-body');
+                        var docRef1 = db.collection("notices_uploads");
+                        console.log("Reached here");
+                        docRef1.get().then(querySnapshot => {
+                        querySnapshot.docs.forEach(doc => {
+                            console.log("data retrieved");
+                            ul1.innerHTML += `<tr>
+                            <td style="padding:20px">  `+doc.data()['title']+`</td>
+                            <td style="padding:20px">  `+doc.data()['desc']+`</td>
+                            
+                            <td style="padding:20px"><a class="btn btn-primary" onclick="updateFile('`+doc.id+`')">Update</a></td>
+                            <td style="padding:20px"><a class="btn btn-primary" onclick="deleteFile('`+doc.id+`')">Delete</a></td>
+                        </tr>`;
+                        });
+                    });  
+                
+
+        var btn = document.querySelector('#btn');
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            var title = document.querySelector('#title').value;
+            var desc = document.querySelector('#desc').value;
+            db.collection('notices_uploads').add({
+                title,
+                desc,
+            }).catch((e) => {
+                console.log(e);
+            }).then(() => {
+                console.log("Data updated");
+                alert("File uploaded");
+            });
+
+        });
+
+                }else{
+                      
+                    var ul1 = document.querySelector('#table-body');
+                        var docRef1 = db.collection("notices_uploads");
+                        console.log("Reached here");
+                        docRef1.get().then(querySnapshot => {
+                        querySnapshot.docs.forEach(doc => {
+                            console.log("data retrieved");
+                            ul1.innerHTML += `<tr>
+                            <td style="padding:20px">  `+doc.data()['title']+`</td>
+                            <td style="padding:20px">  `+doc.data()['desc']+`</td>
+                        </tr>`;
+                        });
+                    });
+                    
+  
+}
+            }
+            else {
+                console.log('user logged out');
+            }
+        });
+
+function updateFile(id){
+ 
+ var title = prompt('Enter the new title');
+ var desc = prompt('Enter the new description');
+ db.collection('notices_uploads').doc(id).update({
+             title,
+             desc,
+         }).catch((e) => {
+             console.log(e);
+         }).then(() => {
+             console.log("Data updated");
+             alert("Data uploaded. Kindly refresh the page");
+         });
+
+}
+
+
+
+const adminCheck = document.querySelector('#admin-check');
+        adminCheck.addEventListener('click', (e) => {
+            e.preventDefault();
+            //TODO: Here instead of this particular uid will come the id of the admin
+            if(auth.currentUser.uid !== '7aa6jS40lzWe4PpRTY46BjXtL5i1'){
+                location.href = 'form1.html';
+            }else{
+                location.href = 'feedback.html';
+            }
+        });
+
+        const logout = document.querySelector('#logout');
+        logout.addEventListener('click', (e) => {
+            e.preventDefault();
+            auth.signOut().then(() => {
+                window.location = 'index.html';
+                window.alert('User signed Out Successfully');
+            });
+        });
+    </script>
     
 
 
-
-
-
-
-
-
-
-
-
-                   
-    
-
-
+</script>
 </html>

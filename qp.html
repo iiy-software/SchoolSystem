@@ -96,6 +96,12 @@
                         </a>
                     </li>
                     <li>
+                            <a href="notices.html">
+                                <i class="pe-7s-bell"></i>
+                                <p>Notices</p>
+                            </a>
+                        </li>
+                    <li>
                         <a href="olympiad.html">
                             <i class="pe-7s-bell"></i>
                             <p>Olympiad</p>
@@ -264,6 +270,20 @@
 
 
 
+        function deleteFile(name, id){
+    console.log("DeleteFile");
+    db.collection('qp_uploads').doc(id).delete();
+    console.log(name);
+    firebase.storage().ref('qp_uploads/'+name).delete().then(() => {
+        
+        alert("Succesfully deleted");
+
+    }).catch((e)=>{
+        if(e)
+        console.log(e);
+    });
+}
+
 
 
 
@@ -321,6 +341,23 @@ auth.onAuthStateChanged(user => {
                     </form>
                     `
 
+
+                    var ul1 = document.querySelector('#ul-list1');
+                        var docRef1 = db.collection("qp_uploads");
+                        console.log("Reached here");
+                        docRef1.get().then(querySnapshot => {
+                        querySnapshot.docs.forEach(doc => {
+                            console.log("data retrieved");
+                            ul1.innerHTML += `<li class="list-group-item">
+                            <h3> Title : `+doc.data()['title']+`</h3>
+                            <p> Description: `+doc.data()['desc']+`</p>
+                            <a class="btn btn-primary" onclick="c_fileDownload('`+doc.data()['loc']+`')">Download</a>
+                            
+                            <a class="btn btn-primary" onclick="deleteFile('`+doc.data()['loc']+`','`+doc.id+`')">Delete</a>
+                            </li>`;
+                        });
+                    });  
+
                     var f;
 
 var file = document.querySelector('#file');
@@ -360,8 +397,8 @@ btn.addEventListener('click', (e) => {
                             ul1.innerHTML += `<li class="list-group-item">
                             <h3> Title : `+doc.data()['title']+`</h3>
                             <p> Description: `+doc.data()['desc']+`</p>
-                            <a class="btn btn-primary" onclick="c_fileDownload('`+doc.data()['loc']+`')">Download</a>
-                        </li>`;
+                            <a class="btn btn-primary" onclick="c_fileDownload('`+doc.data()['loc']+`')">Download</a>   
+                            </li>`;
                         });
                     });  
                 }
