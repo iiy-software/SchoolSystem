@@ -73,11 +73,12 @@
             </a>
           </li>
           <li>
-                                                <a href="table.html">
+                                                <a href="notices.html">
                                                         <i class="pe-7s-note2"></i>
-                                                        <p>Circulars</p>
+                                                        <p>Notices</p>
                                                 </a>
                                         </li>
+                                        
           <li>
             <a href="form1.html">
               <i class="pe-7s-news-paper"></i>
@@ -407,8 +408,8 @@ var image = "";
           <div class="font-icon-list col-lg-2 col-md-3 col-sm-4 col-xs-6 col-xs-6">
                       <div class="font-icon-detail">
                         <img src="`+image+`" style="width: 100%; height:100%; border-radius: 50%; padding-top: 0px;" />
-                        <input type="text" value="`+doc.data()['name']+`">
-                        <input type="text" value="`+doc.data()['exp']+`">
+                        <input type="text" style="font-weight: bold;" value="Name: `+doc.data()['name']+`" >
+                        <input type="text" style="font-weight: bold;" value="Experience: `+doc.data()['exp']+`">
                       </div>
                     </div>
           `;
