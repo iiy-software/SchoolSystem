@@ -236,9 +236,17 @@
 
 
 
-
-
-
+        function deleteFile(name, id){
+            console.log("DeleteFile");
+            db.collection('circular_uploads').doc(id).delete();
+            console.log(name);
+            firebase.storage().child('circular_uploads/'+name).delete().then(() => {
+            alert("Succesfully deleted");  
+            }).catch((e)=>{
+                if(e)
+                console.log(e);
+            });
+}
 
 
 
@@ -296,6 +304,21 @@ auth.onAuthStateChanged(user => {
 
 
 
+                    var ul1 = document.querySelector('#table-body');
+                        var docRef1 = db.collection("circular_uploads");
+                        console.log("Reached here");
+                        docRef1.get().then(querySnapshot => {
+                        querySnapshot.docs.forEach(doc => {
+                            console.log("data retrieved");
+                            ul1.innerHTML += `<tr>
+                            <td style="padding:20px">`+doc.data()['title']+`</td>
+                            <td style="padding:20px">`+doc.data()['desc']+`</td>
+                            <td style="padding:20px"><a class="btn btn-primary" onclick="c_fileDownload('`+doc.data()['loc']+`')">Download</a></td>
+                            <td style="padding:20px"><a class="btn btn-primary" onclick="deleteFile('`+doc.data()['loc']+`','`+doc.id+`')">Delete</a></td>
+            </tr>`;
+                        });
+                    });  
+                
 
 
 
@@ -346,6 +369,35 @@ btn.addEventListener('click', (e) => {
                         });
                     });  
                 }
+                
+                var f;
+
+var file = document.querySelector('#file');
+file.addEventListener('change', (e) => {
+    f = e.target.files[0];
+    var storageRef = firebase.storage().ref('circular_uploads/'+f.name);
+    storageRef.put(f);
+});
+
+var btn = document.querySelector('#btn');
+btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    var title = document.querySelector('#title').value;
+    var desc = document.querySelector('#desc').value;
+    var loc = f.name;
+    db.collection('circular_uploads').add({
+        title,
+        desc,
+        loc
+    }).catch((e) => {
+        console.log(e);
+    }).then(() => {
+        console.log("Data updated");
+        alert("File uploaded");
+    });
+
+});
+
             }
             else {
                 console.log('user logged out');
