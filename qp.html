@@ -101,7 +101,12 @@
                             <p>Question Bank</p>
                         </a>
                     </li>
-                    
+                    <li>
+                            <a href="notices.html">
+                                <i class="pe-7s-bell"></i>
+                                <p>Notices</p>
+                            </a>
+                        </li>
                     <li>
                         <a href="olympiad.html">
                             <i class="pe-7s-bell"></i>
@@ -138,30 +143,14 @@
             </nav>
 
 
-<!--<div class="container" id="main-cont">
-<ul id="ul-list1"></ul> 
-</div>-->
+<div class="container" >
+    <div id="main-cont">
+</div> 
 
-<div class="container">
+<br>
+<ul id="ul-list1"></ul>
 
-                <h2 class="text-center">Quetsions</h2><br><br><br>
-      <left>
-          <div id="main-cont"></div>
-          <br>
-                <table class="table-bordered" width="90%">
-                    <thead>
-                        <tr>
-                          <th style="padding:20px; background-color: rgba(50,115,220,0.3);">Title</th>
-                          <th style="padding:20px; background-color: rgba(50,115,220,0.3);">Description</th>
-                          <th style="padding:20px; background-color: rgba(50,115,220,0.3);">Downloads</th>
-                        </tr>
-                    </thead>
-                    <tbody id="table-body">
-
-                    </tbody>
-                </table>
-            </left>
-            </div>
+</div>
 
             <footer class="footer">
                 <div class="container-fluid">
@@ -308,22 +297,21 @@ auth.onAuthStateChanged(user => {
                     `
 
 
-              /*      var ul1 = document.querySelector('#ul-list1');
+                    var ul1 = document.querySelector('#ul-list1');
                         var docRef1 = db.collection("qp_uploads");
                         console.log("Reached here");
                         docRef1.get().then(querySnapshot => {
                         querySnapshot.docs.forEach(doc => {
                             console.log("data retrieved");
+                            ul1.innerHTML += `<li class="list-group-item">
+                            <h3> Title : `+doc.data()['title']+`</h3>
+                            <p> Description: `+doc.data()['desc']+`</p>
+                            <a class="btn btn-primary" onclick="c_fileDownload('`+doc.data()['loc']+`')">Download</a>
                             
-                             ul1.innerHTML += `<tr>
-                            <td style="padding:20px">  `+doc.data()['title']+`</td>
-                            <td style="padding:20px">  `+doc.data()['desc']+`</td>
-                            
-                            <td style="padding:20px"><a class="btn btn-primary" onclick="updateFile('`+doc.id+`')">Update</a></td>
-                            <td style="padding:20px"><a class="btn btn-primary" onclick="deleteFile('`+doc.id+`')">Delete</a></td>
-                        </tr>`;
+                            <a class="btn btn-primary" onclick="deleteFile('`+doc.data()['loc']+`','`+doc.id+`')">Delete</a>
+                            </li>`;
                         });
-                    }); */ 
+                    });  
 
                     var f;
 
@@ -355,17 +343,17 @@ btn.addEventListener('click', (e) => {
 
                 }else{
                   
-                    var ul1 = document.querySelector('#table-body');
+                    var ul1 = document.querySelector('#ul-list1');
                         var docRef1 = db.collection("qp_uploads");
                         console.log("Reached here");
                         docRef1.get().then(querySnapshot => {
                         querySnapshot.docs.forEach(doc => {
                             console.log("data retrieved");
-                            ul1.innerHTML += `<tr>
-                             <td style="padding:20px">`+doc.data()['title']+`</td>
-            <td style="padding:20px">`+doc.data()['desc']+`</td>
-            <td style="padding:20px"><a class="btn btn-primary" onclick="c_fileDownload('`+doc.data()['loc']+`')">Download</a></td>
-          </tr>`;
+                            ul1.innerHTML += `<li class="list-group-item">
+                            <h3> Title : `+doc.data()['title']+`</h3>
+                            <p> Description: `+doc.data()['desc']+`</p>
+                            <a class="btn btn-primary" onclick="c_fileDownload('`+doc.data()['loc']+`')">Download</a>   
+                            </li>`;
                         });
                     });  
                 }
