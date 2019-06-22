@@ -65,10 +65,16 @@
                             <p>User Profile</p>
                         </a>
                     </li>
-                    <li class="active">
+                    <li >
                         <a href="table.html">
                             <i class="pe-7s-note2"></i>
-                            <p>Circulars/Notice Board</p>
+                            <p>Circulars</p>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="notices.html">
+                            <i class="pe-7s-note2"></i>
+                            <p>Notices</p>
                         </a>
                     </li>
                     <li>
@@ -89,7 +95,7 @@
                             <p>Resource Center</p>
                         </a>
                     </li>
-                    <li>
+                    <li class="active">
                         <a href="qp.html">
                             <i class="pe-7s-bell"></i>
                             <p>Question Bank</p>
@@ -137,8 +143,13 @@
             </nav>
 
 
-<div class="container" id="main-cont">
-<ul id="ul-list1"></ul> 
+<div class="container" >
+    <div id="main-cont">
+</div> 
+
+<br>
+<ul id="ul-list1"></ul>
+
 </div>
 
             <footer class="footer">
@@ -277,7 +288,7 @@ auth.onAuthStateChanged(user => {
                     var div = document.querySelector('#main-cont');
                     div.innerHTML += `
                     <form>
-                        <h2 class="text-center">UPLOAD CIRCULARS AND NOTICES</h2>
+                        <h2 class="text-center">UPLOAD Questions</h2>
                         <input type="text" class="form-control" name="title" placeholder="Title" id="title"><br>
                         <input type="text" class="form-control" name="desc" placeholder="Description" id="desc"><br>
                         <input type="file" name="upload" class="form-control" accept="application/pdf" id="file"/><br>
