@@ -256,6 +256,7 @@ var firebaseConfig = {
                         docRef1.get().then(querySnapshot => {
                         querySnapshot.docs.forEach(doc => {
                             console.log("data retrieved");
+                            
                             ul1.innerHTML += `<tr>
                             <td style="padding:20px">  `+doc.data()['title']+`</td>
                             <td style="padding:20px">  `+doc.data()['desc']+`</td>

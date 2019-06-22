@@ -65,10 +65,16 @@
                             <p>User Profile</p>
                         </a>
                     </li>
-                    <li class="active">
+                    <li >
                         <a href="table.html">
                             <i class="pe-7s-note2"></i>
-                            <p>Circulars/Notice Board</p>
+                            <p>Circulars</p>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="notices.html">
+                            <i class="pe-7s-note2"></i>
+                            <p>Notices</p>
                         </a>
                     </li>
                     <li>
@@ -89,18 +95,13 @@
                             <p>Resource Center</p>
                         </a>
                     </li>
-                    <li>
+                    <li class="active">
                         <a href="qp.html">
                             <i class="pe-7s-bell"></i>
                             <p>Question Bank</p>
                         </a>
                     </li>
-                    <li>
-                            <a href="notices.html">
-                                <i class="pe-7s-bell"></i>
-                                <p>Notices</p>
-                            </a>
-                        </li>
+                    
                     <li>
                         <a href="olympiad.html">
                             <i class="pe-7s-bell"></i>
@@ -137,9 +138,30 @@
             </nav>
 
 
-<div class="container" id="main-cont">
+<!--<div class="container" id="main-cont">
 <ul id="ul-list1"></ul> 
-</div>
+</div>-->
+
+<div class="container">
+
+                <h2 class="text-center">Quetsions</h2><br><br><br>
+      <left>
+          <div id="main-cont"></div>
+          <br>
+                <table class="table-bordered" width="90%">
+                    <thead>
+                        <tr>
+                          <th style="padding:20px; background-color: rgba(50,115,220,0.3);">Title</th>
+                          <th style="padding:20px; background-color: rgba(50,115,220,0.3);">Description</th>
+                          <th style="padding:20px; background-color: rgba(50,115,220,0.3);">Downloads</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body">
+
+                    </tbody>
+                </table>
+            </left>
+            </div>
 
             <footer class="footer">
                 <div class="container-fluid">
@@ -277,7 +299,7 @@ auth.onAuthStateChanged(user => {
                     var div = document.querySelector('#main-cont');
                     div.innerHTML += `
                     <form>
-                        <h2 class="text-center">UPLOAD CIRCULARS AND NOTICES</h2>
+                        <h2 class="text-center">UPLOAD Questions</h2>
                         <input type="text" class="form-control" name="title" placeholder="Title" id="title"><br>
                         <input type="text" class="form-control" name="desc" placeholder="Description" id="desc"><br>
                         <input type="file" name="upload" class="form-control" accept="application/pdf" id="file"/><br>
@@ -286,21 +308,22 @@ auth.onAuthStateChanged(user => {
                     `
 
 
-                    var ul1 = document.querySelector('#ul-list1');
+              /*      var ul1 = document.querySelector('#ul-list1');
                         var docRef1 = db.collection("qp_uploads");
                         console.log("Reached here");
                         docRef1.get().then(querySnapshot => {
                         querySnapshot.docs.forEach(doc => {
                             console.log("data retrieved");
-                            ul1.innerHTML += `<li class="list-group-item">
-                            <h3> Title : `+doc.data()['title']+`</h3>
-                            <p> Description: `+doc.data()['desc']+`</p>
-                            <a class="btn btn-primary" onclick="c_fileDownload('`+doc.data()['loc']+`')">Download</a>
                             
-                            <a class="btn btn-primary" onclick="deleteFile('`+doc.data()['loc']+`','`+doc.id+`')">Delete</a>
-                            </li>`;
+                             ul1.innerHTML += `<tr>
+                            <td style="padding:20px">  `+doc.data()['title']+`</td>
+                            <td style="padding:20px">  `+doc.data()['desc']+`</td>
+                            
+                            <td style="padding:20px"><a class="btn btn-primary" onclick="updateFile('`+doc.id+`')">Update</a></td>
+                            <td style="padding:20px"><a class="btn btn-primary" onclick="deleteFile('`+doc.id+`')">Delete</a></td>
+                        </tr>`;
                         });
-                    });  
+                    }); */ 
 
                     var f;
 
@@ -332,17 +355,17 @@ btn.addEventListener('click', (e) => {
 
                 }else{
                   
-                    var ul1 = document.querySelector('#ul-list1');
+                    var ul1 = document.querySelector('#table-body');
                         var docRef1 = db.collection("qp_uploads");
                         console.log("Reached here");
                         docRef1.get().then(querySnapshot => {
                         querySnapshot.docs.forEach(doc => {
                             console.log("data retrieved");
-                            ul1.innerHTML += `<li class="list-group-item">
-                            <h3> Title : `+doc.data()['title']+`</h3>
-                            <p> Description: `+doc.data()['desc']+`</p>
-                            <a class="btn btn-primary" onclick="c_fileDownload('`+doc.data()['loc']+`')">Download</a>   
-                            </li>`;
+                            ul1.innerHTML += `<tr>
+                             <td style="padding:20px">`+doc.data()['title']+`</td>
+            <td style="padding:20px">`+doc.data()['desc']+`</td>
+            <td style="padding:20px"><a class="btn btn-primary" onclick="c_fileDownload('`+doc.data()['loc']+`')">Download</a></td>
+          </tr>`;
                         });
                     });  
                 }
