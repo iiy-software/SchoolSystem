@@ -1820,8 +1820,10 @@
                 var docRef = db.collection(uid+"");
             console.log(docRef);
                 docRef.get().then(querySnapshot => {
-                    querySnapshot.docs.forEach(doc => {           
-                    console.log(doc.data()["q1"]);
+                    querySnapshot.docs.forEach(doc => {
+
+                    console.log(doc.data()["q1"]+"    "+doc.id);
+                    if(doc.id === 'form1'){
                     var q1 = document.querySelector('input[name="q1"]');
                     q1.checked = true;
                     var q2 = document.querySelector('input[name="q2"]');
@@ -1938,7 +1940,7 @@
                     q57.checked = true;
                     var q58 = document.querySelector('input[name="q58"]');
                     q58.checked = true;
-                    
+                    }
                     });
                 });
         }
