@@ -182,6 +182,7 @@
                           <th style="padding:20px; background-color: rgba(50,115,220,0.3);">Title</th>
                           <th style="padding:20px; background-color: rgba(50,115,220,0.3);">Description</th>
                           <th style="padding:20px; background-color: rgba(50,115,220,0.3);">Downloads</th>
+                           <th style="padding:20px; background-color: rgba(50,115,220,0.3);" id="showme">Delete</th>
                         </tr>
                     </thead>
                     <tbody id="table-body" >
@@ -374,6 +375,10 @@ btn.addEventListener('click', (e) => {
 
 });
 
+document.getElementById("showme").style.display = "block";
+                console.log("block");
+
+
                 }else{
                       
                     var ul1 = document.querySelector('#table-body');
@@ -389,6 +394,8 @@ btn.addEventListener('click', (e) => {
                         </tr>`;
                         });
                     });  
+                         document.getElementById("showme").style.display = "none";
+                console.log("none");
  
 var file = document.querySelector('#file');
 file.addEventListener('change', (e) => {
