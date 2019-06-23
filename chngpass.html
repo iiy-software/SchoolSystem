@@ -245,7 +245,8 @@
         });
         function change() {
 
-            var npass = document.getElementById('npassword');
+            var npass = document.getElementById('npassword').value;
+            console.log(npass);
             if (npass) {
                 user.updatePassword(npass).then(function () {
                     alert("Update Successfull, Please Login Again");
