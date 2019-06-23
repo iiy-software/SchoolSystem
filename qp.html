@@ -65,13 +65,13 @@
                             <p>User Profile</p>
                         </a>
                     </li>
-                    <li >
+                    <li>
                         <a href="table.html">
                             <i class="pe-7s-note2"></i>
                             <p>Circulars</p>
                         </a>
                     </li>
-                    <li >
+                    <li>
                         <a href="notices.html">
                             <i class="pe-7s-note2"></i>
                             <p>Notices</p>
@@ -101,11 +101,17 @@
                             <p>Question Bank</p>
                         </a>
                     </li>
-                   
+
                     <li>
                         <a href="olympiad.html">
                             <i class="pe-7s-bell"></i>
                             <p>Olympiad</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="chngpass.html">
+                            <i class="pe-7s-user"></i>
+                            <p>Change Password</p>
                         </a>
                     </li>
                     <li class="active-pro">
@@ -122,36 +128,36 @@
             <nav class="navbar navbar-default navbar-fixed">
                 <div class="container-fluid">
                     <div class="navbar-header">
-                                                <button type="button" class="navbar-toggle" data-toggle="collapse"
-                                                        data-target="#navigation-example-2">
-                                                        <span class="sr-only">Toggle navigation</span>
-                                                        <span class="icon-bar"></span>
-                                                        <span class="icon-bar"></span>
-                                                        <span class="icon-bar"></span>
-                                                </button>
-                                        </div>
+                        <button type="button" class="navbar-toggle" data-toggle="collapse"
+                            data-target="#navigation-example-2">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
                     <div class="collapse navbar-collapse">
-                     
+
                         <ul class="nav navbar-nav navbar-right">
                             <li>
-                                                                <a href="form1.html">
-                                                                        <p>Academic Audit</p>
-                                                                </a>
-                                                        </li>
-                                                        <li class="dropdown">
-                                                                <a href="teachers.html">
-                                                                        <p>
-                                                                                 Teachers
-                                                                                </p>
+                                <a href="form1.html">
+                                    <p>Academic Audit</p>
+                                </a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="teachers.html">
+                                    <p>
+                                        Teachers
+                                    </p>
 
-                                                                </a>
-                                                                
-                                                        </li>
-                                                        <li>
-                                                                <a href="index.html">
-                                                                        <p>Back to Home</p>
-                                                                </a>
-                                                        </li>
+                                </a>
+
+                            </li>
+                            <li>
+                                <a href="index.html">
+                                    <p>Back to Home</p>
+                                </a>
+                            </li>
                             <li>
                                 <a href="#" id="logout">
                                     <p>Log out</p>
@@ -164,33 +170,34 @@
             </nav>
 
 
-<!--<div class="container" >
+            <!--<div class="container" >
     <div id="main-cont">
 </div> 
 
 <br>
 <ul id="ul-list1"></ul> -->
-<div class="container">
+            <div class="container">
 
                 <h2 class="text-center">Question Bank</h2><br><br><br>
-      <left>
-          <div id="main-cont"></div>
-          <br>
-                <table class="table-bordered" width="90%">
-                    <thead>
-                        <tr>
-                          <th style="padding:20px; background-color: rgba(50,115,220,0.3);">Title</th>
-                          <th style="padding:20px; background-color: rgba(50,115,220,0.3);">Description</th>
-                          <th style="padding:20px; background-color: rgba(50,115,220,0.3);">Downloads</th>
-                          <th style="padding:20px; background-color: rgba(50,115,220,0.3);" id="showme">Delete</th>
+                <left>
+                    <div id="main-cont"></div>
+                    <br>
+                    <table class="table-bordered" width="90%">
+                        <thead>
+                            <tr>
+                                <th style="padding:20px; background-color: rgba(50,115,220,0.3);">Title</th>
+                                <th style="padding:20px; background-color: rgba(50,115,220,0.3);">Description</th>
+                                <th style="padding:20px; background-color: rgba(50,115,220,0.3);">Downloads</th>
+                                <th style="padding:20px; background-color: rgba(50,115,220,0.3);" id="showme">Delete
+                                </th>
 
-                        </tr>
-                    </thead>
-                    <tbody id="table-body">
+                            </tr>
+                        </thead>
+                        <tbody id="table-body">
 
-                    </tbody>
-                </table>
-            </left>
+                        </tbody>
+                    </table>
+                </left>
             </div>
 
 
@@ -206,9 +213,9 @@
                 </div>
             </footer>
 
-</div>
         </div>
-    
+    </div>
+
 
 
 </body>
@@ -235,64 +242,64 @@
 
 <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
 
-    <!-- Add Firebase products that you want to use -->
-    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-firestore.js"></script>
+<!-- Add Firebase products that you want to use -->
+<script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-firestore.js"></script>
 
-    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-storage.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-storage.js"></script>
 
 
 
-    <!-- TODO: Add SDKs for Firebase products that you want to use
+<!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#config-web-app -->
 
-    <script>
-        // Your web app's Firebase configuration
-        var firebaseConfig = {
-            apiKey: "AIzaSyCRTrqrEdRR7hX5dFMU2EM9J4orE2KEe_Y",
-            authDomain: "dav-school-system.firebaseapp.com",
-            databaseURL: "https://dav-school-system.firebaseio.com",
-            projectId: "dav-school-system",
-            storageBucket: "gs://dav-school-system.appspot.com",
-            messagingSenderId: "503899193487",
-            appId: "1:503899193487:web:4835ed6556887d0c"
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
+<script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyCRTrqrEdRR7hX5dFMU2EM9J4orE2KEe_Y",
+        authDomain: "dav-school-system.firebaseapp.com",
+        databaseURL: "https://dav-school-system.firebaseio.com",
+        projectId: "dav-school-system",
+        storageBucket: "gs://dav-school-system.appspot.com",
+        messagingSenderId: "503899193487",
+        appId: "1:503899193487:web:4835ed6556887d0c"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
 
-        //make auth and firestore references
-        const auth = firebase.auth();
-        const db = firebase.firestore();
-
-
-
-
-
-        function deleteFile(name, id){
-    console.log("DeleteFile");
-    db.collection('qp_uploads').doc(id).delete();
-    console.log(name);
-    firebase.storage().ref('qp_uploads/'+name).delete().then(() => {
-        
-        alert("Succesfully deleted");
-
-    }).catch((e)=>{
-        if(e)
-        console.log(e);
-    });
-}
+    //make auth and firestore references
+    const auth = firebase.auth();
+    const db = firebase.firestore();
 
 
 
 
 
-
-        function c_fileDownload(name){
+    function deleteFile(name, id) {
+        console.log("DeleteFile");
+        db.collection('qp_uploads').doc(id).delete();
         console.log(name);
-        var storageRef = firebase.storage().ref('qp_uploads/'+name);
+        firebase.storage().ref('qp_uploads/' + name).delete().then(() => {
 
-        storageRef.getDownloadURL().then(function(url) {
-        location.href = url;                
+            alert("Succesfully deleted");
+
+        }).catch((e) => {
+            if (e)
+                console.log(e);
+        });
+    }
+
+
+
+
+
+
+    function c_fileDownload(name) {
+        console.log(name);
+        var storageRef = firebase.storage().ref('qp_uploads/' + name);
+
+        storageRef.getDownloadURL().then(function (url) {
+            location.href = url;
             /*
                 var xhr = new XMLHttpRequest();
                 xhr.responseType = 'blob';
@@ -302,34 +309,34 @@
                 xhr.open('GET', url);
                 xhr.send();
 */
-        }).catch(function(error) {
+        }).catch(function (error) {
 
-        switch (error.code) {
-            case 'storage/object-not-found':
-            console.log(error.code);
-            break;
-            case 'storage/unauthorized':
-            console.log(error.code);
-            break;
-            case 'storage/canceled':
-            console.log(error.code);
-            break;
-            case 'storage/unknown':
-            console.log(error.code);
-            break;
-            default: console.log(error.code);
-        }
+            switch (error.code) {
+                case 'storage/object-not-found':
+                    console.log(error.code);
+                    break;
+                case 'storage/unauthorized':
+                    console.log(error.code);
+                    break;
+                case 'storage/canceled':
+                    console.log(error.code);
+                    break;
+                case 'storage/unknown':
+                    console.log(error.code);
+                    break;
+                default: console.log(error.code);
+            }
         });
-      }
+    }
 
 
 
-auth.onAuthStateChanged(user => {
-            if (user) {
-                console.log('user logged in');
-                if(auth.currentUser.uid === '7aa6jS40lzWe4PpRTY46BjXtL5i1'){
-                    var div = document.querySelector('#main-cont');
-                    div.innerHTML += `
+    auth.onAuthStateChanged(user => {
+        if (user) {
+            console.log('user logged in');
+            if (auth.currentUser.uid === '7aa6jS40lzWe4PpRTY46BjXtL5i1') {
+                var div = document.querySelector('#main-cont');
+                div.innerHTML += `
                     <form>
                         <h2 class="text-center">UPLOAD Questions</h2>
                         <input type="text" class="form-control" name="title" placeholder="Title" id="title"><br>
@@ -340,104 +347,104 @@ auth.onAuthStateChanged(user => {
                     `
 
 
-                    var ul1 = document.querySelector('#table-body');
-                        var docRef1 = db.collection("qp_uploads");
-                        console.log("Reached here");
-                        docRef1.get().then(querySnapshot => {
-                        querySnapshot.docs.forEach(doc => {
-                            console.log("data retrieved");
-                             ul1.innerHTML += `<tr>
-                             <td style="padding:20px">`+doc.data()['title']+`</td>
-            <td style="padding:20px">`+doc.data()['desc']+`</td>
-            <td style="padding:20px"><a class="btn btn-primary" onclick="c_fileDownload('`+doc.data()['loc']+`')">Download</a></td>
-            <td style="padding:20px"><a class="btn btn-primary" onclick="deleteFile('`+doc.data()['loc']+`','`+doc.id+`')">Delete</a></td>
+                var ul1 = document.querySelector('#table-body');
+                var docRef1 = db.collection("qp_uploads");
+                console.log("Reached here");
+                docRef1.get().then(querySnapshot => {
+                    querySnapshot.docs.forEach(doc => {
+                        console.log("data retrieved");
+                        ul1.innerHTML += `<tr>
+                             <td style="padding:20px">`+ doc.data()['title'] + `</td>
+            <td style="padding:20px">`+ doc.data()['desc'] + `</td>
+            <td style="padding:20px"><a class="btn btn-primary" onclick="c_fileDownload('`+ doc.data()['loc'] + `')">Download</a></td>
+            <td style="padding:20px"><a class="btn btn-primary" onclick="deleteFile('`+ doc.data()['loc'] + `','` + doc.id + `')">Delete</a></td>
           </tr>`;
-                           // <a class="btn btn-primary" onclick="deleteFile('`+doc.data()['loc']+`','`+doc.id+`')">Delete</a>
-                           // </li>`;
-                        });
-                    });  
+                        // <a class="btn btn-primary" onclick="deleteFile('`+doc.data()['loc']+`','`+doc.id+`')">Delete</a>
+                        // </li>`;
+                    });
+                });
 
-                    var f;
+                var f;
 
-var file = document.querySelector('#file');
-file.addEventListener('change', (e) => {
-    f = e.target.files[0];
-    var storageRef = firebase.storage().ref('qp_uploads/'+f.name);
-    storageRef.put(f);
-});
+                var file = document.querySelector('#file');
+                file.addEventListener('change', (e) => {
+                    f = e.target.files[0];
+                    var storageRef = firebase.storage().ref('qp_uploads/' + f.name);
+                    storageRef.put(f);
+                });
 
-var btn = document.querySelector('#btn');
-btn.addEventListener('click', (e) => {
-    e.preventDefault();
-    var title = document.querySelector('#title').value;
-    var desc = document.querySelector('#desc').value;
-    var loc = f.name;
-    db.collection('qp_uploads').add({
-        title,
-        desc,
-        loc
-    }).catch((e) => {
-        console.log(e);
-    }).then(() => {
-        console.log("Data updated");
-        alert("File uploaded");
-    });
+                var btn = document.querySelector('#btn');
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    var title = document.querySelector('#title').value;
+                    var desc = document.querySelector('#desc').value;
+                    var loc = f.name;
+                    db.collection('qp_uploads').add({
+                        title,
+                        desc,
+                        loc
+                    }).catch((e) => {
+                        console.log(e);
+                    }).then(() => {
+                        console.log("Data updated");
+                        alert("File uploaded");
+                    });
 
-});
+                });
 
-document.getElementById("showme").style.display = "block";
+                document.getElementById("showme").style.display = "block";
                 console.log("block");
 
-                }else{
-                  
-                    var ul1 = document.querySelector('#table-body');
-                        var docRef1 = db.collection("qp_uploads");
-                        console.log("Reached here");
-                        docRef1.get().then(querySnapshot => {
-                        querySnapshot.docs.forEach(doc => {
-                            console.log("data retrieved");
-                             ul1.innerHTML += `<tr>
-                             <td style="padding:20px">`+doc.data()['title']+`</td>
-            <td style="padding:20px">`+doc.data()['desc']+`</td>
-            <td style="padding:20px"><a class="btn btn-primary" onclick="c_fileDownload('`+doc.data()['loc']+`')">Download</a></td>
+            } else {
+
+                var ul1 = document.querySelector('#table-body');
+                var docRef1 = db.collection("qp_uploads");
+                console.log("Reached here");
+                docRef1.get().then(querySnapshot => {
+                    querySnapshot.docs.forEach(doc => {
+                        console.log("data retrieved");
+                        ul1.innerHTML += `<tr>
+                             <td style="padding:20px">`+ doc.data()['title'] + `</td>
+            <td style="padding:20px">`+ doc.data()['desc'] + `</td>
+            <td style="padding:20px"><a class="btn btn-primary" onclick="c_fileDownload('`+ doc.data()['loc'] + `')">Download</a></td>
           </tr>`;
-                        });
-                    });  
+                    });
+                });
 
 
-                    document.getElementById("showme").style.display = "none";
+                document.getElementById("showme").style.display = "none";
                 console.log("none");
-                }
-
-
             }
-            else {
-                console.log('user logged out');
-            }
-        })
 
 
-const adminCheck = document.querySelector('#admin-check');
-        adminCheck.addEventListener('click', (e) => {
-            e.preventDefault();
-            //TODO: Here instead of this particular uid will come the id of the admin
-            if(auth.currentUser.uid !== '7aa6jS40lzWe4PpRTY46BjXtL5i1'){
-                location.href = 'form1.html';
-            }else{
-                location.href = 'feedback.html';
-            }
+        }
+        else {
+            console.log('user logged out');
+        }
+    })
+
+
+    const adminCheck = document.querySelector('#admin-check');
+    adminCheck.addEventListener('click', (e) => {
+        e.preventDefault();
+        //TODO: Here instead of this particular uid will come the id of the admin
+        if (auth.currentUser.uid !== '7aa6jS40lzWe4PpRTY46BjXtL5i1') {
+            location.href = 'form1.html';
+        } else {
+            location.href = 'feedback.html';
+        }
+    });
+
+    const logout = document.querySelector('#logout');
+    logout.addEventListener('click', (e) => {
+        e.preventDefault();
+        auth.signOut().then(() => {
+            window.location = 'index.html';
+            window.alert('User signed Out Successfully');
         });
+    });
+</script>
 
-        const logout = document.querySelector('#logout');
-        logout.addEventListener('click', (e) => {
-            e.preventDefault();
-            auth.signOut().then(() => {
-                window.location = 'index.html';
-                window.alert('User signed Out Successfully');
-            });
-        });
-    </script>
-    
 
 
 </html>

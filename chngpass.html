@@ -166,7 +166,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="title text-center">
-                            <h3>Please type your new password.</h3>
+                            <h3>Please type your Email for Password Reset Link.</h3>
                         </div>
                     </div>
                     <div class="row">
@@ -175,9 +175,9 @@
                             <div class="col-md-12">
                                 <form id="signupform" role="form">
                                     <div class="form-group">
-                                        <label for="npassword">New Password</label>
-                                        <input type="password" class="form-control" id="npassword"
-                                            placeholder="Enter Your New Password" required>
+                                        <label for="npassword">Email</label>
+                                        <input type="email" class="form-control" id="npassword"
+                                            placeholder="Enter Your Email" required>
                                     </div>
                                     <!-- <div class="form-group">
                                         <label for="npassword">Retype New Password</label>
@@ -239,23 +239,25 @@
         const auth = firebase.auth();
         const db = firebase.firestore();
 
-        var user = firebase.auth().currentUser;
         document.getElementById("btn").addEventListener("click", function (event) {
             event.preventDefault();
         });
         function change() {
-
+            var user = auth.currentUser;
             var npass = document.getElementById('npassword').value;
             console.log(npass);
-            if (npass) {
-                user.updatePassword(npass).then(function () {
-                    alert("Update Successfull, Please Login Again");
-                }).catch(function (error) {
-                    alert("Error Occured, Please Retry");
-                });
+            if (npass == null) {
+                alert("Both Fields are required");
             }
             else {
-                alert("Field is reqired");
+                auth.sendPasswordResetEmail(npass).then(function () {
+                    console.log("sent");
+                    // Email sent.
+                }).catch(function (error) {
+                    // An error happened
+                    alert("Kindly provide your registered email id");
+                    console.log("Not done");
+                });
             }
         }
         const logout = document.querySelector('#logout');

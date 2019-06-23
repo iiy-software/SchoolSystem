@@ -73,12 +73,12 @@
                                 <p>Circulars</p>
                             </a>
                         </li>
-                        <li >
-                        <a href="notices.html">
-                            <i class="pe-7s-note2"></i>
-                            <p>Notices</p>
-                        </a>
-                    </li>
+                        <li>
+                            <a href="notices.html">
+                                <i class="pe-7s-note2"></i>
+                                <p>Notices</p>
+                            </a>
+                        </li>
                         <li>
                             <a href="form1.html" id="admin-check">
                                 <i class="pe-7s-news-paper"></i>
@@ -103,11 +103,17 @@
                                 <p>Question Bank</p>
                             </a>
                         </li>
-                        
+
                         <li class="active">
                             <a href="olympiad.html">
                                 <i class="pe-7s-bell"></i>
                                 <p>Olympiad</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="chngpass.html">
+                                <i class="pe-7s-user"></i>
+                                <p>Change Password</p>
                             </a>
                         </li>
                         <li class="active-pro">
@@ -123,38 +129,38 @@
         <div class="main-panel">
             <nav class="navbar navbar-default navbar-fixed">
                 <div class="container-fluid">
-                   <div class="navbar-header">
-                                                <button type="button" class="navbar-toggle" data-toggle="collapse"
-                                                        data-target="#navigation-example-2">
-                                                        <span class="sr-only">Toggle navigation</span>
-                                                        <span class="icon-bar"></span>
-                                                        <span class="icon-bar"></span>
-                                                        <span class="icon-bar"></span>
-                                                </button>
-                                        </div>
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse"
+                            data-target="#navigation-example-2">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
                     <div class="collapse navbar-collapse">
-                     
+
 
                         <ul class="nav navbar-nav navbar-right">
-                             <li>
-                                                                <a href="form1.html">
-                                                                        <p>Academic Audit</p>
-                                                                </a>
-                                                        </li>
-                                                        <li class="dropdown">
-                                                                <a href="teachers.html">
-                                                                        <p>
-                                                                               Teachers
-                                                                                </p>
+                            <li>
+                                <a href="form1.html">
+                                    <p>Academic Audit</p>
+                                </a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="teachers.html">
+                                    <p>
+                                        Teachers
+                                    </p>
 
-                                                                </a>
-                                                                
-                                                        </li>
-                                                        <li>
-                                                                <a href="index.html">
-                                                                        <p>Back to Home</p>
-                                                                </a>
-                                                        </li>
+                                </a>
+
+                            </li>
+                            <li>
+                                <a href="index.html">
+                                    <p>Back to Home</p>
+                                </a>
+                            </li>
                             <li>
                                 <a href="#" id="logout">
                                     Log out
@@ -166,34 +172,35 @@
                 </div>
             </nav>
 
-    <!--  <div class="container" id="main-cont">
+            <!--  <div class="container" id="main-cont">
                 <ul id="ul-list1"></ul>    
             </div>-->
-  <div class="container">
+            <div class="container">
 
                 <h2 class="text-center">OLYMPIAD DETAILS</h2><br><br><br>
-                
-      <left>
-        <div id="main-cont"></div>
-          <br>
-                <table class="table-bordered" width="90%">
-                    <thead>
-                        <tr>
-                          <th style="padding:20px; background-color: rgba(50,115,220,0.3);">Title</th>
-                          <th style="padding:20px; background-color: rgba(50,115,220,0.3);">Description</th>
-                          <th style="padding:20px; background-color: rgba(50,115,220,0.3);">Downloads</th>
-                           <th style="padding:20px; background-color: rgba(50,115,220,0.3);" id="showme">Delete</th>
-                        </tr>
-                    </thead>
-                    <tbody id="table-body" >
 
-                    </tbody>
-                </table>
-            </left>
+                <left>
+                    <div id="main-cont"></div>
+                    <br>
+                    <table class="table-bordered" width="90%">
+                        <thead>
+                            <tr>
+                                <th style="padding:20px; background-color: rgba(50,115,220,0.3);">Title</th>
+                                <th style="padding:20px; background-color: rgba(50,115,220,0.3);">Description</th>
+                                <th style="padding:20px; background-color: rgba(50,115,220,0.3);">Downloads</th>
+                                <th style="padding:20px; background-color: rgba(50,115,220,0.3);" id="showme">Delete
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody id="table-body">
 
-        </div>
-          
-  
+                        </tbody>
+                    </table>
+                </left>
+
+            </div>
+
+
             <footer class="footer">
                 <div class="container-fluid">
                     <p class="copyright pull-right">
@@ -249,63 +256,63 @@
 
 
 
-function deleteFile(name, id){
-    console.log("DeleteFile");
-    db.collection('olympiad_uploads').doc(id).delete();
-    console.log(name);
-    firebase.storage().child('olympiad_uploads/'+name).delete().then(() => {
-      alert("Succesfully deleted");  
-    }).catch((e)=>{
-        if(e)
-        console.log(e);
-    });
-}
-
-function o_fileDownload(name){
-        console.log(name);
-        var storageRef = firebase.storage().ref('olympiad_uploads/'+name);
-
-        storageRef.getDownloadURL().then(function(url) {
-        location.href = url;                
-            /*
-                var xhr = new XMLHttpRequest();
-                xhr.responseType = 'blob';
-                xhr.onload = function(event) {
-                    var blob = xhr.response;
-                };
-                xhr.open('GET', url);
-                xhr.send();
-*/
-        }).catch(function(error) {
-
-        switch (error.code) {
-            case 'storage/object-not-found':
-            console.log(error.code);
-            break;
-            case 'storage/unauthorized':
-            console.log(error.code);
-            break;
-            case 'storage/canceled':
-            console.log(error.code);
-            break;
-            case 'storage/unknown':
-            console.log(error.code);
-            break;
-            default: console.log(error.code);
+        function deleteFile(name, id) {
+            console.log("DeleteFile");
+            db.collection('olympiad_uploads').doc(id).delete();
+            console.log(name);
+            firebase.storage().child('olympiad_uploads/' + name).delete().then(() => {
+                alert("Succesfully deleted");
+            }).catch((e) => {
+                if (e)
+                    console.log(e);
+            });
         }
-        });
-      }
+
+        function o_fileDownload(name) {
+            console.log(name);
+            var storageRef = firebase.storage().ref('olympiad_uploads/' + name);
+
+            storageRef.getDownloadURL().then(function (url) {
+                location.href = url;
+                /*
+                    var xhr = new XMLHttpRequest();
+                    xhr.responseType = 'blob';
+                    xhr.onload = function(event) {
+                        var blob = xhr.response;
+                    };
+                    xhr.open('GET', url);
+                    xhr.send();
+    */
+            }).catch(function (error) {
+
+                switch (error.code) {
+                    case 'storage/object-not-found':
+                        console.log(error.code);
+                        break;
+                    case 'storage/unauthorized':
+                        console.log(error.code);
+                        break;
+                    case 'storage/canceled':
+                        console.log(error.code);
+                        break;
+                    case 'storage/unknown':
+                        console.log(error.code);
+                        break;
+                    default: console.log(error.code);
+                }
+            });
+        }
 
 
 
 
-const adminCheck = document.querySelector('#admin-check');
+        const adminCheck = document.querySelector('#admin-check');
         adminCheck.addEventListener('click', (e) => {
             e.preventDefault();
             //TODO: Here instead of this particular uid will come the id of the admin
-            if(auth.currentUser.uid !== '7aa6jS40lzWe4PpRTY46BjXtL5i1'){
+            if (auth.currentUser.uid !== '7aa6jS40lzWe4PpRTY46BjXtL5i1') {
                 location.href = 'form1.html';
-            }else{
+            } else {
                 location.href = 'feedback.html';
             }
         });
@@ -319,7 +326,7 @@ const adminCheck = document.querySelector('#admin-check');
         auth.onAuthStateChanged(user => {
             if (user) {
                 console.log('user logged in');
-                if(auth.currentUser.uid === '7aa6jS40lzWe4PpRTY46BjXtL5i1'){
+                if (auth.currentUser.uid === '7aa6jS40lzWe4PpRTY46BjXtL5i1') {
                     var div = document.querySelector('#main-cont');
                     div.innerHTML += '';
                     div.innerHTML += `
@@ -334,96 +341,96 @@ const adminCheck = document.querySelector('#admin-check');
 
 
                     var ul1 = document.querySelector('#table-body');
-                        var docRef1 = db.collection("olympiad_uploads");
-                        console.log("Reached here");
-                        docRef1.get().then(querySnapshot => {
+                    var docRef1 = db.collection("olympiad_uploads");
+                    console.log("Reached here");
+                    docRef1.get().then(querySnapshot => {
                         querySnapshot.docs.forEach(doc => {
                             console.log("data retrieved");
                             ul1.innerHTML += `<tr>
-                            <td style="padding:20px">  `+doc.data()['title']+`</td>
-                            <td style="padding:20px">  `+doc.data()['desc']+`</td>
-                            <td style="padding:20px"><a class="btn btn-primary" onclick="o_fileDownload('`+doc.data()['loc']+`')">Download</a></td>
-                            <td style="padding:20px"><a class="btn btn-primary" onclick="deleteFile('`+doc.data()['loc']+`','`+doc.id+`')">Delete</a></td>
+                            <td style="padding:20px">  `+ doc.data()['title'] + `</td>
+                            <td style="padding:20px">  `+ doc.data()['desc'] + `</td>
+                            <td style="padding:20px"><a class="btn btn-primary" onclick="o_fileDownload('`+ doc.data()['loc'] + `')">Download</a></td>
+                            <td style="padding:20px"><a class="btn btn-primary" onclick="deleteFile('`+ doc.data()['loc'] + `','` + doc.id + `')">Delete</a></td>
                         </tr>`;
                         });
-                    });  
-                
+                    });
+
 
                     var file = document.querySelector('#file');
-file.addEventListener('change', (e) => {
-    f = e.target.files[0];
-    var storageRef = firebase.storage().ref('olympiad_uploads/'+f.name);
-    storageRef.put(f);
-});
+                    file.addEventListener('change', (e) => {
+                        f = e.target.files[0];
+                        var storageRef = firebase.storage().ref('olympiad_uploads/' + f.name);
+                        storageRef.put(f);
+                    });
 
-var btn = document.querySelector('#btn');
-btn.addEventListener('click', (e) => {
-    e.preventDefault();
-    var title = document.querySelector('#title').value;
-    var desc = document.querySelector('#desc').value;
-    var loc = f.name;
-    db.collection('olympiad_uploads').add({
-        title,
-        desc,
-        loc
-    }).catch((e) => {
-        console.log(e);
-    }).then(() => {
-        console.log("Data updated");
-        alert("File uploaded");
-    });
+                    var btn = document.querySelector('#btn');
+                    btn.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        var title = document.querySelector('#title').value;
+                        var desc = document.querySelector('#desc').value;
+                        var loc = f.name;
+                        db.collection('olympiad_uploads').add({
+                            title,
+                            desc,
+                            loc
+                        }).catch((e) => {
+                            console.log(e);
+                        }).then(() => {
+                            console.log("Data updated");
+                            alert("File uploaded");
+                        });
 
-});
+                    });
 
-document.getElementById("showme").style.display = "block";
-                console.log("block");
+                    document.getElementById("showme").style.display = "block";
+                    console.log("block");
 
 
-                }else{
-                      
+                } else {
+
                     var ul1 = document.querySelector('#table-body');
-                        var docRef1 = db.collection("olympiad_uploads");
-                        console.log("Reached here");
-                        docRef1.get().then(querySnapshot => {
+                    var docRef1 = db.collection("olympiad_uploads");
+                    console.log("Reached here");
+                    docRef1.get().then(querySnapshot => {
                         querySnapshot.docs.forEach(doc => {
                             console.log("data retrieved");
                             ul1.innerHTML += `<tr>
-                            <td style="padding:20px">  `+doc.data()['title']+`</td>
-                            <td style="padding:20px">  `+doc.data()['desc']+`</td>
-                            <td style="padding:20px"><a class="btn btn-primary" onclick="o_fileDownload('`+doc.data()['loc']+`')">Download</a></td>
+                            <td style="padding:20px">  `+ doc.data()['title'] + `</td>
+                            <td style="padding:20px">  `+ doc.data()['desc'] + `</td>
+                            <td style="padding:20px"><a class="btn btn-primary" onclick="o_fileDownload('`+ doc.data()['loc'] + `')">Download</a></td>
                         </tr>`;
                         });
-                    });  
-                         document.getElementById("showme").style.display = "none";
-                console.log("none");
- 
-var file = document.querySelector('#file');
-file.addEventListener('change', (e) => {
-    f = e.target.files[0];
-    var storageRef = firebase.storage().ref('olympiad_uploads/'+f.name);
-    storageRef.put(f);
-});               
+                    });
+                    document.getElementById("showme").style.display = "none";
+                    console.log("none");
 
-var btn = document.querySelector('#btn');
-btn.addEventListener('click', (e) => {
-    e.preventDefault();
-    var title = document.querySelector('#title').value;
-    var desc = document.querySelector('#desc').value;
-    var loc = f.name;
-    db.collection('olympiad_uploads').add({
-        title,
-        desc,
-        loc
-    }).catch((e) => {
-        console.log(e);
-    }).then(() => {
-        console.log("Data updated");
-        alert("File uploaded");
-    });
+                    var file = document.querySelector('#file');
+                    file.addEventListener('change', (e) => {
+                        f = e.target.files[0];
+                        var storageRef = firebase.storage().ref('olympiad_uploads/' + f.name);
+                        storageRef.put(f);
+                    });
 
-});
+                    var btn = document.querySelector('#btn');
+                    btn.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        var title = document.querySelector('#title').value;
+                        var desc = document.querySelector('#desc').value;
+                        var loc = f.name;
+                        db.collection('olympiad_uploads').add({
+                            title,
+                            desc,
+                            loc
+                        }).catch((e) => {
+                            console.log(e);
+                        }).then(() => {
+                            console.log("Data updated");
+                            alert("File uploaded");
+                        });
 
-}
+                    });
+
+                }
             }
             else {
                 console.log('user logged out');

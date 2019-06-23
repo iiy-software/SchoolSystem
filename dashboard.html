@@ -150,7 +150,7 @@
                             <li class="dropdown">
                                 <a href="teachers.html">
                                     <p>
-                                          Teachers
+                                        Teachers
                                     </p>
 
                                 </a>
@@ -275,6 +275,15 @@
             } else {
                 location.href = 'feedback.html';
             }
+        });
+        const out = document.querySelector('#logout');
+        out.addEventListener('click', (e) => {
+            e.preventDefault();
+            console.log("Logout Clicked");
+            auth.signOut().then(() => {
+                window.location = 'index.html';
+                window.alert('User signed Out Successfully');
+            });
         });
 
     </script>

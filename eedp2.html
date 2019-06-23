@@ -72,13 +72,13 @@
               <p>Circulars</p>
             </a>
           </li>
-           <li>
-                                                <a href="notices.html">
-                                                        <i class="pe-7s-note2"></i>
-                                                        <p>Notices</p>
-                                                </a>
-                                        </li>
-                                          <li>  
+          <li>
+            <a href="notices.html">
+              <i class="pe-7s-note2"></i>
+              <p>Notices</p>
+            </a>
+          </li>
+          <li>
             <a href="form1.html">
               <i class="pe-7s-news-paper"></i>
               <p>Academic Audit</p>
@@ -103,15 +103,21 @@
             </a>
           </li>
           <li>
-              <a href="notices.html">
-                  <i class="pe-7s-bell"></i>
-                  <p>Notices</p>
-              </a>
+            <a href="notices.html">
+              <i class="pe-7s-bell"></i>
+              <p>Notices</p>
+            </a>
           </li>
           <li>
             <a href="olympiad.html">
               <i class="pe-7s-bell"></i>
               <p>Olympiad</p>
+            </a>
+          </li>
+          <li>
+            <a href="chngpass.html">
+              <i class="pe-7s-user"></i>
+              <p>Change Password</p>
             </a>
           </li>
           <li class="active-pro">
@@ -128,38 +134,37 @@
       <nav class="navbar navbar-default navbar-fixed">
         <div class="container-fluid">
           <div class="navbar-header">
-                                                <button type="button" class="navbar-toggle" data-toggle="collapse"
-                                                        data-target="#navigation-example-2">
-                                                        <span class="sr-only">Toggle navigation</span>
-                                                        <span class="icon-bar"></span>
-                                                        <span class="icon-bar"></span>
-                                                        <span class="icon-bar"></span>
-                                                </button>
-                                        </div>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example-2">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
           <div class="collapse navbar-collapse">
-             
-        
+
+
 
             <ul class="nav navbar-nav navbar-right">
-               <li>
-                                                                <a href="form1.html">
-                                                                        <p>Academic Audit</p>
-                                                                </a>
-                                                        </li>
-                                                        <li class="dropdown">
-                                                                <a href="teachers.html">
-                                                                        <p>
-                                                                                 Teachers
-                                                                                </p>
+              <li>
+                <a href="form1.html">
+                  <p>Academic Audit</p>
+                </a>
+              </li>
+              <li class="dropdown">
+                <a href="teachers.html">
+                  <p>
+                    Teachers
+                  </p>
 
-                                                                </a>
-                                                                
-                                                        </li>
-                                                        <li>
-                                                                <a href="index.html">
-                                                                        <p>Back to Home</p>
-                                                                </a>
-                                                        </li>
+                </a>
+
+              </li>
+              <li>
+                <a href="index.html">
+                  <p>Back to Home</p>
+                </a>
+              </li>
               <li>
                 <a href="#" id="logout">
                   Log out
@@ -181,7 +186,7 @@
                 </div>
                 <div class="content all-icons">
                   <div id="cont" class="row">
-                    
+
                   </div>
 
 
@@ -194,16 +199,16 @@
 
       </div>
 
-      
-      
-<div class="container">
+
+
+      <div class="container">
         <div class="row text-center" style="position: relative;">
           <button class="btn btn-primary" id="addbtn"
             style="display: block; position: absolute; left: 50%; transform: translateX(-50%);">Add
             Teachers</button>
         </div>
         <!-- The Modal -->
-        <div id="myModal" class="modal" style=" left :-1%";>
+        <div id="myModal" class="modal" style=" left :-1%" ;>
 
           <!-- Modal content -->
           <div class="modal-content">
@@ -212,28 +217,29 @@
             <section class="modal-form">
               <div id="error-cont"></div>
               <form method="POST" id="myform">
-                <input type="text" id="tname" placeholder="Teacher's Name"  required/>
-                <input type="text" id="sub" placeholder="Teacher's Subject" required/>
-                <input type="text" id="tclass" placeholder="Teacher's class" required/>
-                <input type="text" id="tadd" placeholder="Teacher's address" required/>
-                <input type="number" id="tph" placeholder="Teacher's Phone" required/>
+                <input type="text" id="tname" placeholder="Teacher's Name" required />
+                <input type="text" id="sub" placeholder="Teacher's Subject" required />
+                <input type="text" id="tclass" placeholder="Teacher's class" required />
+                <input type="text" id="tadd" placeholder="Teacher's address" required />
+                <input type="number" id="tph" placeholder="Teacher's Phone" required />
                 <input type="email" id="email" placeholder="E-mail Address">
-                <input type="text" id="tcity" placeholder="City" required/>
-                <input type="text" id="tstate" placeholder="State" required/>
-                <input type="text" id="tpin" placeholder="PinCode" required/>
+                <input type="text" id="tcity" placeholder="City" required />
+                <input type="text" id="tstate" placeholder="State" required />
+                <input type="text" id="tpin" placeholder="PinCode" required />
                 <h5>Gender</h5>
                 <input type="radio" name="gender" value="male" checked> Male<br>
                 <input type="radio" name="gender" value="female"> Female<br>
                 <input type="radio" name="gender" value="other"> Other
 
-                <input type="text" id="texp" placeholder="Teacher's experience" required/>
-                <input type="text" id="tqual" placeholder="Teacher's Qualification" required/>
-                 <input type="text" id="tfather" placeholder="Father's Name" required/>
-                  <input type="text" id="tmother" placeholder="Mother's Name" required/>
-                <input type="file" name="file" id="file" class="upload" accept="image/x-png,image/gif,image/jpeg" required/>
+                <input type="text" id="texp" placeholder="Teacher's experience" required />
+                <input type="text" id="tqual" placeholder="Teacher's Qualification" required />
+                <input type="text" id="tfather" placeholder="Father's Name" required />
+                <input type="text" id="tmother" placeholder="Mother's Name" required />
+                <input type="file" name="file" id="file" class="upload" accept="image/x-png,image/gif,image/jpeg"
+                  required />
                 <label for="file">Upload Photo</label>
-                
-              <button type="submit" class="modal-btn" onclick="verifyBtn()">Add Teacher</button>
+
+                <button type="submit" class="modal-btn" onclick="verifyBtn()">Add Teacher</button>
               </form>
 
             </section>
@@ -293,12 +299,12 @@
     var f = "";
 
     var queryDict = {};
-    location.search.substr(1).split("&").forEach(function(item) {
-    queryDict[item.split("=")[0]] = item.split("=")[1];
-});
+    location.search.substr(1).split("&").forEach(function (item) {
+      queryDict[item.split("=")[0]] = item.split("=")[1];
+    });
 
 
-function verifyBtn(){
+    function verifyBtn() {
       console.log("Clicked");
       var name = document.querySelector('#tname').value;
       var sub = document.querySelector('#sub').value;
@@ -316,22 +322,22 @@ function verifyBtn(){
       var email = document.querySelector('#email').value;
       var img = f.name;
       console.log(name);
-      if(name !== "" && sub !== "" && classes !==  "" && add !== "" && city !== "" && state !== ""
-       && pin !== "" && exp !== "" && qual !== "" && father !== "" && mother !== "" && gender !== ""
-       && phone !== "" && email !== "" && img !== ""){
-         addteacher();
-       }else{
-         console.log("Reached here");
+      if (name !== "" && sub !== "" && classes !== "" && add !== "" && city !== "" && state !== ""
+        && pin !== "" && exp !== "" && qual !== "" && father !== "" && mother !== "" && gender !== ""
+        && phone !== "" && email !== "" && img !== "") {
+        addteacher();
+      } else {
+        console.log("Reached here");
         var err = document.querySelector('#error-cont');
-            err.innerHTML = '';
-            err.innerHTML += `<div style="padding:10px; color:whitesmoke; background-color: #ff3535; border-radius: 7px; opacity: 0.8;">
+        err.innerHTML = '';
+        err.innerHTML += `<div style="padding:10px; color:whitesmoke; background-color: #ff3535; border-radius: 7px; opacity: 0.8;">
                     <strong>First fill all the required details.</strong>
                 </div><br>`;
-       }
+      }
     }
 
 
-    function addteacher(){
+    function addteacher() {
       var name = document.querySelector('#tname').value;
       var sub = document.querySelector('#sub').value;
       var classes = document.querySelector('#tclass').value;
@@ -346,82 +352,82 @@ function verifyBtn(){
       var gender = document.querySelector('input[name="gender"]:checked').value;
       var phone = document.querySelector('#tph').value;
       var email = document.querySelector('#email').value;
-      var img = f.name;      
-      db.collection(queryDict.name+""+queryDict.category).doc().set({
-        name,sub,classes,add,city,state,pin,exp,qual,father,mother,gender,img,phone,email
+      var img = f.name;
+      db.collection(queryDict.name + "" + queryDict.category).doc().set({
+        name, sub, classes, add, city, state, pin, exp, qual, father, mother, gender, img, phone, email
       }).then((e) => {
-        if(e){
+        if (e) {
           var err = document.querySelector('#error-cont');
-            err.innerHTML = '';
-            err.innerHTML += `<div style="padding:10px; color:whitesmoke; background-color: #ff3535; border-radius: 7px; opacity: 0.8;">
-                    <strong>`+e+`</strong>
+          err.innerHTML = '';
+          err.innerHTML += `<div style="padding:10px; color:whitesmoke; background-color: #ff3535; border-radius: 7px; opacity: 0.8;">
+                    <strong>`+ e + `</strong>
                 </div><br>`;
-        }else{
+        } else {
           alert("Details added sucessfully, kindly refresh the page(Press Ctrl+R).");
         }
       });
-      
+
     }
 
     var file = document.querySelector('#file');
-        file.addEventListener('change', (e) => {
-            f = e.target.files[0];
-            var storageRef = firebase.storage().ref(queryDict.name+""+queryDict.category+'/'+f.name);
-            storageRef.put(f);
-        });
+    file.addEventListener('change', (e) => {
+      f = e.target.files[0];
+      var storageRef = firebase.storage().ref(queryDict.name + "" + queryDict.category + '/' + f.name);
+      storageRef.put(f);
+    });
 
 
-var image = "";
-    function showteachers(){
-      var docRef = db.collection(queryDict.name+""+queryDict.category);
+    var image = "";
+    function showteachers() {
+      var docRef = db.collection(queryDict.name + "" + queryDict.category);
       docRef.get().then(querySnapshot => {
         querySnapshot.docs.forEach(doc => {
           var cont = document.querySelector('#cont');
-          var storageRef = firebase.storage().ref(queryDict.name+""+queryDict.category+'/'+doc.data()['img']);
-        
-        storageRef.getDownloadURL().then(function(url) {
-        console.log(url); 
-        image = url;
+          var storageRef = firebase.storage().ref(queryDict.name + "" + queryDict.category + '/' + doc.data()['img']);
 
-        cont.innerHTML += `
+          storageRef.getDownloadURL().then(function (url) {
+            console.log(url);
+            image = url;
+
+            cont.innerHTML += `
           <div class="font-icon-list col-lg-2 col-md-3 col-sm-4 col-xs-6 col-xs-6">
                       <div class="font-icon-detail">
-                        <img src="`+image+`" style="width: 100%; border-radius: 50%; height:100%; padding-top: 0px;" />
-                        <input type="text" style="font-weight: bold;" value="Name: `+doc.data()['name']+`" >
-                        <input type="text" style="font-weight: bold;" value="Experience: `+doc.data()['exp']+`">
+                        <img src="`+ image + `" style="width: 100%; border-radius: 50%; height:100%; padding-top: 0px;" />
+                        <input type="text" style="font-weight: bold;" value="Name: `+ doc.data()['name'] + `" >
+                        <input type="text" style="font-weight: bold;" value="Experience: `+ doc.data()['exp'] + `">
                       </div>
                     </div>
           `;
 
 
-        }).catch(function(error) {
+          }).catch(function (error) {
 
-        switch (error.code) {
-            case 'storage/object-not-found':
-            console.log(error.code);
-            break;
-            case 'storage/unauthorized':
-            console.log(error.code);
-            break;
-            case 'storage/canceled':
-            console.log(error.code);
-            break;
-            case 'storage/unknown':
-            console.log(error.code);
-            break;
-            default: console.log(error.code);
-        }
-        });  
-        
+            switch (error.code) {
+              case 'storage/object-not-found':
+                console.log(error.code);
+                break;
+              case 'storage/unauthorized':
+                console.log(error.code);
+                break;
+              case 'storage/canceled':
+                console.log(error.code);
+                break;
+              case 'storage/unknown':
+                console.log(error.code);
+                break;
+              default: console.log(error.code);
+            }
+          });
+
         })
       });
     }
     //for auth listener
     auth.onAuthStateChanged(user => {
       if (user) {
-     //   console.log('user logged in: ', user);
+        //   console.log('user logged in: ', user);
         showteachers();
-    }
+      }
       else {
         console.log('user logged out');
         window.location = 'index.html';
