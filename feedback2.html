@@ -2036,10 +2036,12 @@
         function changeFeedback(uid){
                 
                 var docRef = db.collection(uid+"");
+                console.log(uid);
             console.log(docRef);
                 docRef.get().then(querySnapshot => {
                     querySnapshot.docs.forEach(doc => {      
                     console.log(doc.data()["q1"]);
+                    console.log(doc.id);
                     if(doc.id === 'form2'){
                     var q1 = document.querySelector('input[name="q1"]');
                     q1.checked = true;
@@ -2116,7 +2118,7 @@
                     var q37 = document.querySelector('input[name="q37"]');
                     q37.checked = true;
                     var q38 = document.querySelector('input[name="q38"]');
-                    q39.checked = true;
+                    q38.checked = true;
                     var q39 = document.querySelector('input[name="q39"]');
                     q39.checked = true;
                     var q40 = document.querySelector('input[name="q40"]');
@@ -2261,7 +2263,7 @@
         if (user) {
             console.log('user logged in');
                 // TODO: Here the id of one of the schools will come
-                changeFeedback(uid);
+                //changeFeedback(uid);
         }
         else {
             console.log('user logged out');
