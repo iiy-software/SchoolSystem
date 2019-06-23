@@ -22,9 +22,6 @@
     <link href="assets/css/light-bootstrap-dashboard.css?v=1.4.0" rel="stylesheet" />
 
 
-    <!--  CSS for Demo Purpose, don't include it in your project     -->
-    <link href="assets/css/demo.css" rel="stylesheet" />
-
 
     <!--     Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
@@ -37,13 +34,6 @@
 
     <div class="wrapper">
         <div class="sidebar" data-image="assets/img/sidebar-5.jpg">
-
-            <!--
-
-        Tip 1: you can change the color of the sidebar using: data-color="blue | azure | green | orange | red | purple"
-        Tip 2: you can also add an image using data-image tag
-
-    -->
 
             <div class="sidebar-wrapper"
                 style="background:linear-gradient(to bottom, rgb(29, 199, 234) 0%, rgb(29, 199, 234) 59%, rgb(29, 199, 234) 100%), url('assets/img/sidebar-5.jpg')">
@@ -172,10 +162,37 @@
                 </div>
             </nav>
 
+            <div class="content" style="position:relative; ">
+                <div class="container">
+                    <div class="row">
+                        <div class="title text-center">
+                            <h3>Kindly use your credentials to login to DashBoard.</h3>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="formbox">
+                            <div id="main-cont"></div>
+                            <div class="col-md-12">
+                                <form id="signupform" role="form">
+                                    <div class="form-group">
+                                        <label for="mail">Email address</label>
+                                        <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
+                                            placeholder="Enter email" required>
+                                        <small id="emailHelp" class="form-text text-muted">We'll never share your email
+                                            with
+                                            anyone else.</small>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="password">Password</label>
+                                        <input type="password" class="form-control" id="password" placeholder="Password"
+                                            required>
 
-            <div class="content">
-                <div class="container-fluid">
-                    <!-- <h2>This page will open after succesfull login...</h2> -->
+                                    </div>
+                                    <button type="submit" class="btn btn-primary" id="btn">Submit</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 

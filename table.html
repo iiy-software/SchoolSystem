@@ -174,13 +174,14 @@
                 <left>
                     <div id="main-cont"></div>
                     <br>
-                    <table class="table-bordered" width="90%">
+                    <table class="table-bordered" width="90%" onload="titledisplay()">
                         <thead>
                             <tr>
                                 <th style="padding:20px; background-color: rgba(50,115,220,0.3);">Title</th>
                                 <th style="padding:20px; background-color: rgba(50,115,220,0.3);">Description</th>
                                 <th style="padding:20px; background-color: rgba(50,115,220,0.3);">Downloads</th>
-                                <th style="padding: 20px; background-color: rgba(50,115,220,0.3);">Delete File</th>
+                                <th style="padding: 20px; background-color: rgba(50,115,220,0.3);" id="showme">Delete
+                                    File</th>
                             </tr>
                         </thead>
                         <tbody id="table-body">
@@ -259,9 +260,6 @@
     const auth = firebase.auth();
     const db = firebase.firestore();
 
-
-
-
     function deleteFile(name, id) {
         console.log("DeleteFile");
         db.collection('circular_uploads').doc(id).delete();
@@ -316,7 +314,8 @@
     auth.onAuthStateChanged(user => {
         if (user) {
             console.log('user logged in');
-            if (auth.currentUser.uid === '7aa6jS40lzWe4PpRTY46BjXtL5i1') {
+            if (auth.currentUser.uid == '7aa6jS40lzWe4PpRTY46BjXtL5i1') {
+
                 var div = document.querySelector('#main-cont');
                 div.innerHTML += `
                     <form>
@@ -379,6 +378,10 @@
 
                 });
 
+
+                document.getElementById("showme").style.display = "block";
+                console.log("block");
+
             } else {
 
                 var ul1 = document.querySelector('#table-body');
@@ -394,6 +397,8 @@
           </tr>`;
                     });
                 });
+                document.getElementById("showme").style.display = "none";
+                console.log("none");
             }
 
             var f;
@@ -430,7 +435,6 @@
         }
     })
 
-
     const adminCheck = document.querySelector('#admin-check');
     adminCheck.addEventListener('click', (e) => {
         e.preventDefault();
@@ -450,8 +454,49 @@
             window.alert('User signed Out Successfully');
         });
     });
-</script>
 
+    function titledisplay() {
+        var myuser = auth.currentUser;
+        if (myuser.uid === '7aa6jS40lzWe4PpRTY46BjXtL5i1') {
+            document.getElementById("showme").style.display = "block";
+            console.log("block");
+        }
+        else {
+            document.getElementById("showme").style.display = "none";
+            console.log("none");
+        }
+    }
+</script>
+<script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyCRTrqrEdRR7hX5dFMU2EM9J4orE2KEe_Y",
+        authDomain: "dav-school-system.firebaseapp.com",
+        databaseURL: "https://dav-school-system.firebaseio.com",
+        projectId: "dav-school-system",
+        storageBucket: "gs://dav-school-system.appspot.com",
+        messagingSenderId: "503899193487",
+        appId: "1:503899193487:web:4835ed6556887d0c"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+
+    //make auth and firestore references
+    const nauth = firebase.auth();
+    const ndb = firebase.firestore();
+
+    function titledisplay() {
+        var myuser = nauth.currentUser;
+        if (myuser.uid === '7aa6jS40lzWe4PpRTY46BjXtL5i1') {
+            document.getElementById("showme").style.display = "block";
+            console.log("block");
+        }
+        else {
+            document.getElementById("showme").style.display = "none";
+            console.log("none");
+        }
+    }
+</script>
 
 
 </html>
