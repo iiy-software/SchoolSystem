@@ -166,7 +166,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="title text-center">
-                            <h3>Kindly use your credentials to login to DashBoard.</h3>
+                            <h3>Please type your new password.</h3>
                         </div>
                     </div>
                     <div class="row">
@@ -175,20 +175,17 @@
                             <div class="col-md-12">
                                 <form id="signupform" role="form">
                                     <div class="form-group">
-                                        <label for="mail">Email address</label>
-                                        <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
-                                            placeholder="Enter email" required>
-                                        <small id="emailHelp" class="form-text text-muted">We'll never share your email
-                                            with
-                                            anyone else.</small>
+                                        <label for="npassword">New Password</label>
+                                        <input type="password" class="form-control" id="npassword"
+                                            placeholder="Enter Your New Password" required>
                                     </div>
-                                    <div class="form-group">
-                                        <label for="password">Password</label>
-                                        <input type="password" class="form-control" id="password" placeholder="Password"
-                                            required>
+                                    <!-- <div class="form-group">
+                                        <label for="npassword">Retype New Password</label>
+                                        <input type="password" class="form-control" id="npassword"
+                                            placeholder="Retype Your New Password" required>
 
-                                    </div>
-                                    <button type="submit" class="btn btn-primary" id="btn">Submit</button>
+                                    </div> -->
+                                    <button class="btn btn-primary" id="btn" onclick="change()">Submit</button>
                                 </form>
                             </div>
                         </div>
@@ -197,20 +194,19 @@
             </div>
 
 
-            <footer class="footer">
-                <div class="container-fluid">
-                    <p class="copyright pull-right">
-                        &copy;
-                        <script>document.write(new Date().getFullYear())</script> <a
-                            href="https://www.iiysoftware.com/">IIY
-                            Software</a>, made with <span style="color: red;">&#10084;</span> for a better web
-                    </p>
-                </div>
-            </footer>
+
 
         </div>
     </div>
-
+    <footer class="footer" style="position: absolute; bottom:0; width: 100%;">
+        <div class="container-fluid">
+            <p class="copyright pull-right">
+                &copy;
+                <script>document.write(new Date().getFullYear())</script> <a href="https://www.iiysoftware.com/">IIY
+                    Software</a>, made with <span style="color: red;">&#10084;</span> for a better web
+            </p>
+        </div>
+    </footer>
     <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
 
     <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
@@ -243,17 +239,24 @@
         const auth = firebase.auth();
         const db = firebase.firestore();
 
-        const teachersCheck = document.querySelector('#teachers');
-        teachersCheck.addEventListener('click', (e) => {
-            e.preventDefault();
-            console("Teachers click");
-            //TODO: Here instead of this particular uid will come the id of the admin
-            if (auth.currentUser.uid !== '7aa6jS40lzWe4PpRTY46BjXtL5i1') {
-                location.href = 'icons.html';
-            } else {
-                location.href = 'teachers.html';
-            }
+        var user = firebase.auth().currentUser;
+        document.getElementById("btn").addEventListener("click", function (event) {
+            event.preventDefault();
         });
+        function change() {
+
+            var npass = document.getElementById('npassword');
+            if (npass) {
+                user.updatePassword(npass).then(function () {
+                    alert("Update Successfull, Please Login Again");
+                }).catch(function (error) {
+                    alert("Error Occured, Please Retry");
+                });
+            }
+            else {
+                alert("Field is reqired");
+            }
+        }
         const logout = document.querySelector('#logout');
         logout.addEventListener('click', (e) => {
             e.preventDefault();

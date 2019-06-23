@@ -630,3 +630,20 @@
 .pe-7s-airplay:before {
 	content: "\e67f";
 }
+
+.formbox{
+    overflow: hidden;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    position: absolute;
+    padding: 20px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: #fff;
+    width: 80% !important;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px;
+}
