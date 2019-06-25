@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="assets/img/favicon.ico">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <title>DAV School System -Table</title>
+
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+
+
+    <!-- Bootstrap core CSS     -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Animation library for notifications   -->
+    <link href="assets/css/animate.min.css" rel="stylesheet" />
+
+    <!--  Light Bootstrap Table core CSS    -->
+    <link href="assets/css/light-bootstrap-dashboard.css?v=1.4.0" rel="stylesheet" />
+
+
+    <!--  CSS for Demo Purpose, don't include it in your project     -->
+    <link href="assets/css/demo.css" rel="stylesheet" />
+
+
+    <!--     Fonts and icons     -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
+    <link href="assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="sidebar" data-image="assets/img/sidebar-5.jpg">
+
+            <!--
+    
+            Tip 1: you can change the color of the sidebar using: data-color="blue | azure | green | orange | red | purple"
+            Tip 2: you can also add an image using data-image tag
+    
+        -->
+
+            <div class="sidebar-wrapper"
+                style="background:linear-gradient(to bottom, rgb(29, 199, 234) 0%, rgb(29, 199, 234) 59%, rgb(29, 199, 234) 100%), url('assets/img/sidebar-5.jpg')">
+                <div class="logo">
+                    <a href="dashboard.html" class="simple-text">
+                        My DashBoard
+                    </a>
+                </div>
+
+                <ul class="nav">
+                    <li>
+                        <a href="dashboard.html">
+                            <i class="pe-7s-graph"></i>
+                            <p>Dashboard</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="user.html">
+                            <i class="pe-7s-user"></i>
+                            <p>User Profile</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="table.html">
+                            <i class="pe-7s-note2"></i>
+                            <p>Circulars</p>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="notices.html">
+                            <i class="pe-7s-note2"></i>
+                            <p>Notices</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="form1.html" id="admin-check">
+                            <i class="pe-7s-news-paper"></i>
+                            <p>Academic Audit</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="teachers.html">
+                            <i class="pe-7s-science"></i>
+                            <p>Teachers</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="maps.html">
+                            <i class="pe-7s-map-marker"></i>
+                            <p>Resource Center</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="qp.html">
+                            <i class="pe-7s-bell"></i>
+                            <p>Question Bank</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="olympiad.html">
+                            <i class="pe-7s-bell"></i>
+                            <p>Olympiad</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="chngpass.html">
+                            <i class="pe-7s-user"></i>
+                            <p>Change Password</p>
+                        </a>
+                    </li>
+                    <li class="active-pro">
+                        <a href="index.html">
+                            <i class="pe-7s-rocket"></i>
+                            <p style="font-size: 1.5rem !important;">GO TO HOME</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="main-panel">
+            <nav class="navbar navbar-default navbar-fixed">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse"
+                            data-target="#navigation-example-2">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div class="collapse navbar-collapse">
+
+
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a href="form1.html">
+                                    <p>Academic Audit</p>
+                                </a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="teachers.html">
+                                    <p>
+                                        Teachers
+                                    </p>
+
+                                </a>
+
+                            </li>
+                            <li>
+                                <a href="index.html">
+                                    <p>Back to Home</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" id="logout">
+                                    <p>Log out</p>
+                                </a>
+                            </li>
+                            <li class="separator hidden-lg"></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+
+            <!-- <div class="container" id="main-cont">
+<ul id="ul-list1"></ul> 
+</div> -->
+
+            <div class="container" id="main-cont">
+                <div style="display: flex;flex-wrap:wrap; justify-content: space-evenly" id="imgContainer">
+
+                </div>
+            </div>
+
+            <footer class="footer">
+                <div class="container-fluid">
+                    <p class="copyright pull-right">
+                        &copy;
+                        <script>document.write(new Date().getFullYear())</script> <a
+                            href="https://www.iiysoftware.com/">IIY
+                            Software</a>, made with <span style="color: red;">&#10084;</span> for a better web
+                    </p>
+                </div>
+            </footer>
+
+
+        </div>
+    </div>
+
+
+</body>
+
+<!--   Core JS Files   -->
+<script src="assets/js/jquery.3.2.1.min.js" type="text/javascript"></script>
+<script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+
+<!--  Charts Plugin -->
+<script src="assets/js/chartist.min.js"></script>
+
+<!--  Notifications Plugin    -->
+<script src="assets/js/bootstrap-notify.js"></script>
+
+<!-- Light Bootstrap Table Core javascript and methods for Demo purpose -->
+<script src="assets/js/light-bootstrap-dashboard.js?v=1.4.0"></script>
+
+<!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
+<script src="assets/js/demo.js"></script>
+
+
+<script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
+
+<!-- Add Firebase products that you want to use -->
+<script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-firestore.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-storage.js"></script>
+
+
+
+
+<script>
+
+    var firebaseConfig = {
+        apiKey: "AIzaSyCRTrqrEdRR7hX5dFMU2EM9J4orE2KEe_Y",
+        authDomain: "dav-school-system.firebaseapp.com",
+        databaseURL: "https://dav-school-system.firebaseio.com",
+        projectId: "dav-school-system",
+        storageBucket: "gs://dav-school-system.appspot.com",
+        messagingSenderId: "503899193487",
+        appId: "1:503899193487:web:4835ed6556887d0c"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+
+    //make auth and firestore references
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+
+
+
+    auth.onAuthStateChanged(user => {
+        if (user) {
+            console.log('user logged in');
+            if (auth.currentUser.uid === '7aa6jS40lzWe4PpRTY46BjXtL5i1') {
+                
+                var div = document.querySelector('#main-cont');
+                div.innerHTML += `
+                    <button onclick="imgShow('OWrujt67nnT1GquSjChWI7uNEAt2')" id="sc-eight" style="background-color:#1DC7EA;color:white;padding:10px;margin:5px;border:transparent;">R.B.DAV Sr. Sec. School  </button>
+                    <button onclick="imgShow('Qx5RqymWioPWPZR3sgjNYLHIpZ42')" id="sc-seven" style="background-color:#1DC7EA;color:white;padding:10px;margin:5px;border:transparent;">LRS DAV Sr. Sec. MODEL SCHOOL ,DAV CAMPUS</button>
+                    <button onclick="imgShow('yZWR4scvYuM8gtGiUAKUVIcLgSx1')" id="sc-six" style="background-color:#1DC7EA;color:white;padding:10px;margin:5px;border:transparent;">Smt. Karam Bai DAV Cent. Public School </button>
+                    <button onclick="imgShow('X9b3G13avzMuq77MCGplK5IzAx42')" id="sc-nine" style="background-color:#1DC7EA;color:white;padding:10px;margin:5px;border:transparent;">SGJ DAV Centenary Public School</button>
+                    <button onclick="imgShow('FncVoXmyIMP86Ah7n8ZiCVcJjlt2')" id="sc-eleven" style="background-color:#1DC7EA;color:white;padding:10px;margin:5px;border:transparent;">Mahatma Gandhi DAV Vidyalya</button>
+                    <button onclick="imgShow('EoqIt69qKGYxQqk7HTCBTCBEiZh2')" id="sc-one" style="background-color:#1DC7EA;color:white;padding:10px;margin:5px;border:transparent;">GURUKUL INTL SCHOOL</button>
+                    <button onclick="imgShow('QEn99edIa0hU64nqmJ9s0YaRsnG2')" id="sc-two" style="background-color:#1DC7EA;color:white;padding:10px;margin:5px;border:transparent;">WHEAT FIELDS PUBLIC SCHOOL</button>
+                    <button onclick="imgShow('hwODP1CS4sNUE3fr5BYg0NyTikM2')" id="sc-three" style="background-color:#1DC7EA;color:white;padding:10px;margin:5px;border:transparent;">MATA SUNDRI PUBLIC SCHOOL</button>
+                    <button onclick="imgShow('QJvlw5TMXCUNv78z0WcrQNZjfDj2')" id="sc-four" style="background-color:#1DC7EA;color:white;padding:10px;margin:5px;border:transparent;">RADCLIFFE SCHOOL</button>
+                    <button onclick="imgShow('h1jF6BToWgbDGtw4siN3sEs6Als2')" id="sc-five" style="background-color:#1DC7EA;color:white;padding:10px;margin:5px;border:transparent;">THE MILLENNIUM SCHOOL</button>
+                    <button onclick="imgShow('CxElxaZ9EPTO6b1azSkzkVFjZAs2')" id="sc-ten" style="background-color:#1DC7EA;color:white;padding:10px;margin:5px;border:transparent;">DAYANAND CHANAN SCHOOL</button>
+                                                
+                `;
+
+                
+            } else {
+                var div = document.querySelector('#main-cont');
+                div.innerHTML += '';
+                div.innerHTML += `
+                <input type="file" accept="image/*" id="file">
+                
+                    `;
+
+                var file = document.querySelector('#file');
+                    file.addEventListener('change', (e) => {
+                        f = e.target.files[0];
+                        var storageRef = firebase.storage().ref(auth.currentUser.uid+'_gallery/' + f.name);
+                        storageRef.put(f).then((e) => {
+                            if(e){
+                                console.log(e);
+                            }else{
+                                alert("Image Uploaded. Please refresh the page.");
+                            }
+                        });
+                    });
+
+                var imgContainer = document.querySelector("#imgContainer");
+                var storageRef = firebase.storage().ref(auth.currentUser.uid+"_gallery/");
+                storageRef.listAll().then(function(result) {
+                result.items.forEach(function(imageRef) {
+                    displayImage(imageRef);
+                });
+                }).catch(function(error) {
+                    console.log(error.message+"   ErrorOne");
+                });
+                
+                function displayImage(imageRef) {
+                imageRef.getDownloadURL().then(function(url) {
+                    imgContainer.innerHTML += `<img src="`+url+`" width="200">`;
+                }).catch(function(error) {
+                    console.log(error+"   ErrorTwo");
+                });
+                }
+
+
+            }
+        }
+        else {
+            console.log('user logged out');
+        }
+    });
+
+
+    function imgShow(uid){
+                console.log(uid);
+                var imgContainer = document.querySelector("#imgContainer");
+                
+                var storageRef = firebase.storage().ref(uid+"_gallery/");
+                storageRef.listAll().then(function(result) {
+                result.items.forEach(function(imageRef) {
+                    displayImage(imageRef);
+                });
+                }).catch(function(error) {
+                    console.log(error);
+                });
+                
+                function displayImage(imageRef) {
+                imageRef.getDownloadURL().then(function(url) {
+                    imgContainer.innerHTML += `<img src="`+url+`" width="200">`;
+                }).catch(function(error) {
+                    console.log(error);
+                });
+                }
+                }
+
+
+</script>
+
+</html>
