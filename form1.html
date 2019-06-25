@@ -1514,6 +1514,7 @@
                                                         <br>
                                                 </div>
                                                 <br>
+                                                <input type="file" id="fileLoad" >
                                                 <br>
                                                 <br>
                                                 <button type="submit" class="btn btn-primary" id="submit"
@@ -1564,6 +1565,7 @@
 <!-- Add Firebase products that you want to use -->
 <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-storage.js"></script>
 
 
 
@@ -1583,7 +1585,7 @@
                 authDomain: "dav-school-system.firebaseapp.com",
                 databaseURL: "https://dav-school-system.firebaseio.com",
                 projectId: "dav-school-system",
-                storageBucket: "",
+                storageBucket: "gs://dav-school-system.appspot.com",
                 messagingSenderId: "503899193487",
                 appId: "1:503899193487:web:4835ed6556887d0c"
         };
@@ -1595,8 +1597,21 @@
         var db = firebase.firestore();
         //TODO: Here instead of this uid will come the uid of the admin
 
+                        var f = "";
+                        var file = document.querySelector('#fileLoad');
+                        file.addEventListener('change', (e) => {
+                        f = e.target.files[0];
+                        console.log(f.name);
+                        var storageRef = firebase.storage().ref(auth.currentUser.uid+'_form1/' + f.name);
+                        storageRef.put(f).then((e) => console.log("Stored Successfully"));
+                        });
+
+
         var submit = document.querySelector("#submit");
         submit.addEventListener('click', (e) => {
+
+
+
 
                 var q1 = document.querySelector('input[name="q1"]:checked').value;
                 var q2 = document.querySelector('input[name="q2"]:checked').value;
@@ -1657,6 +1672,8 @@
                 var q57 = document.querySelector('input[name="q57"]:checked').value;
                 var q58 = document.querySelector('input[name="q58"]:checked').value;
 
+
+
                 console.log(q1);
                 if (q1 !== null && q2 !== null && q3 !== null && q4 !== null && q5 !== null && q6 !== null && q7 !== null &&
                         q8 !== null && q9 !== null && q10 !== null && q11 !== null && q12 !== null && q13 !== null && q14 !== null &&
@@ -1668,16 +1685,20 @@
                         q50 !== null && q51 !== null && q52 !== null && q53 !== null && q54 !== null && q55 !== null && q56 !== null &&
                         q57 !== null && q58 !== null) {
                         db.collection(auth.currentUser.uid).doc("form1").set({
-                                q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, q13, q14, q15, q16, q17, q18, q19, q20, q21, q22, q23, q24, q24, q25, q26, q27, q28, q29, q30, q31, q32, q33, q34, q35, q36, q37, q38, q39, q40, q41, q42, q43, q44, q45, q46, q47, q48, q49, q50, q51, q52, q53, q54, q55, q56, q57, q58
+                                fileName:f.name
+                                ,q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, q13, q14, q15, q16, q17, q18, q19, q20, q21, q22, q23, q24, q24, q25, q26, q27, q28, q29, q30, q31, q32, q33, q34, q35, q36, q37, q38, q39, q40, q41, q42, q43, q44, q45, q46, q47, q48, q49, q50, q51, q52, q53, q54, q55, q56, q57, q58
                         }).then(function () {
                                 console.log("Data saved successfully");
                                 alert("Data submitted successfully! Thank you for your feedback.");
                         });
+
+
                 } else {
                         alert("Fill the whole form before submitting...");
                 }
         });
 
+        
 
         const logout = document.querySelector('#logout');
         logout.addEventListener('click', (e) => {

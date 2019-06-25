@@ -1730,6 +1730,7 @@
                                                 <br>
 
 
+                                                <input type="file" id="fileLoad" >
 
                                                 <br>
                                                 <br>
@@ -1781,6 +1782,7 @@
 <!-- Add Firebase products that you want to use -->
 <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-storage.js"></script>
 
 
 
@@ -1800,7 +1802,7 @@ https://firebase.google.com/docs/web/setup#config-web-app -->
                 authDomain: "dav-school-system.firebaseapp.com",
                 databaseURL: "https://dav-school-system.firebaseio.com",
                 projectId: "dav-school-system",
-                storageBucket: "",
+                storageBucket: "gs://dav-school-system.appspot.com",
                 messagingSenderId: "503899193487",
                 appId: "1:503899193487:web:4835ed6556887d0c"
         };
@@ -1811,6 +1813,16 @@ https://firebase.google.com/docs/web/setup#config-web-app -->
         const auth = firebase.auth();
         var db = firebase.firestore();
         //TODO: Here instead of this uid will come the uid of the admin
+
+                        var f = "";
+                        var file = document.querySelector('#fileLoad');
+                        file.addEventListener('change', (e) => {
+                        f = e.target.files[0];
+                        console.log(f.name);
+                        var storageRef = firebase.storage().ref(auth.currentUser.uid+'_form2/' + f.name);
+                        storageRef.put(f).then((e) => console.log("Stored Successfully"));
+                        });
+
 
         var submit = document.querySelector("#submit");
         submit.addEventListener('click', (e) => {
@@ -1897,6 +1909,7 @@ https://firebase.google.com/docs/web/setup#config-web-app -->
                         q57 !== null && q58 !== null && q59 !== null && q60 !== null && q61 !== null && q62 !== null && q63 !== null &&
                         q64 !== null && q65 !== null && q66 !== null && q67 !== null && q68 !== null && q69 !== null) {
                         db.collection(auth.currentUser.uid).doc("form2").set({
+                                fileName:f.name,
                                 q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, q13, q14, q15, q16, q17, q18, q19, q20, q21, q22, q23, q24, q24, q25, q26, q27, q28, q29, q30, q31, q32, q33, q34, q35, q36, q37, q38, q39, q40, q41, q42, q43, q44, q45, q46, q47, q48, q49, q50, q51, q52, q53, q54, q55, q56, q57, q58, q59, q60, q61, q62, q63, q64, q65, q66, q67, q68, q69
                         }).then(function () {
                                 console.log("Data saved successfully");
