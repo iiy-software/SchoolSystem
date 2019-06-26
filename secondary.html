@@ -161,12 +161,6 @@
 
               </li>
               <li>
-                  <a href="gallery.html">
-                      <i class="pe-7s-science"></i>
-                      <p>Gallery</p>
-                  </a>
-              </li>
-              <li>
                 <a href="index.html">
                   <p>Back to Home</p>
                 </a>
@@ -225,6 +219,10 @@
                 <input type="text" id="tname" placeholder="Teacher's Name" required />
                 <input type="text" id="sub" placeholder="Teacher's Subject" required />
                 <input type="text" id="tclass" placeholder="Teacher's class" required />
+                <input type="text" id="tfather" placeholder="Father's Name" required />
+                <input type="text" id="tmother" placeholder="Mother's Name" required />
+                <input type="text" id="texp" placeholder="Teacher's experience" required />
+                <input type="text" id="tqual" placeholder="Teacher's Qualification" required />
                 <input type="text" id="tadd" placeholder="Teacher's address" required />
                 <input type="number" id="tph" placeholder="Teacher's Phone" required />
                 <input type="email" id="email" placeholder="E-mail Address">
@@ -235,12 +233,6 @@
                 <input type="radio" name="gender" value="male" checked> Male<br>
                 <input type="radio" name="gender" value="female"> Female<br>
                 <input type="radio" name="gender" value="other"> Other
-
-                <input type="text" id="texp" placeholder="Teacher's experience" required />
-                <input type="text" id="tqual" placeholder="Teacher's Qualification" required />
-                <input type="text" id="tfather" placeholder="Father's Name" required />
-                <input type="text" id="tmother" placeholder="Mother's Name" required />
-
                 <input type="file" name="file" id="file" class="upload" accept="image/x-png,image/gif,image/jpeg"
                   required />
                 <label for="file">Upload Photo</label>
@@ -395,11 +387,38 @@
             image = url;
 
             cont.innerHTML += `
-          <div class="font-icon-list col-lg-2 col-md-3 col-sm-4 col-xs-6 col-xs-6">
+            <div class="font-icon-list">
                       <div class="font-icon-detail">
-                        <img src="`+ image + `" style="width: 100%; height:100%; border-radius: 50%; padding-top: 0px;" />
-                        <input type="text" style="font-weight: bold;" value="Name: `+ doc.data()['name'] + `" >
-                        <input type="text" style="font-weight: bold;" value="Experience: `+ doc.data()['exp'] + `">
+                       <div class="row">
+                        <div class="col-md-2 teacher-profile">
+                        <img src="`+ image + `" />
+                        <input type="text" class="teacher-name" style="font-weight: bold;" value="Name: `+ doc.data()['name'] + `" >
+                        <input type="text" class="teacher-exp" style="font-weight: bold;" value="Experience: `+ doc.data()['exp'] + `">
+                        <button class="btn btn-danger" id="delbtn1" onclick="delteacherdesktop()" style="position: relative; margin-top: 10px;">
+                        Delete</button>
+                        </div>
+                        <div class="col-md-5 teacher-content">
+                        <table>
+                          <tr><td>DESIGNATION :</td><td id="tdesig">Teacher Designation come here</td></tr>
+                          <tr><td>CLASS :</td><td id="tclass">Teacher class come here</td></tr>
+                          <tr><td>FATHER'S NAME :</td><td id="tdad">Teacher father's name come here</td></tr>
+                          <tr><td>MOTHER'S NAME :</td><td id="tmom">Teacher mother's name come here</td></tr>
+                          <tr><td>QUALIFICATION :</td><td id="tqualf">Teacher qualtification come here</td></tr>
+                          <tr><td>Address :</td><td id="taddr">Teacher address come here</td></tr>
+                        </table>
+                        </div>
+                        <div class="col-md-5 teacher-content">
+                        <table>
+                          <tr><td>PHONE NUMBER :</td><td id="tphone">Teacher phone number come here</td></tr>
+                          <tr><td>EMAIL ID :</td><td id="temail">Teacher emailid come here</td></tr>
+                          <tr><td>CITY :</td><td id="tcity">Teacher city come here</td></tr>
+                          <tr><td>STATE :</td><td id="tstate">Teacher state come here</td></tr>
+                          <tr><td>PIN CODE :</td><td id="tpin">Teacher pin code come here</td></tr>
+                          <tr><td>GENDER :</td><td id="tgender">Teacher gender come here</td></tr>
+                        </table>
+                        <button class="btn btn-danger" id="delbtn2" onclick="delteachermobile()" style="margin-left: auto; margin-right: auto;">Delete</button>
+                        </div>
+                       </div>
                       </div>
                     </div>
           `;

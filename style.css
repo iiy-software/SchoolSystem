@@ -240,3 +240,58 @@ body {
   }
 
   /*done for icons.html */
+
+
+  /*teacher section*/
+  
+.teacher-profile img {
+    height: 80%;
+    width: 100%;
+    padding: 20px;
+    border-radius: 50%;
+}
+.teacher-content {
+    height: 100%;
+    padding: 20px;
+    border-left: 1px solid #B8C3C5;
+}
+.teacher-content table{
+    margin-left: auto;
+    margin-right: auto;
+}
+.teacher-content td{
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.teacher-content button {
+    display: none;
+}
+
+
+@media (max-width:576px){
+    .teacher-profile{
+        height: 50vh;
+        
+    }
+    .teacher-profile img{
+        height:80%;
+        width: 100%;
+    }
+    .teacher-profile input{
+        margin-top: 0px !important;
+    }
+    .teacher-profile button {
+        display: none !important;
+    }
+    .teacher-content{
+        border: none;
+    }
+    .teacher-content td{
+        font-size: 13px;
+    }
+    .teacher-content button {
+        display: block;
+    }
+}
+  /*teacher section*/
