@@ -384,6 +384,13 @@
     });
 
 
+
+    function delteachermobile(id){
+      db.collection(queryDict.name + "" + queryDict.category).doc(id).delete();
+            console.log(name);
+    }
+
+
     var image = "";
     function showteachers() {
       var docRef = db.collection(queryDict.name + "" + queryDict.category);
@@ -404,29 +411,29 @@
                         <img src="`+ image + `" />
                         <input type="text" class="teacher-name" style="font-weight: bold;" value="Name: `+ doc.data()['name'] + `" >
                         <input type="text" class="teacher-exp" style="font-weight: bold;" value="Experience: `+ doc.data()['exp'] + `">
-                        <button class="btn btn-danger" id="delbtn1" onclick="delteacherdesktop()" style="position: relative; margin-top: 10px;">
+                        <button class="btn btn-danger" id="delbtn1" onclick="delteachermobile('`+doc.id+`')" style="position: relative; margin-top: 10px;">
                         Delete</button>
                         </div>
                         <div class="col-md-5 teacher-content">
                         <table>
-                          <tr><td>DESIGNATION :</td><td id="tdesig">Teacher Designation come here</td></tr>
-                          <tr><td>CLASS :</td><td id="tclass">Teacher class come here</td></tr>
-                          <tr><td>FATHER'S NAME :</td><td id="tdad">Teacher father's name come here</td></tr>
-                          <tr><td>MOTHER'S NAME :</td><td id="tmom">Teacher mother's name come here</td></tr>
-                          <tr><td>QUALIFICATION :</td><td id="tqualf">Teacher qualtification come here</td></tr>
-                          <tr><td>Address :</td><td id="taddr">Teacher address come here</td></tr>
+                          <tr><td>DESIGNATION :</td><td>Teacher Designation come here</td></tr>
+                          <tr><td>CLASS :</td><td>`+ doc.data()['classes'] + `</td></tr>
+                          <tr><td>FATHER'S NAME :</td><td>`+ doc.data()['father'] + `</td></tr>
+                          <tr><td>MOTHER'S NAME :</td><td>`+ doc.data()['mother'] + `</td></tr>
+                          <tr><td>QUALIFICATION :</td><td>`+ doc.data()['qual'] + `</td></tr>
+                          <tr><td>Address :</td><td>`+ doc.data()['add'] + `</td></tr>
                         </table>
                         </div>
                         <div class="col-md-5 teacher-content">
                         <table>
-                          <tr><td>PHONE NUMBER :</td><td id="tphone">Teacher phone number come here</td></tr>
-                          <tr><td>EMAIL ID :</td><td id="temail">Teacher emailid come here</td></tr>
-                          <tr><td>CITY :</td><td id="tcity">Teacher city come here</td></tr>
-                          <tr><td>STATE :</td><td id="tstate">Teacher state come here</td></tr>
-                          <tr><td>PIN CODE :</td><td id="tpin">Teacher pin code come here</td></tr>
-                          <tr><td>GENDER :</td><td id="tgender">Teacher gender come here</td></tr>
+                          <tr><td>PHONE NUMBER :</td><td>Teacher phone number come here</td></tr>
+                          <tr><td>EMAIL ID :</td><td>`+ doc.data()['email'] + `</td></tr>
+                          <tr><td>CITY :</td><td>`+ doc.data()['city'] + `</td></tr>
+                          <tr><td>STATE :</td><td>`+ doc.data()['state'] + `</td></tr>
+                          <tr><td>PIN CODE :</td><td>`+ doc.data()['pin'] + `</td></tr>
+                          <tr><td>GENDER :</td><td>`+ doc.data()['gender'] + `</td></tr>
                         </table>
-                        <button class="btn btn-danger" id="delbtn2" onclick="delteachermobile()" style="margin-left: auto; margin-right: auto;">Delete</button>
+                        <button class="btn btn-danger" id="delbtn2" onclick="delteachermobile('`+doc.id+`')" style="margin-left: auto; margin-right: auto;">Delete</button>
                         </div>
                        </div>
                       </div>
