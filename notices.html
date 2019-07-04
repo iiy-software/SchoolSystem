@@ -278,7 +278,15 @@
 
     function deleteFile(id) {
         console.log("DeleteFile");
-        db.collection('notices_uploads').doc(id).delete().then(() => alert("Successfully Deleted. Please refresh this page."));
+        db.collection('notices_uploads').doc(id).delete().then(() =>{ 
+        alert("Successfully Deleted. Please refresh this page."); 
+        location.reload();
+        }).catch((e) => {
+            if(e){
+                console.log(e);
+                location.reload();
+            }
+        });
     }
 
 

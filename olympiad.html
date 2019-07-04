@@ -274,9 +274,11 @@
             console.log(name);
             firebase.storage().child('olympiad_uploads/' + name).delete().then(() => {
                 alert("Succesfully deleted");
+                location.reload();
             }).catch((e) => {
                 if (e)
                     console.log(e);
+                    location.reload();
             });
         }
 
