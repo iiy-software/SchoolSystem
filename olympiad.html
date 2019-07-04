@@ -270,7 +270,9 @@
 
         function deleteFile(name, id) {
             console.log("DeleteFile");
-            db.collection('olympiad_uploads').doc(id).delete();
+            db.collection('olympiad_uploads').doc(id).delete().then(()=>{
+                alert("Deleted Successfully");
+                location.reload();});
             console.log(name);
             firebase.storage().child('olympiad_uploads/' + name).delete().then(() => {
                 alert("Succesfully deleted");

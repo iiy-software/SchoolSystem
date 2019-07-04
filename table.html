@@ -280,7 +280,9 @@
 
     function deleteFile(name, id) {
         console.log("DeleteFile");
-        db.collection('circular_uploads').doc(id).delete();
+        db.collection('circular_uploads').doc(id).delete().then(()=> {alert("Deleted Successfully");
+        location.reload();
+    });
         console.log(name);
         firebase.storage().child('circular_uploads/' + name).delete().then(() => {
             alert("Succesfully deleted");
