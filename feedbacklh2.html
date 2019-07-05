@@ -2029,10 +2029,14 @@
     const db = firebase.firestore();
 
          //TODO: Here instead of this uid will come the uid of the admin
-         console.log(auth.currentUser.uid);
-         if(auth.currentUser.uid !== '7aa6jS40lzWe4PpRTY46BjXtL5i1'){
+         //console.log(auth.currentUser.uid);
+         auth.onAuthStateChanged(user => {
+                if(user){
+                if(auth.currentUser.uid !== '7aa6jS40lzWe4PpRTY46BjXtL5i1'){
                         location.href = 'form1.html';
                 }
+        }
+        });
 
 
 
