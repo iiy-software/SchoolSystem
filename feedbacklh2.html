@@ -2029,6 +2029,7 @@
     const db = firebase.firestore();
 
          //TODO: Here instead of this uid will come the uid of the admin
+         console.log(auth.currentUser.uid);
          if(auth.currentUser.uid !== '7aa6jS40lzWe4PpRTY46BjXtL5i1'){
                         location.href = 'form1.html';
                 }
@@ -2195,14 +2196,14 @@
                 });
         }
 
-
+/*
         const sc_one = document.querySelector('#sc-one');
         sc_one.addEventListener('click', () => {
                 uid = "OWrujt67nnT1GquSjChWI7uNEAt2";   // Here the uid of the school one will come
                 console.log("SCHOOL ONE");
                 changeFeedback(uid);
         });
-        const sc_two = document.querySelector('#sc-two');
+  */      const sc_two = document.querySelector('#sc-two');
         sc_two.addEventListener('click', () => {
                 uid = "QEn99edIa0hU64nqmJ9s0YaRsnG2";   // Here the uid of the school two will come
                 console.log("SCHOOL TWO");
@@ -2226,7 +2227,7 @@
                 console.log("SCHOOL FIVE");
                 changeFeedback(uid);
         });
-        const sc_six = document.querySelector('#sc-six');
+    /*    const sc_six = document.querySelector('#sc-six');
         sc_six.addEventListener('click', () => {
                 uid = "yZWR4scvYuM8gtGiUAKUVIcLgSx1";   // Here the uid of the school five will come
                 changeFeedback(uid);
@@ -2236,26 +2237,26 @@
                 uid = "Qx5RqymWioPWPZR3sgjNYLHIpZ42";   // Here the uid of the school five will come
                 changeFeedback(uid);
         });
-        const sc_eight = document.querySelector('#sc-eight');
+      */  const sc_eight = document.querySelector('#sc-eight');
         sc_eight.addEventListener('click', () => {
                 uid = "EoqIt69qKGYxQqk7HTCBTCBEiZh2";   // Here the uid of the school five will come
                 changeFeedback(uid);
-        });
+        });/*
         const sc_nine = document.querySelector('#sc-nine');
         sc_nine.addEventListener('click', () => {
                 uid = "X9b3G13avzMuq77MCGplK5IzAx42";   // Here the uid of the school five will come
                 changeFeedback(uid);
-        });
+        });*/
         const sc_ten = document.querySelector('#sc-ten');
         sc_ten.addEventListener('click', () => {
                 uid = "CxElxaZ9EPTO6b1azSkzkVFjZAs2";   // Here the uid of the school five will come
                 changeFeedback(uid);
-        });
+        });/*
         const sc_eleven = document.querySelector('#sc-eleven');
         sc_eleven.addEventListener('click', () => {
                 uid = "FncVoXmyIMP86Ah7n8ZiCVcJjlt2";   // Here the uid of the school five will come
                 changeFeedback(uid);
-        });
+        });*/
     //for auth listener
     const adminCheck = document.querySelector('#admin-check');
         adminCheck.addEventListener('click', (e) => {
