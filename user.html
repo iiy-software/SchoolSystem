@@ -438,7 +438,7 @@
                 });
             }
 
-            if (auth.currentUser.uid === 'EsU6A3yoMbQT0EJ7nVXWxv1fLEr1') {
+            if (auth.currentUser.uid === 'yZWR4scvYuM8gtGiUAKUVIcLgSx1') {
                 school_title.innerHTML = 'Smt. Karam Bai DAV Cent. Public School';
                 db.collection('karambaischool').get().then(querySnapshot => {
                     querySnapshot.docs.forEach(doc => {
@@ -454,7 +454,7 @@
                 });
 
             }
-            if (auth.currentUser.uid === 'EtoYm8LaUwOvp0yM8uxiwbqjlzk2') {
+            if (auth.currentUser.uid === 'X9b3G13avzMuq77MCGplK5IzAx42') {
                 school_title.innerHTML = 'SGJ DAV Centenary Public School;'
                 db.collection('sgjschool').get().then(querySnapshot => {
                     querySnapshot.docs.forEach(doc => {
@@ -485,7 +485,7 @@
                 });
 
             }
-            if (auth.currentUser.uid === 'OV4xG553lwXVqJXu7Ohq7tbEIPP2') {
+            if (auth.currentUser.uid === 'OWrujt67nnT1GquSjChWI7uNEAt2') {
                 school_title.innerHTML = 'R.B. DAV Sr. Secondary School';
                 db.collection('rbschool').get().then(querySnapshot => {
                     querySnapshot.docs.forEach(doc => {
@@ -586,7 +586,7 @@
 
     const update = document.getElementById('update');
     update.addEventListener('click', (e) => {
-
+        e.preventDefault();
         var school = document.querySelector('#school').value;
         var username = document.querySelector('#username').value;
         var email = document.querySelector('#email').value;
@@ -597,7 +597,7 @@
         var about = document.querySelector('#about').value;
 
         if (auth.currentUser.uid === 'CxElxaZ9EPTO6b1azSkzkVFjZAs2') {
-            db.collection('dclschool').doc('information').set({
+            db.collection('dclschool').doc('information').update({
                 school,
                 username,
                 email,
@@ -606,6 +606,9 @@
                 city,
                 pcode,
                 about
+            }).catch((e) => console.log(e)).then((e) => {
+                alert("Information Updated");
+                location.reload();
             });
 
 
@@ -621,9 +624,12 @@
                 city,
                 pcode,
                 about
+            }).catch((e) => console.log(e)).then((e) => {
+                alert("Information Updated");
+                location.reload();
             });
         }
-        if (auth.currentUser.uid === 'EsU6A3yoMbQT0EJ7nVXWxv1fLEr1') {
+        if (auth.currentUser.uid === 'yZWR4scvYuM8gtGiUAKUVIcLgSx1') {
             db.collection('karambaischool').doc('information').set({
                 school,
                 username,
@@ -633,9 +639,12 @@
                 city,
                 pcode,
                 about
+            }).catch((e) => console.log(e)).then((e) => {
+                alert("Information Updated");
+                location.reload();
             });
         }
-        if (auth.currentUser.uid === 'EtoYm8LaUwOvp0yM8uxiwbqjlzk2') {
+        if (auth.currentUser.uid === 'X9b3G13avzMuq77MCGplK5IzAx42') {
             db.collection('sgjschool').doc('information').set({
                 school,
                 username,
@@ -645,6 +654,9 @@
                 city,
                 pcode,
                 about
+            }).catch((e) => console.log(e)).then((e) => {
+                alert("Information Updated");
+                location.reload();
             });
         }
         if (auth.currentUser.uid === 'FncVoXmyIMP86Ah7n8ZiCVcJjlt2') {
@@ -657,9 +669,12 @@
                 city,
                 pcode,
                 about
+            }).catch((e) => console.log(e)).then((e) => {
+                alert("Information Updated");
+                location.reload();
             });
         }
-        if (auth.currentUser.uid === 'OV4xG553lwXVqJXu7Ohq7tbEIPP2') {
+        if (auth.currentUser.uid === 'OWrujt67nnT1GquSjChWI7uNEAt2') {
             db.collection('rbschool').doc('information').set({
                 school,
                 username,
@@ -669,6 +684,9 @@
                 city,
                 pcode,
                 about
+            }).catch((e) => console.log(e)).then((e) => {
+                alert("Information Updated");
+                location.reload();
             });
         }
         if (auth.currentUser.uid === 'QEn99edIa0hU64nqmJ9s0YaRsnG2') {
@@ -681,6 +699,9 @@
                 city,
                 pcode,
                 about
+            }).catch((e) => console.log(e)).then((e) => {
+                alert("Information Updated");
+                location.reload();
             });
         }
         if (auth.currentUser.uid === 'QJvlw5TMXCUNv78z0WcrQNZjfDj2') {
@@ -693,10 +714,14 @@
                 city,
                 pcode,
                 about
+            }).catch((e) => console.log(e)).then((e) => {
+                alert("Information Updated");
+                location.reload();
             });
         }
         if (auth.currentUser.uid === 'Qx5RqymWioPWPZR3sgjNYLHIpZ42') {
-            db.collection('lrsschool').doc('information').set({
+            
+            db.collection('lrsschool').doc('information').update({
                 school,
                 username,
                 email,
@@ -705,6 +730,9 @@
                 city,
                 pcode,
                 about
+            }).catch((e) => console.log(e)).then((e) => {
+                alert("Information Updated");
+                location.reload();
             });
         }
         if (auth.currentUser.uid === 'h1jF6BToWgbDGtw4siN3sEs6Als2') {
@@ -717,6 +745,9 @@
                 city,
                 pcode,
                 about
+            }).catch((e) => console.log(e)).then((e) => {
+                alert("Information Updated");
+                location.reload();
             });
         }
         if (auth.currentUser.uid === 'hwODP1CS4sNUE3fr5BYg0NyTikM2') {
@@ -729,6 +760,9 @@
                 city,
                 pcode,
                 about
+            }).catch((e) => console.log(e)).then((e) => {
+                alert("Information Updated");
+                location.reload();
             });
         }
     });
