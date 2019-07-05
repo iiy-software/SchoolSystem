@@ -295,3 +295,47 @@ body {
     }
 }
   /*teacher section*/
+/* gallery */
+/* .img-row{
+    height: 30vh;
+}
+.img-block{
+    box-shadow: #B8C3C5
+}
+.img-block img{
+    margin-left: auto;
+    margin-right: auto;
+    height: 26vh;
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+} */
+.img-row{
+    padding: 40px;
+}
+.img-row img {
+    padding-bottom: 5px;
+    width: 100%;
+}
+div.polaroid {
+    position: relative;
+    width: 234px;
+    padding: 10px 10px 50px 10px;
+    border: 1px solid #BFBFBF;
+    background-color: white;
+    box-shadow: 10px 10px 5px #aaaaaa;
+  }
+  
+  div.rotate_right {
+    float: left;
+    -ms-transform: rotate(7deg); /* IE 9 */
+    -webkit-transform: rotate(7deg); /* Safari */
+    transform: rotate(7deg);
+  }
+  
+  div.rotate_left {
+    float: left;
+    -ms-transform: rotate(-8deg); /* IE 9 */
+    -webkit-transform: rotate(-8deg); /* Safari */
+    transform: rotate(-8deg);
+  }

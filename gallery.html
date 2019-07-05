@@ -24,6 +24,7 @@
 
     <!--  CSS for Demo Purpose, don't include it in your project     -->
     <link href="assets/css/demo.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
 
 
     <!--     Fonts and icons     -->
@@ -71,7 +72,7 @@
                             <p>Circulars</p>
                         </a>
                     </li>
-                    <li >
+                    <li>
                         <a href="notices.html">
                             <i class="pe-7s-note2"></i>
                             <p>Notices</p>
@@ -153,7 +154,7 @@
                         <ul class="nav navbar-nav navbar-right">
                             <li>
                                 <a href="form1.html">
-                                    <p>Academic Audit  PB G</p>
+                                    <p>Academic Audit PB G</p>
                                 </a>
                             </li>
                             <li class="dropdown">
@@ -187,11 +188,41 @@
 </div> -->
 
             <div class="container" id="main-cont">
+                <div class="row img-row">
+                    <div class="col-md-3">
+                        <div class="polaroid rotate_right">
+                            <img src="assets/img/faces/face-2.jpg" alt="Pulpit rock" width="284" height="213">
+                            <button class="btn btn-danger" style="position: absolute;
+                            left:50%; transform:translateX(-50%);" onclick="galleryimg_del()">Delete</button>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="polaroid rotate_left">
+                            <img src="assets/img/faces/face-2.jpg" alt="Monterosso al Mare" width="284" height="213">
+                            <button class="btn btn-danger" style="position: absolute;
+                            left:50%; transform:translateX(-50%);" onclick="galleryimg_del()">Delete</button>
+                        </div>
+                    </div>
+                    <div class="col-md-3 img-block">
+                        <div class="polaroid rotate_right">
+                            <img src="assets/img/faces/face-2.jpg" alt="Pulpit rock" width="284" height="213">
+                            <button class="btn btn-danger" style="position: absolute;
+                            left:50%; transform:translateX(-50%);" onclick="galleryimg_del()">Delete</button>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="polaroid rotate_left">
+                            <img src="assets/img/faces/face-2.jpg" alt="Monterosso al Mare" width="284" height="213">
+                            <button class="btn btn-danger" style="position: absolute;
+                                left:50%; transform:translateX(-50%);" onclick="galleryimg_del()">Delete</button>
+                        </div>
+                    </div>
+                </div>
                 <div style="display: flex;flex-wrap:wrap; justify-content: space-evenly" id="imgContainer">
 
                 </div>
             </div>
-            
+
             <footer class="footer" style="margin-top: 340px; ">
                 <div class="container-fluid">
                     <p class="copyright pull-right">
@@ -262,7 +293,7 @@
         if (user) {
             console.log('user logged in');
             if (auth.currentUser.uid === '7aa6jS40lzWe4PpRTY46BjXtL5i1') {
-                
+
                 var div = document.querySelector('#main-cont');
                 div.innerHTML += `
                     <button onclick="imgShow('OWrujt67nnT1GquSjChWI7uNEAt2')" id="sc-eight" style="background-color:#1DC7EA;color:white;padding:10px;margin:5px;border:transparent;">R.B.DAV Sr. Sec. School  </button>
@@ -279,7 +310,7 @@
                                                 
                 `;
 
-                
+
             } else {
                 var div = document.querySelector('#main-cont');
                 div.innerHTML += '';
@@ -289,34 +320,34 @@
                     `;
 
                 var file = document.querySelector('#file');
-                    file.addEventListener('change', (e) => {
-                        f = e.target.files[0];
-                        var storageRef = firebase.storage().ref(auth.currentUser.uid+'_gallery/' + f.name);
-                        storageRef.put(f).then((e) => {
-                            if(e){
-                                console.log(e);
-                            }else{
-                                alert("Image Uploaded. Please refresh the page.");
-                            }
-                        });
+                file.addEventListener('change', (e) => {
+                    f = e.target.files[0];
+                    var storageRef = firebase.storage().ref(auth.currentUser.uid + '_gallery/' + f.name);
+                    storageRef.put(f).then((e) => {
+                        if (e) {
+                            console.log(e);
+                        } else {
+                            alert("Image Uploaded. Please refresh the page.");
+                        }
                     });
+                });
 
                 var imgContainer = document.querySelector("#imgContainer");
-                var storageRef = firebase.storage().ref(auth.currentUser.uid+"_gallery/");
-                storageRef.listAll().then(function(result) {
-                result.items.forEach(function(imageRef) {
-                    displayImage(imageRef);
+                var storageRef = firebase.storage().ref(auth.currentUser.uid + "_gallery/");
+                storageRef.listAll().then(function (result) {
+                    result.items.forEach(function (imageRef) {
+                        displayImage(imageRef);
+                    });
+                }).catch(function (error) {
+                    console.log(error.message + "   ErrorOne");
                 });
-                }).catch(function(error) {
-                    console.log(error.message+"   ErrorOne");
-                });
-                
+
                 function displayImage(imageRef) {
-                imageRef.getDownloadURL().then(function(url) {
-                    imgContainer.innerHTML += `<img src="`+url+`" width="200">`;
-                }).catch(function(error) {
-                    console.log(error+"   ErrorTwo");
-                });
+                    imageRef.getDownloadURL().then(function (url) {
+                        imgContainer.innerHTML += `<img src="` + url + `" width="200">`;
+                    }).catch(function (error) {
+                        console.log(error + "   ErrorTwo");
+                    });
                 }
 
 
@@ -328,28 +359,37 @@
     });
 
 
-    function imgShow(uid){
-                console.log(uid);
-                var imgContainer = document.querySelector("#imgContainer");
-                
-                var storageRef = firebase.storage().ref(uid+"_gallery/");
-                storageRef.listAll().then(function(result) {
-                result.items.forEach(function(imageRef) {
-                    displayImage(imageRef);
-                });
-                }).catch(function(error) {
-                    console.log(error);
-                });
-                
-                function displayImage(imageRef) {
-                imageRef.getDownloadURL().then(function(url) {
-                    imgContainer.innerHTML += `<img src="`+url+`" width="200">`;
-                }).catch(function(error) {
-                    console.log(error);
-                });
-                }
-                }
+    function imgShow(uid) {
+        console.log(uid);
+        var imgContainer = document.querySelector("#imgContainer");
 
+        var storageRef = firebase.storage().ref(uid + "_gallery/");
+        storageRef.listAll().then(function (result) {
+            result.items.forEach(function (imageRef) {
+                displayImage(imageRef);
+            });
+        }).catch(function (error) {
+            console.log(error);
+        });
+
+        function displayImage(imageRef) {
+            imageRef.getDownloadURL().then(function (url) {
+                imgContainer.innerHTML += `<img src="` + url + `" width="200">`;
+            }).catch(function (error) {
+                console.log(error);
+            });
+        }
+    }
+
+    //for logout user
+    const logout = document.querySelector('#logout');
+    logout.addEventListener('click', (e) => {
+        e.preventDefault();
+        auth.signOut().then(() => {
+            window.location = 'index.html';
+            window.alert('User signed Out Successfully');
+        });
+    });
 
 </script>
 
