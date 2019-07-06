@@ -188,8 +188,13 @@
 </div> -->
 
             <div class="container">
+                <div class="row text-center btn-row">
+                    <input type="file" id="add_img_btn" name="file" class="input-img-file" />
+                    <label for="add_img_btn">Choose a file</label><br><br>
+                    <button class="btn btn-secondary" id="upload_img_btn" onclick="add_img()">Upload file</button>
+                </div>
                 <div class="row img-row" id="main-cont">
-                    
+
                 </div>
                 <div style="display: flex;flex-wrap:wrap; justify-content: space-evenly" id="imgContainer">
 
@@ -305,7 +310,7 @@
                     });
                 });
 
-                
+
                 var cl = "rotate_right";
                 var b = true;
                 var imgContainer = document.querySelector("#main-cont");
@@ -320,16 +325,16 @@
 
                 function displayImage(imageRef) {
                     imageRef.getDownloadURL().then(function (url) {
-                        if(b){
-                    cl = 'rotate_right';
-                    b = false;
-                }else{
-                    cl = 'rotate_left';
-                    b = true;
-                }
-                imgContainer.innerHTML += 
-                `<div class="col-md-3">
-                        <div class="polaroid `+cl+`">
+                        if (b) {
+                            cl = 'rotate_right';
+                            b = false;
+                        } else {
+                            cl = 'rotate_left';
+                            b = true;
+                        }
+                        imgContainer.innerHTML +=
+                            `<div class="col-md-3">
+                        <div class="polaroid `+ cl+`">
                             <img src="`+url+`" alt="Monterosso al Mare" width="284" height="213">
                             <button class="btn btn-danger" style="position: absolute;
                                 left:50%; transform:translateX(-50%);" onclick="galleryimg_del()">Delete</button>
@@ -366,15 +371,15 @@
 
         function displayImage(imageRef) {
             imageRef.getDownloadURL().then(function (url) {
-                if(b){
+                if (b) {
                     cl = 'rotate_right';
                     b = false;
-                }else{
+                } else {
                     cl = 'rotate_left';
                     b = true;
                 }
-                imgContainer.innerHTML += 
-                `<div class="col-md-3">
+                imgContainer.innerHTML +=
+                    `<div class="col-md-3">
                         <div class="polaroid `+cl+`">
                             <img src="`+url+`" alt="Monterosso al Mare" width="284" height="213">
                             <button class="btn btn-danger" style="position: absolute;
