@@ -187,36 +187,9 @@
 <ul id="ul-list1"></ul> 
 </div> -->
 
-            <div class="container" id="main-cont">
-                <div class="row img-row">
-                    <div class="col-md-3">
-                        <div class="polaroid rotate_right">
-                            <img src="assets/img/faces/face-2.jpg" alt="Pulpit rock" width="284" height="213">
-                            <button class="btn btn-danger" style="position: absolute;
-                            left:50%; transform:translateX(-50%);" onclick="galleryimg_del()">Delete</button>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="polaroid rotate_left">
-                            <img src="assets/img/faces/face-2.jpg" alt="Monterosso al Mare" width="284" height="213">
-                            <button class="btn btn-danger" style="position: absolute;
-                            left:50%; transform:translateX(-50%);" onclick="galleryimg_del()">Delete</button>
-                        </div>
-                    </div>
-                    <div class="col-md-3 img-block">
-                        <div class="polaroid rotate_right">
-                            <img src="assets/img/faces/face-2.jpg" alt="Pulpit rock" width="284" height="213">
-                            <button class="btn btn-danger" style="position: absolute;
-                            left:50%; transform:translateX(-50%);" onclick="galleryimg_del()">Delete</button>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="polaroid rotate_left">
-                            <img src="assets/img/faces/face-2.jpg" alt="Monterosso al Mare" width="284" height="213">
-                            <button class="btn btn-danger" style="position: absolute;
-                                left:50%; transform:translateX(-50%);" onclick="galleryimg_del()">Delete</button>
-                        </div>
-                    </div>
+            <div class="container">
+                <div class="row img-row" id="main-cont">
+                    
                 </div>
                 <div style="display: flex;flex-wrap:wrap; justify-content: space-evenly" id="imgContainer">
 
@@ -332,7 +305,10 @@
                     });
                 });
 
-                var imgContainer = document.querySelector("#imgContainer");
+                
+                var cl = "rotate_right";
+                var b = true;
+                var imgContainer = document.querySelector("#main-cont");
                 var storageRef = firebase.storage().ref(auth.currentUser.uid + "_gallery/");
                 storageRef.listAll().then(function (result) {
                     result.items.forEach(function (imageRef) {
@@ -344,7 +320,21 @@
 
                 function displayImage(imageRef) {
                     imageRef.getDownloadURL().then(function (url) {
-                        imgContainer.innerHTML += `<img src="` + url + `" width="200">`;
+                        if(b){
+                    cl = 'rotate_right';
+                    b = false;
+                }else{
+                    cl = 'rotate_left';
+                    b = true;
+                }
+                imgContainer.innerHTML += 
+                `<div class="col-md-3">
+                        <div class="polaroid `+cl+`">
+                            <img src="`+url+`" alt="Monterosso al Mare" width="284" height="213">
+                            <button class="btn btn-danger" style="position: absolute;
+                                left:50%; transform:translateX(-50%);" onclick="galleryimg_del()">Delete</button>
+                        </div>
+                    </div>`;
                     }).catch(function (error) {
                         console.log(error + "   ErrorTwo");
                     });
@@ -359,9 +349,11 @@
     });
 
 
+    var cl = "rotate_right";
+    var b = true;
     function imgShow(uid) {
         console.log(uid);
-        var imgContainer = document.querySelector("#imgContainer");
+        var imgContainer = document.querySelector("#main-cont");
 
         var storageRef = firebase.storage().ref(uid + "_gallery/");
         storageRef.listAll().then(function (result) {
@@ -374,7 +366,21 @@
 
         function displayImage(imageRef) {
             imageRef.getDownloadURL().then(function (url) {
-                imgContainer.innerHTML += `<img src="` + url + `" width="200">`;
+                if(b){
+                    cl = 'rotate_right';
+                    b = false;
+                }else{
+                    cl = 'rotate_left';
+                    b = true;
+                }
+                imgContainer.innerHTML += 
+                `<div class="col-md-3">
+                        <div class="polaroid `+cl+`">
+                            <img src="`+url+`" alt="Monterosso al Mare" width="284" height="213">
+                            <button class="btn btn-danger" style="position: absolute;
+                                left:50%; transform:translateX(-50%);" onclick="galleryimg_del()">Delete</button>
+                        </div>
+                    </div>`;
             }).catch(function (error) {
                 console.log(error);
             });
