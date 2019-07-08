@@ -294,14 +294,13 @@
 
                 var file = document.querySelector('#file');
                 file.addEventListener('change', (e) => {
+                    alert("Reached here...");
                     f = e.target.files[0];
                     var storageRef = firebase.storage().ref(auth.currentUser.uid + '_gallery/' + f.name);
-                    storageRef.put(f).then((e) => {
-                        if (e) {
-                            console.log(e);
-                        } else {
+                    storageRef.put(f).then(() => {
+                         
                             alert("Image Uploaded. Please refresh the page.");
-                        }
+                        
                     });
                 });
 
@@ -378,7 +377,7 @@
                         <div class="polaroid `+cl+`">
                             <img src="`+url+`" alt="Monterosso al Mare" width="284" height="213">
                             <button class="btn btn-danger" style="position: absolute;
-                                left:50%; transform:translateX(-50%);" onclick="galleryimg_del()">Delete</button>
+                                left:50%; transform:translateX(-50%);" onclick="deleteFile('`+uid+`','`+imageRef+`')">Delete</button>
                         </div>
                     </div>`;
             }).catch(function (error) {
@@ -386,6 +385,20 @@
             });
         }
     }
+
+    function deleteFile(uid, name) {
+        console.log("DeleteFile");
+        db.collection(uid+'_gallery/').doc(name).delete().then(() =>{ 
+        alert("Successfully Deleted. Please refresh this page."); 
+        location.reload();
+        }).catch((e) => {
+            if(e){
+                console.log(e);
+                location.reload();
+            }
+        });
+    }
+
 
     //for logout user
     const logout = document.querySelector('#logout');
