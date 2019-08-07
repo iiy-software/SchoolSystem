@@ -27,8 +27,8 @@
 
 
     <!--     Fonts and icons     -->
-    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
     <link href="assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
 </head>
 
@@ -282,37 +282,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4">
-                            <div class="card card-user">
-                                <div class="image">
-                                    <img src="assets/img/LRS.jpg" alt="..." />
-                                </div>
-                                <div class="content">
-                                    <div class="author">
-                                        <a href="#">
-                                            <img class="avatar border-gray" src="assets/img/imgplaceholder.png"
-                                                alt="..." style="background-color: #fff;" />
-
-                                            <h4 class="title" id="school_title">R.B DAV Public School<br />
-                                                <small>Punjab</small>
-                                            </h4>
-                                        </a>
-                                    </div>
-                                    <p class="description text-center"> "About Us"
-                                    </p>
-                                </div>
-                                <hr>
-                                <div class="text-center">
-                                    <button href="#" class="btn btn-simple"><i
-                                            class="fa fa-facebook-square"></i></button>
-                                    <button href="#" class="btn btn-simple"><i class="fa fa-twitter"></i></button>
-                                    <button href="#" class="btn btn-simple"><i
-                                            class="fa fa-google-plus-square"></i></button>
-
-                                </div>
-                            </div>
-                        </div>
-
+      
                     </div>
                 </div>
             </div>
@@ -408,7 +378,6 @@
         if (user) {
 
             if (auth.currentUser.uid === 'CxElxaZ9EPTO6b1azSkzkVFjZAs2') {
-                school_title.innerHTML = 'Dayanand Chanan Lal High School';
                 db.collection('dclschool').get().then(querySnapshot => {
                     querySnapshot.docs.forEach(doc => {
                         document.querySelector('#school').value = doc.data()['school'];
@@ -423,7 +392,6 @@
                 });
             }
             if (auth.currentUser.uid === 'EoqIt69qKGYxQqk7HTCBTCBEiZh2') {
-                school_title.innerHTML = 'Gurukul Intl School';
                 db.collection('gurukulschool').get().then(querySnapshot => {
                     querySnapshot.docs.forEach(doc => {
                         document.querySelector('#school').value = doc.data()['school'];
@@ -439,7 +407,6 @@
             }
 
             if (auth.currentUser.uid === 'yZWR4scvYuM8gtGiUAKUVIcLgSx1') {
-                school_title.innerHTML = 'Smt. Karam Bai DAV Cent. Public School';
                 db.collection('karambaischool').get().then(querySnapshot => {
                     querySnapshot.docs.forEach(doc => {
                         document.querySelector('#school').value = doc.data()['school'];
@@ -455,7 +422,6 @@
 
             }
             if (auth.currentUser.uid === 'X9b3G13avzMuq77MCGplK5IzAx42') {
-                school_title.innerHTML = 'SGJ DAV Centenary Public School;'
                 db.collection('sgjschool').get().then(querySnapshot => {
                     querySnapshot.docs.forEach(doc => {
                         document.querySelector('#school').value = doc.data()['school'];
@@ -470,7 +436,6 @@
                 });
             }
             if (auth.currentUser.uid === 'FncVoXmyIMP86Ah7n8ZiCVcJjlt2') {
-                school_title.innerHTML = 'Mahatma Gandhi DAV Vidyalaya';
                 db.collection('mgandhischool').get().then(querySnapshot => {
                     querySnapshot.docs.forEach(doc => {
                         document.querySelector('#school').value = doc.data()['school'];
@@ -486,7 +451,6 @@
 
             }
             if (auth.currentUser.uid === 'OWrujt67nnT1GquSjChWI7uNEAt2') {
-                school_title.innerHTML = 'R.B. DAV Sr. Secondary School';
                 db.collection('rbschool').get().then(querySnapshot => {
                     querySnapshot.docs.forEach(doc => {
                         document.querySelector('#school').value = doc.data()['school'];
@@ -502,7 +466,6 @@
 
             }
             if (auth.currentUser.uid === 'QEn99edIa0hU64nqmJ9s0YaRsnG2') {
-                school_title.innerHTML = 'Wheat Fields Public School';
                 db.collection('wheatschool').get().then(querySnapshot => {
                     querySnapshot.docs.forEach(doc => {
                         document.querySelector('#school').value = doc.data()['school'];
@@ -518,7 +481,6 @@
 
             }
             if (auth.currentUser.uid === 'QJvlw5TMXCUNv78z0WcrQNZjfDj2') {
-                school_title.innerHTML = 'Radcliffe School';
                 db.collection('radcliffeschool').get().then(querySnapshot => {
                     querySnapshot.docs.forEach(doc => {
                         document.querySelector('#school').value = doc.data()['school'];
@@ -534,7 +496,6 @@
 
             }
             if (auth.currentUser.uid === 'Qx5RqymWioPWPZR3sgjNYLHIpZ42') {
-                school_title.innerHTML = 'LRS DAV Sr. Sec. Model School';
                 db.collection('lrsschool').get().then(querySnapshot => {
                     querySnapshot.docs.forEach(doc => {
                         document.querySelector('#school').value = doc.data()['school'];
@@ -550,7 +511,6 @@
             }
 
             if (auth.currentUser.uid === 'h1jF6BToWgbDGtw4siN3sEs6Als2') {
-                school_title.innerHTML = 'The Millennium School';
                 db.collection('millenniumschool').get().then(querySnapshot => {
                     querySnapshot.docs.forEach(doc => {
                         document.querySelector('#school').value = doc.data()['school'];
@@ -565,7 +525,6 @@
                 });
             }
             if (auth.currentUser.uid === 'hwODP1CS4sNUE3fr5BYg0NyTikM2') {
-                school_title.innerHTML = 'Mata Sundri Public School';
                 db.collection('msundrischool').get().then(querySnapshot => {
                     querySnapshot.docs.forEach(doc => {
                         document.querySelector('#school').value = doc.data()['school'];
